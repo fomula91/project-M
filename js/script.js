@@ -70,8 +70,8 @@ monogatari.characters ({
 			normal: 'haru_A100.png',
 			smile: 'haru_A101.png',
 			angry: 'haru_A102.png',
-			surprised: 'haru_A103.png',
-			talk: 'haru_A104.png'
+			surprised: 'haru_A104.png',
+			worried: 'haru_A103.png'
 		}
 	},
 	's': {
@@ -82,9 +82,9 @@ monogatari.characters ({
 			normal: 'sora_A100.png',
 			happy: 'sora_A101.png',
 			angry: 'sora_A102.png',
-			surprised: 'sora_A103.png',
-			worried: 'sora_A104.png',
-			smile: 'sora_A190.png'
+			surprised: 'sora_A104.png',
+			worried: 'sora_A103.png',
+			angry2: 'sora_A190.png'
 		}
 	},
 	'h': {
@@ -93,13 +93,13 @@ monogatari.characters ({
 		directory: 'hana',
 		sprites: {
 			normal: 'hana_A100.png',
-			happy: 'hana_A199.png',
+			happy: 'hana_A201.png',
 			normal2: 'hana_A200.png',
 			laugh: 'hana_A201.png',
-			surprised: 'hana_A202.png',
-			sad: 'hana_A203.png',
-			shocked: 'hana_A204.png',
-			casual: 'hana_B199.png'
+			angry: 'hana_A202.png',
+			worried: 'hana_A203.png',
+			surprised: 'hana_A204.png',
+			yandere: 'hana_B199.png'
 		}
 	}
 });
