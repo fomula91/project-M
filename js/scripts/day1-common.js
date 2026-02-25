@@ -4,7 +4,7 @@ monogatari.script ({
 
 	// ---- START: Name Input ----
 	'Start': [
-		'show scene #f5e6ca with fadeIn',
+		'show scene auditorium_sunrise with fadeIn',
 		'centered 사쿠라 학원에 오신 것을 환영합니다.',
 		{
 			'Input': {
@@ -35,7 +35,7 @@ monogatari.script ({
 
 	// ---- PROLOGUE ----
 	'Prologue': [
-		'show scene #87ceeb with fadeIn',
+		'show scene school_front_day with fadeIn',
 		'centered ── 1일차: 벚꽃이 피는 아침 ──',
 		'봄바람이 벚꽃 잎을 흩날리는 4월의 아침.',
 		'오늘은 사쿠라 학원의 새 학기 첫날이다.',
@@ -48,7 +48,7 @@ monogatari.script ({
 
 	// ---- SCHOOL ARRIVAL: Meet both characters ----
 	'SchoolArrival': [
-		'show scene #ffe4e1 with slideRight',
+		'show scene classroom_day with slideRight',
 		'교실에 들어서자, 두 사람이 눈에 들어온다.',
 		'show character s normal at left with fadeIn',
 		's 안녕하세요. 저는 이 반의 학급위원 소라입니다.',
@@ -68,7 +68,7 @@ monogatari.script ({
 
 	// ---- MORNING EVENT: First Choice ----
 	'MorningEvent': [
-		'show scene #f0f8ff with slideLeft',
+		'show scene classroom2_morning with slideLeft',
 		'쉬는 시간, 복도에서 소란이 들린다.',
 		'show character s worried at left with fadeIn',
 		's 저기... 죄송한데, 이 서류들을 교무실까지 옮겨야 하는데...',
@@ -94,7 +94,7 @@ monogatari.script ({
 
 	// ---- LUNCH TIME: Second Choice ----
 	'LunchTime': [
-		'show scene #fafad2 with fadeIn',
+		'show scene classroom_day with fadeIn',
 		'점심시간이 되었다.',
 		'오늘은 어디서 점심을 먹을까 고민하는데...',
 		'show character s normal at left with fadeIn',
@@ -120,7 +120,7 @@ monogatari.script ({
 
 	// ---- DAY 1 AFTERNOON: Transition to Day 2 ----
 	'Day1Afternoon': [
-		'show scene #ffefd5 with fadeIn',
+		'show scene classroom_afternoon with fadeIn',
 		'오후 수업이 끝나고, 석양이 교실을 물들인다.',
 		'show character p normal at center with fadeIn',
 		'p ...오늘 하루가 정말 빠르게 지나갔다.',

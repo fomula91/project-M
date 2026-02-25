@@ -4,7 +4,7 @@ monogatari.script ({
 
 	// ---- Day 3: Sora Route ----
 	'Day3SoraRoute': [
-		'show scene #bbdefb with slideLeft',
+		'show scene classroom3_afternoon with slideLeft',
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 1
@@ -31,7 +31,7 @@ monogatari.script ({
 	],
 
 	'Day3SoraClimax': [
-		'show scene #5c6bc0 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'show character s normal',
 		'축제가 끝나고, 석양이 학교를 물들인다.',
 		'소라와 함께 교정을 걷는다.',
@@ -82,7 +82,7 @@ monogatari.script ({
 		'이 순간이 영원히 계속되길 바라며, 소라의 손을 꼭 잡았다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',
-		'show scene #b0c4de with fadeIn',
+		'show scene auditorium_evening with fadeIn',
 		'centered ── 소라 엔딩: 조용한 봄의 시작 ──',
 		'end'
 	],
@@ -98,7 +98,7 @@ monogatari.script ({
 		'벚꽃이 흩날리는 교정에서 두 사람은 나란히 집으로 향한다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',
-		'show scene #b0c4de with fadeIn',
+		'show scene auditorium_evening with fadeIn',
 		'centered ── 소라 엔딩: 소중한 거리 ──',
 		'end'
 	]

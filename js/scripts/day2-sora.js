@@ -4,7 +4,7 @@ monogatari.script ({
 
 	// ---- DAY 2: With Sora (sora +2) ----
 	'Day2WithSora': [
-		'show scene #d1c4e9 with fadeIn',
+		'show scene classroom_day with fadeIn',
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 2,
@@ -42,7 +42,7 @@ monogatari.script ({
 	],
 
 	'Day2SoraEvening': [
-		'show scene #7986cb with fadeIn',
+		'show scene classroom2_evening with fadeIn',
 		'show character s normal at center with fadeIn',
 		'복도에서 소라를 마주친다. 소라가 창밖을 바라보고 있다.',
 		's ...아, {{player.name}} 씨.',

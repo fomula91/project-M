@@ -6,7 +6,7 @@ monogatari.script ({
 	'HelpSora': [
 		'hide character h with fadeOut',
 		'hide character p',
-		'show scene #e6e6fa with fadeIn',
+		'show scene classroom4_morning with fadeIn',
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 2,
@@ -33,7 +33,7 @@ monogatari.script ({
 
 	// ---- LIBRARY (sora +1) ----
 	'Library': [
-		'show scene #d4e6f1 with slideLeft',
+		'show scene classroom3_morning with slideLeft',
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 1,

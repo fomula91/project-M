@@ -6,7 +6,7 @@ monogatari.script ({
 	'GoWithHana': [
 		'hide character s with fadeOut',
 		'hide character p',
-		'show scene #fff0f5 with slideRight',
+		'show scene auditorium_day with slideRight',
 		function () {
 			this.storage ({
 				hana_affection: this.storage ('hana_affection') + 2,
@@ -32,7 +32,7 @@ monogatari.script ({
 	// ---- ROOFTOP (hana +1) ----
 	'Rooftop': [
 		'hide character p',
-		'show scene #87ceeb with slideRight',
+		'show scene auditorium_noon with slideRight',
 		function () {
 			this.storage ({
 				hana_affection: this.storage ('hana_affection') + 1,

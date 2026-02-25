@@ -4,7 +4,7 @@ monogatari.script ({
 
 	// ---- Day 3: Hana Route ----
 	'Day3HanaRoute': [
-		'show scene #f8bbd0 with slideRight',
+		'show scene auditorium_afternoon with slideRight',
 		function () {
 			this.storage ({
 				hana_affection: this.storage ('hana_affection') + 1
@@ -30,7 +30,7 @@ monogatari.script ({
 	],
 
 	'Day3HanaClimax': [
-		'show scene #e57373 with fadeIn',
+		'show scene busstop_evening with fadeIn',
 		'show character h normal2',
 		'축제가 끝나고, 하교 시간.',
 		'h {{player.name}}... 잠깐만!',
@@ -86,7 +86,7 @@ monogatari.script ({
 		'벚꽃 비가 내리는 하교길, 하나와 손을 맞잡고 걸어간다.',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',
-		'show scene #ffb6c1 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'centered ── 하나 엔딩: 벚꽃빛 하교길 ──',
 		'end'
 	],
@@ -105,7 +105,7 @@ monogatari.script ({
 		'p ...미안, 하나.',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',
-		'show scene #ffb6c1 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'centered ── 하나 엔딩: 변하지 않는 밝은 미소 ──',
 		'end'
 	]

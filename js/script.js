@@ -57,7 +57,25 @@ monogatari.assets ('images', {
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-
+	'school_front_early': 'early01.jpg',
+	'school_front_day': 'day01.jpg',
+	'school_grounds_early': 'early02.jpg',
+	'school_grounds_day': 'day02.jpg',
+	'school_grounds_evening': 'evening02.jpg',
+	'classroom_day': 'classroom_01_day.jpg',
+	'classroom_afternoon': 'classroom_01_afternoon.jpg',
+	'classroom2_morning': 'classroom_02_morning.jpg',
+	'classroom2_evening': 'classroom_02_evening.jpg',
+	'classroom3_morning': 'classroom_03_morning.jpg',
+	'classroom3_afternoon': 'classroom_03_afternoon.jpg',
+	'classroom4_morning': 'classroom_04_morning.jpg',
+	'auditorium_sunrise': 'Auditorium_Outside_Sunrise.jpg',
+	'auditorium_day': 'Auditorium_Outside_Day.jpg',
+	'auditorium_noon': 'Auditorium_Outside_Noon.jpg',
+	'auditorium_afternoon': 'Auditorium_Outside_Afternoon.jpg',
+	'auditorium_evening': 'Auditorium_Outside_Evening.jpg',
+	'busstop_evening': 'bus stop evening.jpg',
+	'busstop_night': 'bus stop night.jpg'
 });
 
 // Define the Characters

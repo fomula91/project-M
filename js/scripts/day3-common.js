@@ -3,9 +3,9 @@
 monogatari.script ({
 
 	'Day3Start': [
-		'show scene #1a0a1e with fadeIn',
+		'show scene school_grounds_early with fadeIn',
 		'centered ── 3일차: 축제, 그리고... ──',
-		'show scene #fff8e1 with fadeIn',
+		'show scene auditorium_day with fadeIn',
 		'축제 당일 아침.',
 		'학교 전체가 활기로 가득하다. 풍선, 리본, 현수막이 곳곳에 걸려 있다.',
 		'show character p normal at center with fadeIn',
@@ -36,7 +36,7 @@ monogatari.script ({
 
 	// ---- Hidden Ending Path: Both affections high ----
 	'Day3BothHigh': [
-		'show scene #ffe0b2 with slideRight',
+		'show scene classroom4_morning with slideRight',
 		'교실에 들어서자 소라와 하나가 동시에 다가온다.',
 		'show character s worried at left with fadeIn',
 		'show character h surprised at right with fadeIn',
@@ -68,7 +68,7 @@ monogatari.script ({
 
 	// ---- Day 3: Balanced (equal affection) ----
 	'Day3Balanced': [
-		'show scene #ffe0b2 with fadeIn',
+		'show scene classroom4_morning with fadeIn',
 		'교실에 들어서자 소라와 하나가 나란히 앉아 이야기를 나누고 있다.',
 		'show character s happy at left with fadeIn',
 		'show character h happy at right with fadeIn',

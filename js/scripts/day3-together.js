@@ -5,7 +5,7 @@ monogatari.script ({
 	// ---- Day 3: Together Route (friendship or hidden) ----
 	'Day3TogetherRoute': [
 		'hide character p',
-		'show scene #fff9c4 with slideRight',
+		'show scene auditorium_noon with slideRight',
 		function () {
 			this.storage ({
 				chose_both: true
@@ -30,7 +30,7 @@ monogatari.script ({
 	],
 
 	'Day3TogetherClimax': [
-		'show scene #ffab91 with fadeIn',
+		'show scene auditorium_evening with fadeIn',
 		'show character s happy',
 		'show character h happy',
 		'show character p smile at center with fadeIn',
@@ -60,7 +60,7 @@ monogatari.script ({
 
 	// ---- HIDDEN ENDING: Sakura Promise ----
 	'HiddenEnding': [
-		'show scene #e1bee7 with fadeIn',
+		'show scene auditorium_sunrise with fadeIn',
 		'갑자기 바람이 불며 벚꽃잎이 옥상 위로 솟구친다.',
 		'말 그대로 벚꽃 비가 내린다.',
 		'show character h surprised',
@@ -89,14 +89,14 @@ monogatari.script ({
 		'hide character p with fadeOut',
 		'hide character s',
 		'hide character h',
-		'show scene #ce93d8 with fadeIn',
+		'show scene auditorium_sunrise with fadeIn',
 		'centered ── 히든 엔딩: 벚꽃의 약속 ──',
 		'end'
 	],
 
 	// ---- FRIENDSHIP ENDING ----
 	'FriendshipEnding': [
-		'show scene #ffe4b5 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'show character s happy',
 		'show character h happy',
 		'세 사람이 옥상에서 나란히 석양을 바라본다.',
@@ -111,7 +111,7 @@ monogatari.script ({
 		'이렇게, 사쿠라 학원에서의 새로운 이야기가 시작되었다.',
 		'hide character s',
 		'hide character h',
-		'show scene #ffe4b5 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'centered ── 우정 엔딩: 세 사람의 봄 ──',
 		'end'
 	]

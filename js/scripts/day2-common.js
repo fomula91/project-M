@@ -3,9 +3,9 @@
 monogatari.script ({
 
 	'Day2Start': [
-		'show scene #2c1810 with fadeIn',
+		'show scene school_front_early with fadeIn',
 		'centered ── 2일차: 가까워지는 마음 ──',
-		'show scene #fce4ec with fadeIn',
+		'show scene school_grounds_day with fadeIn',
 		'사쿠라 학원에서의 둘째 날.',
 		'어젯밤, 두 사람의 얼굴이 떠올라 잠을 설쳤다.',
 		'show character p worried at center with fadeIn',
@@ -51,7 +51,7 @@ monogatari.script ({
 
 	// ---- DAY 2 MORNING ----
 	'Day2Morning': [
-		'show scene #e8eaf6 with slideLeft',
+		'show scene classroom2_morning with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
 		'"내일 있을 학교 축제 준비를 시작하겠습니다. 2인 1조로 팀을 구성하세요."',
 		'show character s worried at left with fadeIn',
@@ -78,7 +78,7 @@ monogatari.script ({
 
 	// ---- DAY 2 EVENING ----
 	'Day2Evening': [
-		'show scene #ff8a65 with fadeIn',
+		'show scene classroom_afternoon with fadeIn',
 		'해가 지고, 교실에 주황빛이 가득 찬다.',
 		'축제 준비를 마치고 돌아가려는데...',
 		{
@@ -102,7 +102,7 @@ monogatari.script ({
 	],
 
 	'Day2NeutralEvening': [
-		'show scene #ffcc80 with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 1,
@@ -125,7 +125,7 @@ monogatari.script ({
 	],
 
 	'Day2End': [
-		'show scene #1a1a2e with fadeIn',
+		'show scene busstop_night with fadeIn',
 		'집에 돌아와 침대에 누워 천장을 바라본다.',
 		'show character p normal at center with fadeIn',
 		'p ...내일은 축제다.',

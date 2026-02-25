@@ -5,7 +5,7 @@ monogatari.script ({
 	// ---- DAY 2: With Hana (hana +2) ----
 	'Day2WithHana': [
 		'hide character p',
-		'show scene #fce4ec with slideRight',
+		'show scene classroom_day with slideRight',
 		function () {
 			this.storage ({
 				hana_affection: this.storage ('hana_affection') + 2,
@@ -43,7 +43,7 @@ monogatari.script ({
 	],
 
 	'Day2HanaEvening': [
-		'show scene #ef9a9a with fadeIn',
+		'show scene school_grounds_evening with fadeIn',
 		'show character h happy at center with fadeIn',
 		'교문 앞에서 하나가 기다리고 있다.',
 		'h {{player.name}}! 여기여기!',
