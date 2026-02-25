@@ -1,0 +1,7 @@
+engine/electron/
+engine/nginx/
+.htaccess
+node_modules/
+yarn.lock
+.DS_Store
+.claude/
