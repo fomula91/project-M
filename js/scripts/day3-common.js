@@ -1,0 +1,73 @@
+/* global monogatari */
+
+monogatari.script ({
+
+	'Day3Start': [
+		'show scene #1a0a1e with fadeIn',
+		'centered ── 3일차: 축제, 그리고... ──',
+		'show scene #fff8e1 with fadeIn',
+		'축제 당일 아침.',
+		'학교 전체가 활기로 가득하다. 풍선, 리본, 현수막이 곳곳에 걸려 있다.',
+		'p 드디어 축제다...',
+		{
+			'Conditional': {
+				'Condition': function () {
+					var sora = this.storage ('sora_affection');
+					var hana = this.storage ('hana_affection');
+					if (sora >= 5 && hana >= 5) {
+						return 'BothHigh';
+					} else if (sora > hana) {
+						return 'SoraHigh';
+					} else if (hana > sora) {
+						return 'HanaHigh';
+					} else {
+						return 'Balanced';
+					}
+				},
+				'BothHigh': 'jump Day3BothHigh',
+				'SoraHigh': 'jump Day3SoraRoute',
+				'HanaHigh': 'jump Day3HanaRoute',
+				'Balanced': 'jump Day3Balanced'
+			}
+		}
+	],
+
+	// ---- Hidden Ending Path: Both affections high ----
+	'Day3BothHigh': [
+		'show scene #ffe0b2 with slideRight',
+		'교실에 들어서자 소라와 하나가 동시에 다가온다.',
+		's {{player.name}} 씨, 오늘 축제... 같이 돌아볼래요?',
+		'h {{player.name}}! 나랑 같이 돌아다니기로 했잖아!',
+		's ...에? 하나 씨, 저도 {{player.name}} 씨와 약속이...',
+		'h 에에?! 소라도?!',
+		'두 사람이 서로를 바라보며 당혹스러운 표정을 짓는다.',
+		'p ...이건 어떻게 해야 하지.',
+		{
+			'Choice': {
+				'Dialog': 'p ...어떻게 하면 좋을까?',
+				'ChooseSora': {
+					'Text': '소라와 함께 축제를 돌아본다',
+					'Do': 'jump Day3SoraRoute'
+				},
+				'ChooseHana': {
+					'Text': '하나와 함께 축제를 돌아본다',
+					'Do': 'jump Day3HanaRoute'
+				},
+				'ChooseBoth': {
+					'Text': '셋이서 같이 다니자!',
+					'Do': 'jump Day3TogetherRoute'
+				}
+			}
+		}
+	],
+
+	// ---- Day 3: Balanced (equal affection) ----
+	'Day3Balanced': [
+		'show scene #ffe0b2 with fadeIn',
+		'교실에 들어서자 소라와 하나가 나란히 앉아 이야기를 나누고 있다.',
+		'h 아! {{player.name}}! 와와, 오늘 축제 같이 돌자!',
+		's 네, {{player.name}} 씨도 함께해요.',
+		'두 사람의 따뜻한 웃음이 나를 맞이한다.',
+		'jump Day3TogetherRoute'
+	]
+});
