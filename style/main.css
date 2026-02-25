@@ -1,13 +1,7 @@
 /**
  * =============================================================================
- * This is the file where all your styling should go in.
- * Instead of modifying the styles found in the monogatari.css file or others,
- * you should overwrite those styles in this file.
- *
- * The CSS selectors shown are not an extensive list but they are the most
- * common you might want to change. To find what other elements are available,
- * you can take a look at the monogatari.css file or use your browser's dev
- * tools to inspect the elements.
+ * Project M - 사쿠라 학원 Visual Novel
+ * Cherry Blossom Theme Stylesheet
  * =============================================================================
 **/
 
@@ -17,24 +11,24 @@
  * ===========================
 **/
 
-/* General Style */
 body {
 	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+	background: #1a0a1e;
 }
 
-/* Simple Button styles*/
 button {
-
+	font-family: 'Noto Sans KR', sans-serif;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-/* Simple Button Style on Hover */
 button:hover {
-
+	transform: translateY(-2px);
 }
 
-/* General Styling for Menu Screens */
 [data-screen] {
-
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /**
@@ -43,14 +37,85 @@ button:hover {
  * ===========================
 **/
 
-/* Main Menu Styling */
 [data-screen="main"] {
-
+	background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #f48fb1 50%, #ce93d8 75%, #b39ddb 100%) !important;
+	position: relative;
+	overflow: hidden;
 }
 
-/* Main Menu Buttons Styling */
-[data-screen="main"] button {
+/* Sakura petal animation */
+[data-screen="main"]::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background:
+		radial-gradient(ellipse at 20% 50%, rgba(255, 183, 197, 0.4) 0%, transparent 50%),
+		radial-gradient(ellipse at 80% 20%, rgba(206, 147, 216, 0.3) 0%, transparent 50%),
+		radial-gradient(ellipse at 50% 80%, rgba(179, 157, 219, 0.3) 0%, transparent 50%);
+	pointer-events: none;
+	animation: shimmer 8s ease-in-out infinite alternate;
+}
 
+@keyframes shimmer {
+	0% { opacity: 0.6; }
+	100% { opacity: 1; }
+}
+
+/* Game title styling */
+[data-screen="main"] [data-content="title"] {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 700;
+	font-size: 3em;
+	color: #fff;
+	text-shadow:
+		0 0 20px rgba(244, 143, 177, 0.8),
+		0 0 40px rgba(244, 143, 177, 0.4),
+		2px 2px 4px rgba(0, 0, 0, 0.3);
+	letter-spacing: 0.1em;
+	position: relative;
+	z-index: 1;
+}
+
+[data-screen="main"] [data-content="subtitle"] {
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	letter-spacing: 0.15em;
+	position: relative;
+	z-index: 1;
+}
+
+[data-screen="main"] button {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	padding: 12px 40px;
+	margin: 8px;
+	border-radius: 30px;
+	font-size: 1.05em;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+	position: relative;
+	z-index: 1;
+}
+
+[data-screen="main"] button:hover {
+	background: rgba(255, 255, 255, 0.3);
+	border-color: rgba(255, 255, 255, 0.5);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 25px rgba(244, 143, 177, 0.4);
+}
+
+[data-screen="main"] button:active {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 15px rgba(244, 143, 177, 0.3);
 }
 
 /**
@@ -59,24 +124,43 @@ button:hover {
  * ===========================
 **/
 
-/* Slots Style */
 [data-component="save-slot"] figure {
-
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s ease;
 }
 
-/* Slot's Image Style */
+[data-component="save-slot"] figure:hover {
+	background: rgba(255, 255, 255, 0.15);
+	border-color: rgba(244, 143, 177, 0.5);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 [data-component="save-slot"] img {
-
+	border-radius: 8px 8px 0 0;
 }
 
-/* Slots Title Style */
 [data-component="save-slot"] figcaption {
-
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.85);
+	padding: 8px;
 }
 
-/* Slots Delete Button Style */
 [data-component="save-slot"] button {
+	background: rgba(244, 67, 54, 0.2);
+	border: 1px solid rgba(244, 67, 54, 0.3);
+	color: #ef9a9a;
+	border-radius: 6px;
+	padding: 4px 12px;
+	font-size: 0.85em;
+}
 
+[data-component="save-slot"] button:hover {
+	background: rgba(244, 67, 54, 0.4);
 }
 
 /**
@@ -85,39 +169,104 @@ button:hover {
  * ===========================
 **/
 
-/* Choice Buttons style */
+/* Choice Buttons */
+[data-component="choice-container"] {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
 [data-component="choice-container"] button {
-
+	background: linear-gradient(135deg, rgba(244, 143, 177, 0.85) 0%, rgba(206, 147, 216, 0.85) 100%);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: #fff;
+	padding: 14px 50px;
+	border-radius: 30px;
+	font-size: 1.05em;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	min-width: 280px;
+	transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Choice Button Style on Hover */
 [data-component="choice-container"] button:hover {
-
+	background: linear-gradient(135deg, rgba(244, 143, 177, 1) 0%, rgba(206, 147, 216, 1) 100%);
+	transform: translateY(-4px) scale(1.03);
+	box-shadow:
+		0 10px 30px rgba(244, 143, 177, 0.4),
+		0 0 15px rgba(206, 147, 216, 0.3);
+	border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Text Box styling */
+[data-component="choice-container"] button:active {
+	transform: translateY(-1px) scale(1.01);
+}
+
+/* Text Box */
 [data-component="text-box"] {
-
+	background: rgba(20, 10, 30, 0.82) !important;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(244, 143, 177, 0.2);
+	border-radius: 16px !important;
+	margin: 0 auto;
+	padding: 20px 28px !important;
+	box-shadow:
+		0 -4px 30px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	color: #f0e6f0;
+	font-size: 1.05em;
+	line-height: 1.8;
+	letter-spacing: 0.02em;
 }
 
-/* Character Name Style */
+/* Character Name Tag */
 [data-ui="who"] {
-
+	font-weight: 700;
+	font-size: 1.1em;
+	letter-spacing: 0.05em;
+	padding: 2px 16px;
+	border-radius: 12px 12px 0 0;
+	background: linear-gradient(90deg, rgba(244, 143, 177, 0.2), transparent);
+	display: inline-block;
+	margin-bottom: 4px;
 }
 
-/* Style for Centered Text */
+/* Centered Text (chapter titles, endings) */
 [data-component="centered-dialog"] {
-
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 700;
+	font-size: 1.6em;
+	color: #fff;
+	text-shadow:
+		0 0 30px rgba(244, 143, 177, 0.6),
+		0 0 60px rgba(206, 147, 216, 0.3),
+		2px 2px 4px rgba(0, 0, 0, 0.5);
+	letter-spacing: 0.15em;
+	line-height: 1.6;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 8px;
+	padding: 30px 50px;
 }
 
-/* Character Images Styles */
+/* Character Images */
 [data-screen="game"] [data-character] {
-
+	transition: all 0.5s ease;
 }
 
-/* Other Images Styles */
 [data-screen="game"] [data-image] {
+	transition: all 0.5s ease;
+}
 
+/* Inner monologue style (narrator text with parentheses) */
+[data-component="text-box"] p {
+	line-height: 1.85;
 }
 
 /**
@@ -126,26 +275,83 @@ button:hover {
  * ===========================
 **/
 
-/* These styles are applied to the Mobile version of the Quick Menu */
-
-/* Quick Menu Style */
 [data-component="quick-menu"] {
-
+	background: rgba(20, 10, 30, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border-top: 1px solid rgba(244, 143, 177, 0.15);
+	padding: 6px 12px;
 }
 
-/* Quick Menu Buttons Style */
 [data-component="quick-menu"] span {
-
+	color: rgba(255, 255, 255, 0.65);
+	padding: 6px 10px;
+	border-radius: 8px;
+	transition: all 0.25s ease;
+	font-size: 0.9em;
 }
 
-/* Quick Menu Buttons Style on Hover */
 [data-component="quick-menu"] span:hover {
-
+	color: #f8bbd0;
+	background: rgba(244, 143, 177, 0.15);
 }
 
-/* Quick Menu Buttons Icon Style */
 [data-component="quick-menu"] > span > .fa {
+	font-size: 1.1em;
+}
 
+/**
+ * ===========================
+ * Settings Screen
+ * ===========================
+**/
+
+[data-screen="settings"],
+[data-screen="save"],
+[data-screen="load"],
+[data-screen="help"] {
+	background: linear-gradient(180deg, rgba(26, 10, 30, 0.95) 0%, rgba(40, 20, 50, 0.95) 100%);
+}
+
+/**
+ * ===========================
+ * Input Dialog Styling
+ * ===========================
+**/
+
+[data-component="input-modal"] {
+	background: rgba(20, 10, 30, 0.9);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border: 1px solid rgba(244, 143, 177, 0.3);
+	border-radius: 16px;
+	padding: 30px;
+}
+
+[data-component="input-modal"] input[type="text"] {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(244, 143, 177, 0.3);
+	border-radius: 8px;
+	color: #fff;
+	padding: 10px 16px;
+	font-size: 1.1em;
+	transition: border-color 0.3s ease;
+}
+
+[data-component="input-modal"] input[type="text"]:focus {
+	border-color: #f48fb1;
+	outline: none;
+	box-shadow: 0 0 15px rgba(244, 143, 177, 0.2);
+}
+
+[data-component="input-modal"] button {
+	background: linear-gradient(135deg, #f48fb1, #ce93d8);
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 30px;
+	font-weight: 500;
 }
 
 /**
@@ -154,86 +360,122 @@ button:hover {
  * ===========================
 **/
 
-/* Use the background property to set a color for these */
 input[type=range]:focus::-webkit-slider-runnable-track {
-
+	background: linear-gradient(90deg, #f48fb1, #ce93d8);
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-
+	background: linear-gradient(90deg, #f48fb1, #ce93d8);
+	border-radius: 4px;
+	height: 6px;
 }
 
 input[type=range]:focus::-ms-fill-upper {
-
+	background: #ce93d8;
 }
 
 input[type=range]:focus::-ms-fill-lower {
-
+	background: #f48fb1;
 }
 
 input[type=range]::-moz-range-track {
-
+	background: linear-gradient(90deg, #f48fb1, #ce93d8);
+	border-radius: 4px;
+	height: 6px;
 }
 
 input[type=range]::-ms-fill-lower {
-
+	background: #f48fb1;
 }
 
 input[type=range]::-ms-fill-upper {
+	background: #ce93d8;
+}
 
+/**
+ * ===========================
+ * Loading Screen
+ * ===========================
+**/
+
+loading-screen {
+	background: linear-gradient(135deg, #1a0a1e, #2d1038) !important;
+}
+
+/**
+ * ===========================
+ * Animations
+ * ===========================
+**/
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes gentlePulse {
+	0%, 100% { opacity: 0.8; }
+	50% { opacity: 1; }
 }
 
 /** Medium Screens, Phablets (601px) **/
 @media screen and (min-width: 37.56255em) {
-	/* Styles for the desktop version of the Quick Menu */
-
-	/* Quick Menu Style */
 	[data-component="quick-menu"] {
-
+		padding: 8px 20px;
 	}
 
-	/* Quick Menu Buttons Style */
 	[data-component="quick-menu"] span {
-
+		padding: 8px 14px;
 	}
 
-	/* Quick Menu Buttons Style on Hover */
 	[data-component="quick-menu"] span:hover {
-
+		color: #f8bbd0;
+		background: rgba(244, 143, 177, 0.15);
 	}
 }
 
 /** Medium Devices, Tablets (992px)**/
 @media screen and (min-width: 62em) {
-
+	[data-component="text-box"] {
+		max-width: 85%;
+		margin: 0 auto;
+	}
 }
 
 /** HD Screen, Large Devices, Wide Screens, Desktop (1200px) **/
 @media screen and (min-width: 75em) {
-
+	[data-component="text-box"] {
+		max-width: 80%;
+	}
 }
 
-/** Full HD Screen, Large Devices, Wide Screens, Large Desktops (1920px) **/
+/** Full HD Screen **/
 @media screen and (min-width: 120em) {
 
 }
 
-/** Retina Screen , Large Devices, Wide Screens(2560px) **/
+/** Retina Screen **/
 @media screen and (min-width: 160em) {
 
 }
 
-/** 4k Screens, Large Devices, Wide Screens (3840px) **/
+/** 4k Screens **/
 @media screen and (min-width: 240em) {
 
 }
 
-/** 5k Screens, Large Devices, Wide Screens (5000px) **/
+/** 5k Screens **/
 @media screen and (min-width: 312.5em) {
 
 }
 
-/** 8k Screens, Large Devices, Wide Screens (8000px) **/
+/** 8k Screens **/
 @media screen and (min-width: 500em) {
 
 }
