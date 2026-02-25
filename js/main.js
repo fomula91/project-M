@@ -27,6 +27,30 @@ const { $_ready, $_ } = Monogatari;
 
 // 1. Outside the $_ready function:
 
+// Customize main screen template with title, subtitle, and sakura petals
+monogatari.component ('main-screen').template (() => {
+	return `
+		<div class="main-screen__overlay"></div>
+		<div class="sakura-container">
+			<div class="petal petal--1"></div>
+			<div class="petal petal--2"></div>
+			<div class="petal petal--3"></div>
+			<div class="petal petal--4"></div>
+			<div class="petal petal--5"></div>
+			<div class="petal petal--6"></div>
+			<div class="petal petal--7"></div>
+			<div class="petal petal--8"></div>
+			<div class="petal petal--9"></div>
+			<div class="petal petal--10"></div>
+			<div class="petal petal--11"></div>
+			<div class="petal petal--12"></div>
+		</div>
+		<div class="main-screen__content">
+			<h1 data-content="title">사쿠라 학원</h1>
+			<p data-content="subtitle">벚꽃이 피는 봄날의 이야기</p>
+		</div>
+	`;
+});
 
 $_ready (() => {
 	// 2. Inside the $_ready function:

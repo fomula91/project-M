@@ -38,79 +38,183 @@ button:hover {
 **/
 
 [data-screen="main"] {
-	background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 25%, #f48fb1 50%, #ce93d8 75%, #b39ddb 100%) !important;
+	background: url('../assets/scenes/Auditorium_Outside_Sunrise.jpg') center center / cover no-repeat !important;
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-/* Sakura petal animation */
-[data-screen="main"]::before {
-	content: '';
+/* Dark gradient overlay for readability */
+.main-screen__overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background:
-		radial-gradient(ellipse at 20% 50%, rgba(255, 183, 197, 0.4) 0%, transparent 50%),
-		radial-gradient(ellipse at 80% 20%, rgba(206, 147, 216, 0.3) 0%, transparent 50%),
-		radial-gradient(ellipse at 50% 80%, rgba(179, 157, 219, 0.3) 0%, transparent 50%);
+		linear-gradient(180deg,
+			rgba(10, 5, 20, 0.55) 0%,
+			rgba(10, 5, 20, 0.2) 40%,
+			rgba(10, 5, 20, 0.15) 60%,
+			rgba(10, 5, 20, 0.6) 100%),
+		radial-gradient(ellipse at 50% 30%, rgba(244, 143, 177, 0.15) 0%, transparent 70%);
 	pointer-events: none;
-	animation: shimmer 8s ease-in-out infinite alternate;
+	z-index: 1;
 }
 
-@keyframes shimmer {
-	0% { opacity: 0.6; }
-	100% { opacity: 1; }
+/* ---- Sakura Petal Animation ---- */
+.sakura-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 2;
+	overflow: hidden;
 }
 
-/* Game title styling */
+.petal {
+	position: absolute;
+	top: -40px;
+	width: 12px;
+	height: 12px;
+	background: radial-gradient(ellipse at 30% 30%, #ffc1cc, #f8a4b8);
+	border-radius: 50% 0 50% 50%;
+	opacity: 0;
+	animation: petalFall linear infinite;
+}
+
+.petal--1  { left: 5%;  animation-duration: 10s; animation-delay: 0s;   width: 10px; height: 10px; }
+.petal--2  { left: 15%; animation-duration: 13s; animation-delay: 2s;   width: 14px; height: 14px; }
+.petal--3  { left: 25%; animation-duration: 11s; animation-delay: 4s;   width: 8px;  height: 8px; }
+.petal--4  { left: 35%; animation-duration: 14s; animation-delay: 1s;   width: 12px; height: 12px; }
+.petal--5  { left: 45%; animation-duration: 10s; animation-delay: 5s;   width: 10px; height: 10px; }
+.petal--6  { left: 55%; animation-duration: 12s; animation-delay: 3s;   width: 15px; height: 15px; }
+.petal--7  { left: 65%; animation-duration: 11s; animation-delay: 6s;   width: 9px;  height: 9px; }
+.petal--8  { left: 75%; animation-duration: 13s; animation-delay: 0.5s; width: 13px; height: 13px; }
+.petal--9  { left: 85%; animation-duration: 10s; animation-delay: 3.5s; width: 11px; height: 11px; }
+.petal--10 { left: 92%; animation-duration: 14s; animation-delay: 7s;   width: 10px; height: 10px; }
+.petal--11 { left: 10%; animation-duration: 15s; animation-delay: 8s;   width: 7px;  height: 7px; }
+.petal--12 { left: 50%; animation-duration: 12s; animation-delay: 1.5s; width: 11px; height: 11px; }
+
+@keyframes petalFall {
+	0% {
+		opacity: 0;
+		transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+	}
+	10% {
+		opacity: 0.8;
+	}
+	50% {
+		transform: translateY(45vh) translateX(80px) rotate(180deg) scale(0.9);
+	}
+	80% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(100vh) translateX(-30px) rotate(360deg) scale(0.7);
+	}
+}
+
+/* ---- Title & Subtitle ---- */
+.main-screen__content {
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	margin-bottom: 40px;
+	animation: titleFadeIn 1.5s ease-out 0.3s both;
+}
+
 [data-screen="main"] [data-content="title"] {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 700;
-	font-size: 3em;
+	font-size: 3.5em;
 	color: #fff;
 	text-shadow:
-		0 0 20px rgba(244, 143, 177, 0.8),
-		0 0 40px rgba(244, 143, 177, 0.4),
-		2px 2px 4px rgba(0, 0, 0, 0.3);
-	letter-spacing: 0.1em;
-	position: relative;
-	z-index: 1;
+		0 0 30px rgba(255, 183, 197, 0.9),
+		0 0 60px rgba(244, 143, 177, 0.5),
+		0 0 100px rgba(244, 143, 177, 0.3),
+		2px 2px 6px rgba(0, 0, 0, 0.5);
+	letter-spacing: 0.15em;
+	margin: 0 0 12px 0;
+	line-height: 1.2;
 }
 
 [data-screen="main"] [data-content="subtitle"] {
 	font-weight: 300;
-	color: rgba(255, 255, 255, 0.9);
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-	letter-spacing: 0.15em;
+	font-size: 1.1em;
+	color: rgba(255, 220, 230, 0.9);
+	text-shadow:
+		0 0 15px rgba(244, 143, 177, 0.4),
+		1px 1px 3px rgba(0, 0, 0, 0.4);
+	letter-spacing: 0.25em;
+	margin: 0;
+}
+
+@keyframes titleFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ---- Main Menu Buttons ---- */
+[data-screen="main"] [data-component="main-menu"] {
 	position: relative;
-	z-index: 1;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	animation: menuFadeIn 1.2s ease-out 0.8s both;
+}
+
+@keyframes menuFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 [data-screen="main"] button {
-	background: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.25);
 	color: #fff;
-	padding: 12px 40px;
-	margin: 8px;
+	padding: 12px 52px;
+	margin: 0;
 	border-radius: 30px;
 	font-size: 1.05em;
 	font-weight: 500;
-	letter-spacing: 0.08em;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease;
+	letter-spacing: 0.1em;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	position: relative;
-	z-index: 1;
+	z-index: 3;
+	min-width: 200px;
 }
 
 [data-screen="main"] button:hover {
-	background: rgba(255, 255, 255, 0.3);
-	border-color: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.25);
+	border-color: rgba(255, 183, 197, 0.6);
 	transform: translateY(-3px);
-	box-shadow: 0 8px 25px rgba(244, 143, 177, 0.4);
+	box-shadow:
+		0 8px 30px rgba(244, 143, 177, 0.35),
+		0 0 20px rgba(255, 183, 197, 0.15);
 }
 
 [data-screen="main"] button:active {
@@ -492,13 +596,23 @@ loading-screen {
 @media screen and (max-width: 37.5em) {
 	/* Game Title */
 	[data-screen="main"] [data-content="title"] {
-		font-size: 2em;
+		font-size: 2.2em;
+	}
+
+	[data-screen="main"] [data-content="subtitle"] {
+		font-size: 0.9em;
+		letter-spacing: 0.15em;
+	}
+
+	.main-screen__content {
+		margin-bottom: 24px;
 	}
 
 	/* Main Menu Buttons */
 	[data-screen="main"] button {
-		padding: 10px 24px;
+		padding: 10px 32px;
 		font-size: 0.95em;
+		min-width: 160px;
 	}
 
 	/* Text Box */
@@ -539,7 +653,11 @@ loading-screen {
 /** Small Mobile Devices (360px and below) **/
 @media screen and (max-width: 22.5em) {
 	[data-screen="main"] [data-content="title"] {
-		font-size: 1.6em;
+		font-size: 1.8em;
+	}
+
+	[data-screen="main"] [data-content="subtitle"] {
+		font-size: 0.8em;
 	}
 
 	[data-component="choice-container"] button {
