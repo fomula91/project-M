@@ -1,8 +1,8 @@
 {
-	"short_name": "Monogatari",
-	"name": "Monogatari Visual Novel",
-	"background_color": "#F7F7F7",
-	"theme_color": "#F7F7F7",
+	"short_name": "사쿠라 학원",
+	"name": "Project M - 사쿠라 학원",
+	"background_color": "#1a0a1e",
+	"theme_color": "#ff69b4",
 	"orientation": "landscape",
 	"display": "fullscreen",
 	"start_url": "index.html",

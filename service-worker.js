@@ -5,7 +5,7 @@ const name = 'Monogatari';
 
 // The version of the cache, changing this will force everything to be cached
 // again.
-const version = '0.1.0';
+const version = '0.2.0';
 
 const files = [
 
@@ -29,6 +29,16 @@ const files = [
 	'js/storage.js',
 	'js/script.js',
 	'js/main.js',
+	'js/scripts/day1-common.js',
+	'js/scripts/day1-sora.js',
+	'js/scripts/day1-hana.js',
+	'js/scripts/day2-common.js',
+	'js/scripts/day2-sora.js',
+	'js/scripts/day2-hana.js',
+	'js/scripts/day3-common.js',
+	'js/scripts/day3-sora.js',
+	'js/scripts/day3-hana.js',
+	'js/scripts/day3-together.js',
 
 	// App Images
 	'favicon.ico',
