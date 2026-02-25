@@ -64,14 +64,45 @@ monogatari.assets ('scenes', {
 monogatari.characters ({
 	'p': {
 		name: '{{player.name}}',
-		color: '#ffa726'
+		color: '#ffa726',
+		directory: 'haru',
+		sprites: {
+			normal: 'haru_A100.png',
+			smile: 'haru_A101.png',
+			angry: 'haru_A102.png',
+			surprised: 'haru_A103.png',
+			talk: 'haru_A104.png'
+		},
+		default_expression: 'normal'
 	},
 	's': {
 		name: '소라',
-		color: '#4a90d9'
+		color: '#4a90d9',
+		directory: 'sora',
+		sprites: {
+			normal: 'sora_A100.png',
+			happy: 'sora_A101.png',
+			angry: 'sora_A102.png',
+			surprised: 'sora_A103.png',
+			worried: 'sora_A104.png',
+			smile: 'sora_A190.png'
+		},
+		default_expression: 'normal'
 	},
 	'h': {
 		name: '하나',
-		color: '#e87ba1'
+		color: '#e87ba1',
+		directory: 'hana',
+		sprites: {
+			normal: 'hana_A100.png',
+			happy: 'hana_A199.png',
+			normal2: 'hana_A200.png',
+			laugh: 'hana_A201.png',
+			surprised: 'hana_A202.png',
+			sad: 'hana_A203.png',
+			shocked: 'hana_A204.png',
+			casual: 'hana_B199.png'
+		},
+		default_expression: 'normal'
 	}
 });

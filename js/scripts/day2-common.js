@@ -27,17 +27,21 @@ monogatari.script ({
 
 	// ---- Conditional greeting based on Day 1 ----
 	'Day2SoraGreeting': [
+		'show character s happy at left with fadeIn',
 		's {{player.name}} 씨, 좋은 아침이에요.',
 		's 어제 도와주셔서 정말 감사했어요. 오늘도 잘 부탁드려요.',
 		'소라가 평소보다 밝은 표정으로 인사한다.',
+		'show character h surprised at right with fadeIn',
 		'h 앗! 너희 둘 벌써 친해진 거야? 나도 끼워줘~!',
 		'jump Day2Morning'
 	],
 
 	'Day2HanaGreeting': [
+		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 좋은 아침! 오늘도 재밌게 놀자!',
 		'h 어제 매점 빵 맛있었지? 오늘은 다른 맛 먹어보자!',
 		'하나가 달려와서 팔짱을 낀다.',
+		'show character s normal at left with fadeIn',
 		's ...좋은 아침이에요, {{player.name}} 씨.',
 		'소라가 멀리서 조용히 인사한다.',
 		'jump Day2Morning'
@@ -48,8 +52,10 @@ monogatari.script ({
 		'show scene #e8eaf6 with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
 		'"내일 있을 학교 축제 준비를 시작하겠습니다. 2인 1조로 팀을 구성하세요."',
+		'show character s worried',
 		's {{player.name}} 씨... 혹시, 저와 같이 준비하실래요?',
 		'소라가 조심스럽게 다가와 물어본다.',
+		'show character h laugh',
 		'h {{player.name}}! 나랑 같이 하자! 우리 팀이면 완전 재밌을 거야!',
 		'하나가 신나서 뛰어온다.',
 		{
@@ -95,15 +101,21 @@ monogatari.script ({
 	'Day2NeutralEvening': [
 		'show scene #ffcc80 with fadeIn',
 		'교문을 나서려는데, 소라와 하나가 나란히 서 있다.',
+		'show character s normal at left with fadeIn',
 		's 아, {{player.name}} 씨. 같이 가실래요?',
+		'show character h happy at right with fadeIn',
 		'h 셋이서 가자! 오늘도 재밌었다~!',
 		'셋이서 나란히 걸으며 하교한다.',
 		'p ...이 순간이 계속되면 좋겠다.',
 		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
+		'hide character s',
+		'hide character h',
 		'jump Day2End'
 	],
 
 	'Day2End': [
+		'hide character s',
+		'hide character h',
 		'show scene #1a1a2e with fadeIn',
 		'집에 돌아와 침대에 누워 천장을 바라본다.',
 		'p ...내일은 축제다.',

@@ -36,6 +36,8 @@ monogatari.script ({
 	'Day3BothHigh': [
 		'show scene #ffe0b2 with slideRight',
 		'교실에 들어서자 소라와 하나가 동시에 다가온다.',
+		'show character s worried at left with fadeIn',
+		'show character h surprised at right with fadeIn',
 		's {{player.name}} 씨, 오늘 축제... 같이 돌아볼래요?',
 		'h {{player.name}}! 나랑 같이 돌아다니기로 했잖아!',
 		's ...에? 하나 씨, 저도 {{player.name}} 씨와 약속이...',
@@ -65,6 +67,8 @@ monogatari.script ({
 	'Day3Balanced': [
 		'show scene #ffe0b2 with fadeIn',
 		'교실에 들어서자 소라와 하나가 나란히 앉아 이야기를 나누고 있다.',
+		'show character s happy at left with fadeIn',
+		'show character h happy at right with fadeIn',
 		'h 아! {{player.name}}! 와와, 오늘 축제 같이 돌자!',
 		's 네, {{player.name}} 씨도 함께해요.',
 		'두 사람의 따뜻한 웃음이 나를 맞이한다.',
