@@ -8,7 +8,9 @@ monogatari.script ({
 		'show scene #fce4ec with fadeIn',
 		'사쿠라 학원에서의 둘째 날.',
 		'어젯밤, 두 사람의 얼굴이 떠올라 잠을 설쳤다.',
+		'show character p worried at center with fadeIn',
 		'p ...왜 이렇게 두근거리는 걸까.',
+		'hide character p with fadeOut',
 		'교문을 들어서자 익숙한 목소리가 들려온다.',
 		{
 			'Conditional': {
@@ -52,12 +54,13 @@ monogatari.script ({
 		'show scene #e8eaf6 with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
 		'"내일 있을 학교 축제 준비를 시작하겠습니다. 2인 1조로 팀을 구성하세요."',
-		'show character s worried',
+		'show character s worried at left with fadeIn',
 		's {{player.name}} 씨... 혹시, 저와 같이 준비하실래요?',
 		'소라가 조심스럽게 다가와 물어본다.',
-		'show character h laugh',
+		'show character h laugh at right with fadeIn',
 		'h {{player.name}}! 나랑 같이 하자! 우리 팀이면 완전 재밌을 거야!',
 		'하나가 신나서 뛰어온다.',
+		'show character p normal at center with fadeIn',
 		{
 			'Choice': {
 				'Dialog': 'p ...누구와 팀을 할까?',
@@ -106,20 +109,22 @@ monogatari.script ({
 		'show character h happy at right with fadeIn',
 		'h 셋이서 가자! 오늘도 재밌었다~!',
 		'셋이서 나란히 걸으며 하교한다.',
+		'show character p smile at center with fadeIn',
 		'p ...이 순간이 계속되면 좋겠다.',
 		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
+		'hide character p',
 		'hide character s',
 		'hide character h',
 		'jump Day2End'
 	],
 
 	'Day2End': [
-		'hide character s',
-		'hide character h',
 		'show scene #1a1a2e with fadeIn',
 		'집에 돌아와 침대에 누워 천장을 바라본다.',
+		'show character p normal at center with fadeIn',
 		'p ...내일은 축제다.',
 		'p ...누구와 함께 보내게 될까.',
+		'hide character p with fadeOut',
 		'설레는 마음을 안고, 서서히 잠이 든다.',
 		'jump Day3Start'
 	]

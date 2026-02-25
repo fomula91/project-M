@@ -12,10 +12,11 @@ monogatari.script ({
 			});
 		},
 		'show character s surprised at center with fadeIn',
+		'show character p smile at left with fadeIn',
 		'p 소라 씨, 같이 하죠.',
 		's ...! 네, 감사합니다.',
 		'소라의 눈이 반짝인다. 처음 보는 표정이다.',
-		'show character h sad at right with fadeIn',
+		'show character h worried at right with fadeIn',
 		'h 에에~ 아쉽다... 그럼 나는 다른 친구한테 가볼게!',
 		'하나가 아쉬운 표정을 지으며 웃는다.',
 		'hide character h with fadeOut',
@@ -26,11 +27,12 @@ monogatari.script ({
 		'show character s happy',
 		'p 와, 정말 예쁘다. 소라 씨 손재주가 대단하네요.',
 		's 에... 칭찬은 좀 부끄럽지만... 고마워요.',
-		'show character s smile',
+		'show character s happy',
 		'소라가 얼굴을 붉히며 작은 종이학 하나를 건넨다.',
 		's 이건... {{player.name}} 씨에게 드리는 거예요. 행운의 부적이라고 생각해주세요.',
 		'p 소중하게 간직할게요.',
 		'소라가 수줍게 미소 짓는다. 심장이 두근거린다.',
+		'hide character p with fadeOut',
 		'hide character s with fadeOut',
 		'jump Day2Evening'
 	],
@@ -40,6 +42,7 @@ monogatari.script ({
 		'show character s normal at center with fadeIn',
 		'복도에서 소라를 마주친다. 소라가 창밖을 바라보고 있다.',
 		's ...아, {{player.name}} 씨.',
+		'show character p normal at right with fadeIn',
 		'p 아직 안 갔어요?',
 		's 네... 석양이 예뻐서 잠깐 보고 있었어요.',
 		's {{player.name}} 씨는... 석양 좋아하세요?',
@@ -50,6 +53,7 @@ monogatari.script ({
 		'소라가 처음으로 환하게 웃는다.',
 		'p ...저도요, 소라 씨.',
 		'두 사람 사이로 석양빛이 부드럽게 비춘다.',
+		'hide character p with fadeOut',
 		'hide character s with fadeOut',
 		'jump Day2End'
 	]

@@ -39,7 +39,9 @@ monogatari.script ({
 		'centered ── 1일차: 벚꽃이 피는 아침 ──',
 		'봄바람이 벚꽃 잎을 흩날리는 4월의 아침.',
 		'오늘은 사쿠라 학원의 새 학기 첫날이다.',
+		'show character p normal at center with fadeIn',
 		'p 후아... 드디어 새 학기다. 어떤 만남이 기다리고 있을까.',
+		'hide character p with fadeOut',
 		'교문을 지나 교실로 향하는 길, 벚꽃 나무 아래에서 한 소녀가 서 있다.',
 		'jump SchoolArrival'
 	],
@@ -56,7 +58,9 @@ monogatari.script ({
 		'h 앗! 새로운 친구다! 안녕안녕~! 나는 하나!',
 		'h 우리 같은 반이네! 앞으로 잘 지내자~!',
 		'밝은 미소로 다가오는 활발한 소녀.',
+		'show character p smile at center with fadeIn',
 		'p ...두 사람 다 인상적이네. 잘 지낼 수 있겠지?',
+		'hide character p',
 		'hide character s',
 		'hide character h',
 		'jump MorningEvent'
@@ -72,6 +76,7 @@ monogatari.script ({
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 나랑 같이 학교 탐험하러 가자! 매점에 새로 나온 빵이 있대!',
 		'하나가 신나서 손을 잡아끈다.',
+		'show character p worried at center with fadeIn',
 		{
 			'Choice': {
 				'Dialog': 'p ...어떻게 하지?',
@@ -97,6 +102,7 @@ monogatari.script ({
 		's 조용하고 좋은 자리가 있어요.',
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 옥상에서 같이 밥 먹자! 바람도 시원하고 좋아!',
+		'show character p normal at center with fadeIn',
 		{
 			'Choice': {
 				'Dialog': 'p ...어디로 갈까?',
@@ -114,14 +120,15 @@ monogatari.script ({
 
 	// ---- DAY 1 AFTERNOON: Transition to Day 2 ----
 	'Day1Afternoon': [
-		'hide character s',
-		'hide character h',
 		'show scene #ffefd5 with fadeIn',
 		'오후 수업이 끝나고, 석양이 교실을 물들인다.',
+		'show character p normal at center with fadeIn',
 		'p ...오늘 하루가 정말 빠르게 지나갔다.',
+		'show character p smile',
 		'p ...새 학교에서의 첫날, 좋은 사람들을 만났어.',
 		'집으로 돌아가는 길, 벚꽃 나무 아래서 오늘 하루를 떠올린다.',
 		'p 내일은 또 어떤 일이 있을까...',
+		'hide character p with fadeOut',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
 		'jump Day2Start'
 	]

@@ -4,6 +4,7 @@ monogatari.script ({
 
 	// ---- DAY 2: With Hana (hana +2) ----
 	'Day2WithHana': [
+		'hide character p',
 		'show scene #fce4ec with slideRight',
 		function () {
 			this.storage ({
@@ -11,6 +12,7 @@ monogatari.script ({
 			});
 		},
 		'show character h laugh at center with fadeIn',
+		'show character p smile at right with fadeIn',
 		'p 하나, 같이 하자!',
 		'h 진짜?! 최고! 우리 팀 무적이다!',
 		'하나가 기뻐하며 껑충 뛰어오른다.',
@@ -31,6 +33,7 @@ monogatari.script ({
 		'p 약속할게.',
 		'show character h happy',
 		'하나의 눈이 별처럼 빛난다.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'jump Day2Evening'
 	],
@@ -40,6 +43,7 @@ monogatari.script ({
 		'show character h happy at center with fadeIn',
 		'교문 앞에서 하나가 기다리고 있다.',
 		'h {{player.name}}! 여기여기!',
+		'show character p normal at right with fadeIn',
 		'p 하나? 기다리고 있었어?',
 		'h 응! 같이 가고 싶어서~',
 		'하나와 나란히 걷기 시작한다.',
@@ -52,6 +56,7 @@ monogatari.script ({
 		'h 내일... 꼭 같이 축제 돌아다니자. 절대 약속!',
 		'p 응, 약속.',
 		'석양 속 하나의 미소가 유독 아름답게 보인다.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'jump Day2End'
 	]

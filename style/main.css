@@ -261,6 +261,22 @@ button:hover {
 /* Character Images */
 [data-screen="game"] [data-character] {
 	transition: all 0.5s ease;
+	bottom: auto !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+}
+
+[data-screen="game"] [data-character].left {
+	left: 12% !important;
+}
+
+[data-screen="game"] [data-character].right {
+	right: 12% !important;
+}
+
+[data-screen="game"] [data-character].center {
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
 }
 
 [data-screen="game"] [data-image] {

@@ -4,7 +4,6 @@ monogatari.script ({
 
 	// ---- Day 3: Hana Route ----
 	'Day3HanaRoute': [
-		'hide character s with fadeOut',
 		'show scene #f8bbd0 with slideRight',
 		function () {
 			this.storage ({
@@ -15,6 +14,7 @@ monogatari.script ({
 		'하나와 함께 축제를 돌아본다.',
 		'h 와~! 이거 봐이거 봐! 솜사탕이다!',
 		'h {{player.name}}! 같이 먹자!',
+		'show character p smile at left with fadeIn',
 		'p 하하, 그래!',
 		'하나에 이끌려 이곳저곳을 돌아다닌다.',
 		'h 여기도 가보자! 점술 카페래! 운세 봐주는 곳!',
@@ -41,7 +41,7 @@ monogatari.script ({
 		'h {{player.name}}... 나, 할 말이 있어.',
 		'h 나 원래 항상 웃으면서 다니잖아. 밝은 게 좋으니까.',
 		'h 근데... {{player.name}} 앞에서는 웃는 것만으로는 부족한 기분이 들어.',
-		'show character h sad',
+		'show character h worried',
 		'h 진짜 내 마음을 보여주고 싶달까...',
 		'하나가 발을 멈추고 나를 똑바로 바라본다.',
 		'h {{player.name}}, 나... 너 좋아해.',
@@ -68,6 +68,7 @@ monogatari.script ({
 				confessed: true
 			});
 		},
+		'show character p happy at left',
 		'p 하나, 나도... 너 좋아해.',
 		'show character h shocked',
 		'h ...진짜?!',
@@ -83,6 +84,7 @@ monogatari.script ({
 		'h 나, {{player.name}} 옆에 평생 있을 거야. 약속!',
 		'p 나도, 약속.',
 		'벚꽃 비가 내리는 하교길, 하나와 손을 맞잡고 걸어간다.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'show scene #ffb6c1 with fadeIn',
 		'centered ── 하나 엔딩: 벚꽃빛 하교길 ──',
@@ -90,6 +92,7 @@ monogatari.script ({
 	],
 
 	'HanaFriendEnd': [
+		'show character p normal at left',
 		'show character h sad',
 		'h ...그렇구나. 에헤, 역시 나 욕심이었나~',
 		'하나가 눈물을 참으며 밝게 웃어 보인다.',
@@ -98,7 +101,9 @@ monogatari.script ({
 		'p 하나... 고마워.',
 		'h 울지마! 나 괜찮다고~! ...에헤.',
 		'하나가 웃는 얼굴로 손을 흔들며 하교한다.',
+		'show character p worried',
 		'p ...미안, 하나.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'show scene #ffb6c1 with fadeIn',
 		'centered ── 하나 엔딩: 변하지 않는 밝은 미소 ──',

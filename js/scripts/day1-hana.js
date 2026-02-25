@@ -5,6 +5,7 @@ monogatari.script ({
 	// ---- GO WITH HANA (hana +2) ----
 	'GoWithHana': [
 		'hide character s with fadeOut',
+		'hide character p',
 		'show scene #fff0f5 with slideRight',
 		function () {
 			this.storage ({
@@ -13,6 +14,7 @@ monogatari.script ({
 			});
 		},
 		'show character h laugh at center with fadeIn',
+		'show character p smile at left with fadeIn',
 		'p 좋아, 같이 가자 하나!',
 		'h 야호~! 가자가자!',
 		'show character h happy',
@@ -22,12 +24,14 @@ monogatari.script ({
 		'h 에헤헤~ 새 친구랑 같이 다니니까 더 신나지!',
 		'h {{player.name}}는 정말 재밌는 사람이야. 우리 절친하자!',
 		'하나의 밝은 에너지에 나도 모르게 웃음이 난다.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'jump LunchTime'
 	],
 
 	// ---- ROOFTOP (hana +1) ----
 	'Rooftop': [
+		'hide character p',
 		'show scene #87ceeb with slideRight',
 		function () {
 			this.storage ({
@@ -36,6 +40,7 @@ monogatari.script ({
 			});
 		},
 		'show character h happy at center with fadeIn',
+		'show character p smile at left with fadeIn',
 		'p 하나, 옥상으로 가자!',
 		'h 좋아~! 달려!',
 		'옥상에서 바라보는 풍경은 장관이다.',
@@ -47,6 +52,7 @@ monogatari.script ({
 		'show character h laugh',
 		'하나가 장난스럽게 윙크한다.',
 		'p ...하나는 정말 밝은 아이다. 같이 있으면 나까지 즐거워져.',
+		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'jump Day1Afternoon'
 	]

@@ -8,7 +8,9 @@ monogatari.script ({
 		'show scene #fff8e1 with fadeIn',
 		'축제 당일 아침.',
 		'학교 전체가 활기로 가득하다. 풍선, 리본, 현수막이 곳곳에 걸려 있다.',
+		'show character p normal at center with fadeIn',
 		'p 드디어 축제다...',
+		'hide character p with fadeOut',
 		{
 			'Conditional': {
 				'Condition': function () {
@@ -43,6 +45,7 @@ monogatari.script ({
 		's ...에? 하나 씨, 저도 {{player.name}} 씨와 약속이...',
 		'h 에에?! 소라도?!',
 		'두 사람이 서로를 바라보며 당혹스러운 표정을 짓는다.',
+		'show character p worried at center with fadeIn',
 		'p ...이건 어떻게 해야 하지.',
 		{
 			'Choice': {
