@@ -412,6 +412,28 @@ game-screen:has([data-component="choice-container"])::after {
 	transform: translateX(-50%) !important;
 }
 
+/* Prevent character overlap in multi-character scenes */
+game-screen:has([data-character].left):has([data-character].right) [data-character] {
+	max-width: 20%;
+	height: auto !important;
+	max-height: 70vh;
+	bottom: 18vh !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].left {
+	left: 2% !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].center {
+	left: 37% !important;
+	right: auto !important;
+	transform: none !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].right {
+	right: 2% !important;
+}
+
 [data-screen="game"] [data-image] {
 	transition: all 0.5s ease;
 }
