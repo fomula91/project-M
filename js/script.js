@@ -72,8 +72,7 @@ monogatari.characters ({
 			angry: 'haru_A102.png',
 			surprised: 'haru_A103.png',
 			talk: 'haru_A104.png'
-		},
-		default_expression: 'normal'
+		}
 	},
 	's': {
 		name: '소라',
@@ -86,8 +85,7 @@ monogatari.characters ({
 			surprised: 'sora_A103.png',
 			worried: 'sora_A104.png',
 			smile: 'sora_A190.png'
-		},
-		default_expression: 'normal'
+		}
 	},
 	'h': {
 		name: '하나',
@@ -102,7 +100,6 @@ monogatari.characters ({
 			sad: 'hana_A203.png',
 			shocked: 'hana_A204.png',
 			casual: 'hana_B199.png'
-		},
-		default_expression: 'normal'
+		}
 	}
 });
