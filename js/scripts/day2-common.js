@@ -103,6 +103,12 @@ monogatari.script ({
 
 	'Day2NeutralEvening': [
 		'show scene #ffcc80 with fadeIn',
+		function () {
+			this.storage ({
+				sora_affection: this.storage ('sora_affection') + 1,
+				hana_affection: this.storage ('hana_affection') + 1
+			});
+		},
 		'교문을 나서려는데, 소라와 하나가 나란히 서 있다.',
 		'show character s normal at left with fadeIn',
 		's 아, {{player.name}} 씨. 같이 가실래요?',

@@ -8,7 +8,8 @@ monogatari.script ({
 		'show scene #fce4ec with slideRight',
 		function () {
 			this.storage ({
-				hana_affection: this.storage ('hana_affection') + 2
+				hana_affection: this.storage ('hana_affection') + 2,
+				sora_affection: this.storage ('sora_affection') + 1
 			});
 		},
 		'show character h laugh at center with fadeIn',
@@ -18,6 +19,9 @@ monogatari.script ({
 		'하나가 기뻐하며 껑충 뛰어오른다.',
 		'show character s normal at left with fadeIn',
 		's 그렇군요... 열심히 해주세요.',
+		's 아, 이건 제가 정리해둔 축제 자료예요. 도움이 될 거예요.',
+		'소라가 깔끔하게 정리된 노트를 건네준다.',
+		's 두 분 다 화이팅이에요.',
 		'소라가 조용히 미소를 지으며 돌아선다.',
 		'hide character s with fadeOut',
 		'방과 후, 하나와 함께 교실을 꾸미기 시작한다.',

@@ -8,6 +8,7 @@ monogatari.script ({
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 2,
+				hana_affection: this.storage ('hana_affection') + 1,
 				day2_studied_together: true
 			});
 		},
@@ -19,6 +20,9 @@ monogatari.script ({
 		'show character h worried at right with fadeIn',
 		'h 에에~ 아쉽다... 그럼 나는 다른 친구한테 가볼게!',
 		'하나가 아쉬운 표정을 지으며 웃는다.',
+		'h 아, 잠깐! 이거 아까 매점에서 산 간식인데, 둘이서 힘내라고!',
+		'하나가 과자 봉지를 책상 위에 올려놓고 환하게 웃는다.',
+		'h 열심히 해~ 응원할게!',
 		'hide character h with fadeOut',
 		'방과 후, 교실에서 둘이서 축제 준비를 시작한다.',
 		's 저는... 장식을 만드는 건 자신 있어요.',

@@ -46,7 +46,7 @@ monogatari.script ({
 				'Condition': function () {
 					var sora = this.storage ('sora_affection');
 					var hana = this.storage ('hana_affection');
-					if (sora >= 5 && hana >= 5 && this.storage ('chose_both') === true) {
+					if (sora >= 4 && hana >= 4 && this.storage ('chose_both') === true) {
 						return 'HiddenPath';
 					} else {
 						return 'FriendPath';

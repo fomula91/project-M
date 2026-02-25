@@ -16,7 +16,7 @@ monogatari.script ({
 				'Condition': function () {
 					var sora = this.storage ('sora_affection');
 					var hana = this.storage ('hana_affection');
-					if (sora >= 5 && hana >= 5) {
+					if (sora >= 4 && hana >= 4) {
 						return 'BothHigh';
 					} else if (sora > hana) {
 						return 'SoraHigh';
