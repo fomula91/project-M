@@ -596,7 +596,7 @@ loading-screen {
 @media screen and (max-width: 37.5em) {
 	/* Character Size & Position */
 	[data-screen="game"] [data-character] {
-		height: 50vh;
+		height: min(50vh, 65vw);
 		bottom: 5vh !important;
 	}
 
@@ -667,7 +667,7 @@ loading-screen {
 /** Small Mobile Devices (360px and below) **/
 @media screen and (max-width: 22.5em) {
 	[data-screen="game"] [data-character] {
-		height: 45vh;
+		height: min(45vh, 60vw);
 		bottom: 8vh !important;
 	}
 	[data-screen="game"] [data-character].left {
@@ -829,5 +829,38 @@ loading-screen {
 	[data-screen="game"] [data-character] {
 		height: 45vh;
 		bottom: 22vh !important;
+	}
+}
+
+/**
+ * ===========================
+ * Mobile Portrait - Force Landscape
+ * ===========================
+**/
+@media screen and (orientation: portrait) and (max-width: 37.5em) {
+	html {
+		overflow: hidden;
+	}
+
+	body {
+		transform: rotate(-90deg);
+		transform-origin: left top;
+		width: 100vh !important;
+		max-width: 100vh !important;
+		height: 100vw !important;
+		max-height: 100vw !important;
+		overflow: hidden !important;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	[data-screen="game"] [data-character] {
+		height: 50vw !important;
+		bottom: 2vw !important;
+	}
+
+	[data-component="text-box"] {
+		max-height: 40% !important;
 	}
 }
