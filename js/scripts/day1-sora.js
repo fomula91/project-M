@@ -41,7 +41,7 @@ monogatari.script ({
 			});
 		},
 		'show character s normal at center with fadeIn',
-		'show character p happy at right with fadeIn',
+		'show character p smile at right with fadeIn',
 		'p 소라 씨, 도서관으로 가죠.',
 		's 네! 이쪽으로 오세요.',
 		'도서관 한쪽 구석, 창가 자리에 앉는다.',

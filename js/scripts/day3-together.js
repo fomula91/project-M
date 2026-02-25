@@ -31,7 +31,7 @@ monogatari.script ({
 
 	'Day3TogetherClimax': [
 		'show scene #ffab91 with fadeIn',
-		'show character s smile',
+		'show character s happy',
 		'show character h happy',
 		'show character p smile at center with fadeIn',
 		'축제가 끝나갈 무렵, 옥상에서 셋이 석양을 바라본다.',
@@ -63,7 +63,7 @@ monogatari.script ({
 		'show scene #e1bee7 with fadeIn',
 		'갑자기 바람이 불며 벚꽃잎이 옥상 위로 솟구친다.',
 		'말 그대로 벚꽃 비가 내린다.',
-		'show character h shocked',
+		'show character h surprised',
 		'h 와...! 진짜 예쁘다!',
 		'show character s surprised',
 		's 이건... 마치 마법 같아요.',
@@ -75,7 +75,7 @@ monogatari.script ({
 		'p 전학 와서 불안했는데... 너희를 만나서 정말 다행이야.',
 		'p 소라의 차분한 따뜻함도, 하나의 밝은 에너지도...',
 		'p 둘 다 없으면 안 될 만큼 소중해.',
-		'show character s smile',
+		'show character s happy',
 		's {{player.name}} 씨...',
 		'show character h laugh',
 		'h {{player.name}}...',

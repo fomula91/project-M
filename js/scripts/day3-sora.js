@@ -65,7 +65,7 @@ monogatari.script ({
 				confessed: true
 			});
 		},
-		'show character p happy at right',
+		'show character p smile at right',
 		'p 소라 씨, 저도... 같은 마음이에요.',
 		'p 처음 만났을 때부터 신경이 쓰였어요.',
 		's {{player.name}} 씨...',

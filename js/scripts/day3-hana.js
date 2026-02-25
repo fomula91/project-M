@@ -68,9 +68,9 @@ monogatari.script ({
 				confessed: true
 			});
 		},
-		'show character p happy at left',
+		'show character p smile at left',
 		'p 하나, 나도... 너 좋아해.',
-		'show character h shocked',
+		'show character h surprised',
 		'h ...진짜?!',
 		'하나의 눈이 크게 뜨인다. 그리고 눈물이 고인다.',
 		'show character h laugh',
@@ -93,7 +93,7 @@ monogatari.script ({
 
 	'HanaFriendEnd': [
 		'show character p normal at left',
-		'show character h sad',
+		'show character h worried',
 		'h ...그렇구나. 에헤, 역시 나 욕심이었나~',
 		'하나가 눈물을 참으며 밝게 웃어 보인다.',
 		'show character h happy',
