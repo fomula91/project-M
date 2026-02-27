@@ -5,7 +5,7 @@ const name = 'Monogatari';
 
 // The version of the cache, changing this will force everything to be cached
 // again.
-const version = '0.2.0';
+const version = '0.3.0';
 
 const files = [
 
@@ -17,28 +17,44 @@ const files = [
 	// Engine Files
 	'engine/core/monogatari.css',
 	'engine/core/monogatari.js',
+	'engine/debug/debug.js',
 
 	// HTML Files
 	'index.html',
 
 	// Style Sheets
 	'style/main.css',
+	'style/text-box.css',
+	'style/character-position.css',
+	'style/character-actions.css',
+	'style/choice-stats.css',
+	'style/settings.css',
 
 	// JavaScript Files
 	'js/options.js',
 	'js/storage.js',
 	'js/script.js',
 	'js/main.js',
-	'js/scripts/day1-common.js',
-	'js/scripts/day1-sora.js',
-	'js/scripts/day1-hana.js',
-	'js/scripts/day2-common.js',
-	'js/scripts/day2-sora.js',
-	'js/scripts/day2-hana.js',
-	'js/scripts/day3-common.js',
-	'js/scripts/day3-sora.js',
-	'js/scripts/day3-hana.js',
-	'js/scripts/day3-together.js',
+	'js/scripts/day1/day1-common.js',
+	'js/scripts/day1/day1-sora.js',
+	'js/scripts/day1/day1-hana.js',
+	'js/scripts/day2/day2-common.js',
+	'js/scripts/day2/day2-sora.js',
+	'js/scripts/day2/day2-hana.js',
+	'js/scripts/day3/day3-common.js',
+	'js/scripts/day3/day3-sora.js',
+	'js/scripts/day3/day3-hana.js',
+	'js/scripts/day3/day3-together.js',
+	'js/scripts/day4/day4-common.js',
+	'js/scripts/day4/day4-sora.js',
+	'js/scripts/day4/day4-hana.js',
+	'js/scripts/day4/day4-together.js',
+	'js/scripts/day5/day5-sora.js',
+	'js/scripts/day5/day5-hana.js',
+	'js/scripts/day5/day5-together.js',
+	'js/helpers/transitions.js',
+	'js/choice-stats.js',
+	'js/affinity-hint.js',
 
 	// App Images
 	'favicon.ico',
