@@ -357,26 +357,6 @@ game-screen:has([data-component="choice-container"])::after {
 	transform: translateY(-1px) scale(1.0);
 }
 
-/* Text Box */
-[data-component="text-box"] {
-	background: rgba(20, 10, 30, 0.82) !important;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	border: 1px solid rgba(244, 143, 177, 0.2);
-	border-radius: 16px !important;
-	left: 0 !important;
-	right: 0 !important;
-	margin: 0 auto !important;
-	padding: 20px 28px !important;
-	box-shadow:
-		0 -4px 30px rgba(0, 0, 0, 0.3),
-		inset 0 1px 0 rgba(255, 255, 255, 0.05);
-	color: #f0e6f0;
-	font-size: 1.05em;
-	line-height: 1.8;
-	letter-spacing: 0.02em;
-	text-align: center;
-}
 
 /* Character Name Tag */
 [data-ui="who"] {
@@ -411,11 +391,6 @@ game-screen:has([data-component="choice-container"])::after {
 
 [data-screen="game"] [data-image] {
 	transition: all 0.5s ease;
-}
-
-/* Inner monologue style (narrator text with parentheses) */
-[data-component="text-box"] p {
-	line-height: 1.85;
 }
 
 /**
@@ -614,12 +589,6 @@ loading-screen {
 		min-width: 160px;
 	}
 
-	/* Text Box */
-	[data-component="text-box"] {
-		padding: 12px 16px !important;
-		font-size: 0.95em;
-	}
-
 	/* Character Name Tag */
 	[data-ui="who"] {
 		font-size: 1em;
@@ -663,9 +632,6 @@ loading-screen {
 		width: 95%;
 	}
 
-	[data-component="text-box"] {
-		padding: 10px 12px !important;
-	}
 }
 
 /** Medium Screens, Phablets (601px) **/
@@ -681,21 +647,6 @@ loading-screen {
 	[data-component="quick-menu"] span:hover {
 		color: #f8bbd0;
 		background: rgba(244, 143, 177, 0.15);
-	}
-}
-
-/** Medium Devices, Tablets (992px)**/
-@media screen and (min-width: 62em) {
-	[data-component="text-box"] {
-		max-width: 85%;
-		margin: 0 auto;
-	}
-}
-
-/** HD Screen, Large Devices, Wide Screens, Desktop (1200px) **/
-@media screen and (min-width: 75em) {
-	[data-component="text-box"] {
-		max-width: 80%;
 	}
 }
 
@@ -722,7 +673,4 @@ loading-screen {
 		left: 0;
 	}
 
-	[data-component="text-box"] {
-		max-height: 40% !important;
-	}
 }

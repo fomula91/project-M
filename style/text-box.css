@@ -1,0 +1,95 @@
+/**
+ * ===========================
+ * Text Box Styling
+ * ===========================
+**/
+
+/* Text Box */
+[data-component="text-box"] {
+	background: rgba(20, 10, 30, 0.82) !important;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(244, 143, 177, 0.2);
+	border-radius: 16px !important;
+	left: 0 !important;
+	right: 0 !important;
+	margin: 0 auto !important;
+	padding: 20px 28px !important;
+	box-shadow:
+		0 -4px 30px rgba(0, 0, 0, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	color: #f0e6f0;
+	font-size: 1.05em;
+	line-height: 1.8;
+	letter-spacing: 0.02em;
+	text-align: center;
+	min-height: 30% !important;
+	max-height: 30% !important;
+}
+
+/* Inner monologue style (narrator text with parentheses) */
+[data-component="text-box"] p {
+	line-height: 1.85;
+}
+
+/**
+ * ===========================
+ * Responsive - Mobile (max-width: 37.5em / 600px)
+ * ===========================
+**/
+@media screen and (max-width: 37.5em) {
+	[data-component="text-box"] {
+		padding: 12px 16px !important;
+		font-size: 0.95em;
+		min-height: 35% !important;
+		max-height: 35% !important;
+	}
+}
+
+/**
+ * ===========================
+ * Responsive - Ultra Small (max-width: 22.5em / 360px)
+ * ===========================
+**/
+@media screen and (max-width: 22.5em) {
+	[data-component="text-box"] {
+		padding: 10px 12px !important;
+		min-height: 38% !important;
+		max-height: 38% !important;
+	}
+}
+
+/**
+ * ===========================
+ * Responsive - Tablets (min-width: 62em / 992px)
+ * ===========================
+**/
+@media screen and (min-width: 62em) {
+	[data-component="text-box"] {
+		max-width: 85%;
+		margin: 0 auto;
+	}
+}
+
+/**
+ * ===========================
+ * Responsive - Desktop (min-width: 75em / 1200px)
+ * ===========================
+**/
+@media screen and (min-width: 75em) {
+	[data-component="text-box"] {
+		max-width: 80%;
+	}
+}
+
+/**
+ * ===========================
+ * Portrait Mode
+ * ===========================
+**/
+@media screen and (orientation: portrait) and (max-width: 37.5em) {
+	[data-component="text-box"] {
+		min-height: 35% !important;
+		max-height: 40% !important;
+	}
+}
