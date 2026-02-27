@@ -1,0 +1,175 @@
+/**
+ * ===========================
+ * Choice Statistics Overlay
+ * ===========================
+**/
+
+/* Active stats state: disable hover transforms */
+.choice-stats-active [data-choice] {
+	pointer-events: none;
+	cursor: default;
+}
+
+.choice-stats-active [data-choice]:hover {
+	transform: none !important;
+	box-shadow:
+		0 4px 20px rgba(255, 183, 197, 0.25),
+		0 0 40px rgba(255, 218, 225, 0.1) !important;
+}
+
+/* Percentage bar inside button */
+.choice-stats-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 30px;
+	transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* Selected choice: deep rose bar with edge */
+.choice-stats-selected .choice-stats-bar {
+	background: linear-gradient(90deg, rgba(219, 112, 147, 0.35) 0%, rgba(219, 112, 147, 0.55) 100%);
+	border-right: 2.5px solid rgba(219, 112, 147, 0.8);
+}
+
+/* Unselected choice: mauve bar with edge */
+.choice-stats-unselected .choice-stats-bar {
+	background: linear-gradient(90deg, rgba(180, 140, 160, 0.2) 0%, rgba(180, 140, 160, 0.35) 100%);
+	border-right: 2px solid rgba(180, 140, 160, 0.5);
+}
+
+/* Selected button styling: strong border + inner glow */
+.choice-stats-selected {
+	position: relative;
+	border-color: rgba(255, 210, 220, 0.8) !important;
+	border-width: 2px !important;
+	box-shadow:
+		0 0 25px rgba(255, 183, 197, 0.45),
+		0 0 50px rgba(255, 218, 225, 0.2),
+		inset 0 0 20px rgba(255, 183, 197, 0.15) !important;
+}
+
+/* Selected: checkmark indicator */
+.choice-stats-selected::before {
+	content: "\2714";
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.1em;
+	color: rgba(255, 220, 230, 0.95);
+	text-shadow: 0 1px 3px rgba(120, 40, 70, 0.5);
+	z-index: 2;
+	opacity: 0;
+	animation: statsFadeIn 0.15s ease-out forwards;
+}
+
+/* Unselected button styling: dimmed + desaturated */
+.choice-stats-unselected {
+	opacity: 0.5;
+	transform: scale(0.96);
+	filter: saturate(0.6);
+	background: linear-gradient(135deg, rgba(255, 183, 197, 0.3) 0%, rgba(255, 218, 225, 0.25) 50%, rgba(248, 187, 208, 0.3) 100%) !important;
+}
+
+/* Percentage label: dark rose pill badge */
+.choice-stats-percent {
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: 800;
+	font-size: 1.15em;
+	color: #fff;
+	background: rgba(120, 40, 70, 0.7);
+	padding: 3px 10px;
+	border-radius: 14px;
+	border: 1px solid rgba(255, 200, 210, 0.25);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	opacity: 0;
+	animation: statsFadeIn 0.15s ease-out forwards;
+}
+
+@keyframes statsFadeIn {
+	from { opacity: 0; transform: translateY(-50%) translateX(8px); }
+	to { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+/**
+ * ===========================
+ * Choice Statistics Preview
+ * ===========================
+**/
+
+/* Preview state: keep buttons clickable */
+.choice-stats-preview [data-choice] {
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+/* Preview percentage bar: visible deep rose */
+.choice-stats-preview-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 30px;
+	background: rgba(219, 112, 147, 0.2);
+	border-right: 2px solid rgba(219, 112, 147, 0.3);
+	transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* Preview percentage label: light pill badge */
+.choice-stats-preview-percent {
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: 600;
+	font-size: 0.9em;
+	color: #fff;
+	background: rgba(120, 40, 70, 0.45);
+	padding: 2px 8px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 200, 210, 0.15);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	z-index: 1;
+	opacity: 0;
+	animation: previewStatsFadeIn 0.15s ease-out forwards;
+}
+
+@keyframes previewStatsFadeIn {
+	from { opacity: 0; transform: translateY(-50%) translateX(8px); }
+	to { opacity: 0.8; transform: translateY(-50%) translateX(0); }
+}
+
+/**
+ * ===========================
+ * Mobile Responsive
+ * ===========================
+**/
+
+@media screen and (max-width: 37.5em) {
+	.choice-stats-percent {
+		right: 12px;
+		font-size: 0.95em;
+		padding: 2px 8px;
+	}
+
+	.choice-stats-preview-percent {
+		right: 12px;
+		font-size: 0.8em;
+		padding: 1px 6px;
+	}
+
+	.choice-stats-selected::before {
+		left: 10px;
+		font-size: 0.95em;
+	}
+}
