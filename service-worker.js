@@ -5,7 +5,7 @@ const name = 'Monogatari';
 
 // The version of the cache, changing this will force everything to be cached
 // again.
-const version = '0.3.0';
+const version = '0.4.0';
 
 const files = [
 

@@ -25,6 +25,33 @@
 
 const { $_ready, $_ } = Monogatari;
 
+// CSS lazy loader
+const screenCSS = {
+	game: [
+		'./style/text-box.css',
+		'./style/character-position.css',
+		'./style/character-actions.css',
+		'./style/choice-stats.css'
+	],
+	settings: ['./style/settings.css']
+};
+const loadedScreens = new Set();
+
+function activateCSS(screen) {
+	if (loadedScreens.has(screen) || !screenCSS[screen]) return;
+	loadedScreens.add(screen);
+	return Promise.all(screenCSS[screen].map(href => {
+		return new Promise(resolve => {
+			const link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = href;
+			link.onload = resolve;
+			link.onerror = resolve;
+			document.head.appendChild(link);
+		});
+	}));
+}
+
 // 1. Outside the $_ready function:
 
 // Customize main screen template with title, subtitle, and sakura petals
@@ -57,6 +84,20 @@ $_ready (() => {
 
 	monogatari.init ('#monogatari').then (() => {
 		// 3. Inside the init function:
+
+		// 로딩 화면이 아직 보이는 동안 게임 CSS 활성화
+		activateCSS('game');
+
+		// 설정 화면은 진입 시에만 로딩 (MutationObserver)
+		const settingsEl = document.querySelector('[data-screen="settings"]');
+		if (settingsEl) {
+			new MutationObserver(() => {
+				if (settingsEl.classList.contains('active')) {
+					activateCSS('settings');
+				}
+			}).observe(settingsEl, { attributes: true, attributeFilter: ['class'] });
+		}
+
 		ChoiceStats.init();
 		ChoiceStats.installHook();
 		ChoiceStats.installPreviewObserver();

@@ -76,53 +76,56 @@
 
 		<!-- Third Party CSS Libraries -->
 
-		<!-- Monogatari CSS Libraries -->
+		<!-- 렌더 크리티컬: 즉시 로딩 -->
 		<link rel="stylesheet" href="./engine/core/monogatari.css">
 		<link rel="stylesheet" href="./style/main.css">
-		<link rel="stylesheet" href="./style/text-box.css">
-		<link rel="stylesheet" href="./style/character-position.css">
-		<link rel="stylesheet" href="./style/character-actions.css">
-		<link rel="stylesheet" href="./style/choice-stats.css">
-		<link rel="stylesheet" href="./style/settings.css">
+
+		<!-- 게임 화면용: preload (다운로드만, 렌더 차단 없음) -->
+		<link rel="preload" href="./style/text-box.css" as="style">
+		<link rel="preload" href="./style/character-position.css" as="style">
+		<link rel="preload" href="./style/character-actions.css" as="style">
+		<link rel="preload" href="./style/choice-stats.css" as="style">
+
+		<!-- settings.css: on-demand 로딩 (설정 화면 진입 시) -->
 
 
 		<!-- Third Party JavaScript Libraries -->
 
 		<!-- Monogatari JavaScript Libraries -->
-		<script src="./engine/debug/debug.js"></script>
-		<script src="./engine/core/monogatari.js"></script>
-		<script src="./js/options.js"></script>
-		<script src="./js/storage.js"></script>
+		<script defer src="./engine/debug/debug.js"></script>
+		<script defer src="./engine/core/monogatari.js"></script>
+		<script defer src="./js/options.js"></script>
+		<script defer src="./js/storage.js"></script>
 
 		<!-- Helpers (스크립트보다 먼저 로드) -->
-		<script src="./js/helpers/transitions.js"></script>
+		<script defer src="./js/helpers/transitions.js"></script>
 
-		<script src="./js/script.js"></script>
+		<script defer src="./js/script.js"></script>
 		<!-- Day 1 -->
-		<script src="./js/scripts/day1/day1-common.js"></script>
-		<script src="./js/scripts/day1/day1-sora.js"></script>
-		<script src="./js/scripts/day1/day1-hana.js"></script>
+		<script defer src="./js/scripts/day1/day1-common.js"></script>
+		<script defer src="./js/scripts/day1/day1-sora.js"></script>
+		<script defer src="./js/scripts/day1/day1-hana.js"></script>
 		<!-- Day 2 -->
-		<script src="./js/scripts/day2/day2-common.js"></script>
-		<script src="./js/scripts/day2/day2-sora.js"></script>
-		<script src="./js/scripts/day2/day2-hana.js"></script>
+		<script defer src="./js/scripts/day2/day2-common.js"></script>
+		<script defer src="./js/scripts/day2/day2-sora.js"></script>
+		<script defer src="./js/scripts/day2/day2-hana.js"></script>
 		<!-- Day 3 -->
-		<script src="./js/scripts/day3/day3-common.js"></script>
-		<script src="./js/scripts/day3/day3-sora.js"></script>
-		<script src="./js/scripts/day3/day3-hana.js"></script>
-		<script src="./js/scripts/day3/day3-together.js"></script>
+		<script defer src="./js/scripts/day3/day3-common.js"></script>
+		<script defer src="./js/scripts/day3/day3-sora.js"></script>
+		<script defer src="./js/scripts/day3/day3-hana.js"></script>
+		<script defer src="./js/scripts/day3/day3-together.js"></script>
 		<!-- Day 4 -->
-		<script src="./js/scripts/day4/day4-common.js"></script>
-		<script src="./js/scripts/day4/day4-sora.js"></script>
-		<script src="./js/scripts/day4/day4-hana.js"></script>
-		<script src="./js/scripts/day4/day4-together.js"></script>
+		<script defer src="./js/scripts/day4/day4-common.js"></script>
+		<script defer src="./js/scripts/day4/day4-sora.js"></script>
+		<script defer src="./js/scripts/day4/day4-hana.js"></script>
+		<script defer src="./js/scripts/day4/day4-together.js"></script>
 		<!-- Day 5 -->
-		<script src="./js/scripts/day5/day5-sora.js"></script>
-		<script src="./js/scripts/day5/day5-hana.js"></script>
-		<script src="./js/scripts/day5/day5-together.js"></script>
-		<script src="./js/choice-stats.js"></script>
-		<script src="./js/affinity-hint.js"></script>
-		<script src="./js/main.js"></script>
+		<script defer src="./js/scripts/day5/day5-sora.js"></script>
+		<script defer src="./js/scripts/day5/day5-hana.js"></script>
+		<script defer src="./js/scripts/day5/day5-together.js"></script>
+		<script defer src="./js/choice-stats.js"></script>
+		<script defer src="./js/affinity-hint.js"></script>
+		<script defer src="./js/main.js"></script>
 
 	</head>
 
