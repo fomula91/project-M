@@ -10,6 +10,9 @@
 
 [data-screen="game"] [data-character] {
 	bottom: clamp(0px, 26vh, 22rem);
+	transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+	            right 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+	            transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 [data-screen="game"] [data-character].center {
 	bottom: clamp(0px, 26vh, 22rem);

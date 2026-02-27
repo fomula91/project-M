@@ -1,0 +1,60 @@
+/**
+ * =============================================================================
+ * Character Action Animations
+ * 커스텀 캐릭터 연출용 CSS 애니메이션
+ *
+ * 엔진의 .animated 클래스와 함께 사용 (duration: 1s, fill-mode: both)
+ * 사용법: show character s normal at center with approachCloser
+ * =============================================================================
+ **/
+
+/* --- approachCloser: 캐릭터가 다가오는 느낌 --- */
+@keyframes approachCloser {
+	from {
+		transform: scale(0.85) translateY(15px);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1) translateY(0);
+		opacity: 1;
+	}
+}
+.approachCloser {
+	animation-name: approachCloser;
+}
+
+/* --- stepBack: 한 발 물러나는 느낌 --- */
+@keyframes stepBack {
+	from {
+		transform: scale(1) translateY(0);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0.88) translateY(10px);
+		opacity: 0.7;
+	}
+}
+.stepBack {
+	animation-name: stepBack;
+}
+
+/* --- shake: 놀람/분노 표현 --- */
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	10%, 50%, 90% { transform: translateX(-8px); }
+	30%, 70% { transform: translateX(8px); }
+}
+.shake {
+	animation-name: shake;
+}
+
+/* --- nod: 고개 끄덕임 --- */
+@keyframes nod {
+	0%, 100% { transform: translateY(0); }
+	25% { transform: translateY(8px); }
+	50% { transform: translateY(0); }
+	75% { transform: translateY(8px); }
+}
+.nod {
+	animation-name: nod;
+}
