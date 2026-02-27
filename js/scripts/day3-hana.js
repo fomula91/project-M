@@ -31,7 +31,9 @@ monogatari.script ({
 	],
 
 	'Day3HanaClimax': [
-		'show scene busstop_evening with fadeIn',
+		...fadeScene('busstop_evening'),
+		'stop music fade 2',
+		'play music hana-ending loop fade 2',
 		'show character h normal2',
 		'축제가 끝나고, 하교 시간.',
 		'h {{player.name}}... 잠깐만!',

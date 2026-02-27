@@ -33,6 +33,8 @@ monogatari.script ({
 
 	'Day3SoraClimax': [
 		'show scene school_grounds_evening with fadeIn',
+		'stop music fade 2',
+		'play music sora-ending loop fade 2',
 		'show character s normal',
 		'축제가 끝나고, 석양이 학교를 물들인다.',
 		'소라와 함께 교정을 걷는다.',

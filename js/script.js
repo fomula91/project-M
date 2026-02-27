@@ -33,7 +33,10 @@ monogatari.assets ('gallery', {
 // Define the music used in the game.
 monogatari.assets ('music', {
 	'acoustic-chill': 'acoustic-chill.mp3',
-	'sunny-day': 'sunny-day.mp3'
+	'sunny-day': 'sunny-day.mp3',
+	'sora-ending': 'sora-ending.mp3',
+	'hana-ending': 'hana-ending.mp3',
+	'harem-ending': 'harem-ending.mp3'
 });
 
 // Define the voice files used in the game.
