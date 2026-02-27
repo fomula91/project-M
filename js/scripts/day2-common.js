@@ -51,7 +51,7 @@ monogatari.script ({
 		'소라가 평소보다 한 걸음 더 가까이 다가와 인사한다.',
 		'show character h surprised at right with fadeIn',
 		'h 앗! 소라가 웃고 있어?! 너희 둘 대체 어제 뭐 한 거야~?!',
-		'jump Day2Morning'
+		'jump Day2ScienceLab'
 	],
 
 	'Day2SoraGreetingNormal': [
@@ -61,7 +61,7 @@ monogatari.script ({
 		'소라가 평소보다 밝은 표정으로 인사한다.',
 		'show character h surprised at right with fadeIn',
 		'h 앗! 너희 둘 벌써 친해진 거야? 나도 끼워줘~!',
-		'jump Day2Morning'
+		'jump Day2ScienceLab'
 	],
 
 	'Day2HanaGreeting': [
@@ -87,7 +87,7 @@ monogatari.script ({
 		'하나가 신나서 달려와 팔짱을 낀다.',
 		'show character s normal at left with fadeIn',
 		's ...좋은 아침이에요. 하나 씨가 유독 밝네요, 오늘.',
-		'jump Day2Morning'
+		'jump Day2ScienceLab'
 	],
 
 	'Day2HanaGreetingNormal': [
@@ -98,6 +98,80 @@ monogatari.script ({
 		'show character s normal at left with fadeIn',
 		's ...좋은 아침이에요, {{player.name}} 씨.',
 		'소라가 멀리서 조용히 인사한다.',
+		'jump Day2ScienceLab'
+	],
+
+	// ---- DAY 2 SCIENCE LAB: 과학실 복선 ----
+	'Day2ScienceLab': [
+		'show scene science_lab_01 with fadeIn',
+		'1교시 과학 수업. 과학실에서 실험을 진행한다.',
+		'show scene science_lab_03 with fadeIn',
+		'실험 준비를 위해 서랍을 열었더니, 오래된 노트가 하나 들어있다.',
+		'show character p surprised at center with fadeIn',
+		'p ...이건 뭐지? "유우의 실험 노트"라고 적혀 있다.',
+		'p 유우...? 어디서 들어본 것 같은데.',
+		'show scene science_lab_05 with fadeIn',
+		'hide character p with fadeOut',
+		{
+			'Choice': {
+				'Dialog': 'p 이 노트에 대해...',
+				'AskSora': {
+					'Text': '소라에게 물어본다',
+					'Do': 'jump Day2ScienceLabSora'
+				},
+				'AskHana': {
+					'Text': '하나에게 물어본다',
+					'Do': 'jump Day2ScienceLabHana'
+				},
+				'Ignore': {
+					'Text': '조용히 넘어간다',
+					'Do': 'jump Day2ScienceLabSkip'
+				}
+			}
+		}
+	],
+
+	'Day2ScienceLabSora': [
+		'show character s normal at center with fadeIn',
+		's 그 노트... 어디서 찾으셨어요?',
+		'show character s angry2',
+		's ...유우 선배의 거예요. 작년에 졸업한...',
+		'소라가 순간 동요한 표정을 짓지만 이내 침착해진다.',
+		'show character s normal',
+		's 과학부에서 활동하셨던 분이에요. 뛰어난 분이었죠.',
+		'p 소라 씨와도 아는 사이였어?',
+		's ...네. 저와 하나를 이어준 분이기도 해요.',
+		'소라가 작게 웃으며 말한다.',
+		'hide character s with fadeOut',
+		function () {
+			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
+			AffinityHint.show('unknown');
+		},
+		'jump Day2Morning'
+	],
+
+	'Day2ScienceLabHana': [
+		'show character h normal2 at center with fadeIn',
+		'h 앗, 그거! 유우 선배 노트다!',
+		'h 작년에 졸업하신 분인데... 나랑 소라를 처음 이어준 사람이야.',
+		'하나가 진지한 표정으로 노트를 바라본다.',
+		'show character h happy',
+		'h 과학 실험 엄청 잘하는 사람이었어! 나도 많이 배웠는데~',
+		'p 그렇구나. 대단한 선배였나 보다.',
+		'h 응! 언젠가 다시 올 수도 있다고 했었는데...',
+		'hide character h with fadeOut',
+		function () {
+			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
+			AffinityHint.show('unknown');
+		},
+		'jump Day2Morning'
+	],
+
+	'Day2ScienceLabSkip': [
+		'show character p normal at center with fadeIn',
+		'p ...누군가의 물건이겠지. 조용히 넣어두자.',
+		'노트를 서랍에 다시 넣고 수업에 집중한다.',
+		'hide character p with fadeOut',
 		'jump Day2Morning'
 	],
 
@@ -181,11 +255,23 @@ monogatari.script ({
 
 	'Day2End': [
 		'show scene busstop_night with fadeIn',
-		'집에 돌아와 침대에 누워 천장을 바라본다.',
+		'버스 정류장에서 혼자 버스를 기다린다.',
 		'show character p normal at center with fadeIn',
 		'p ...내일은 축제다.',
 		'p ...누구와 함께 보내게 될까.',
 		'hide character p with fadeOut',
+		'그때, 정류장 건너편에 낯선 인물이 서 있는 것이 보인다.',
+		'show character u normal at left with fadeIn',
+		'...보라색 머리카락이 가로등 불빛에 비친다.',
+		'show character p surprised at center with fadeIn',
+		'p ...저 사람은──',
+		'고개를 돌려 다시 보니, 이미 아무도 없다.',
+		'hide character u with fadeOut',
+		'p ...기분 탓이었나.',
+		'hide character p with fadeOut',
+		function () {
+			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
+		},
 		'설레는 마음을 안고, 서서히 잠이 든다.',
 		'jump Day3Start'
 	]

@@ -1,0 +1,34 @@
+/* global monogatari */
+
+monogatari.script ({
+
+	// ---- DAY 4 SORA AFTERNOON ----
+	'Day4SoraAfternoon': [
+		'show scene classroom3_afternoon with fadeIn',
+		'오후, 소라를 찾아 교실로 간다.',
+		'show character s normal at center with fadeIn',
+		's {{player.name}} 씨... 오늘 유우 선배가 왔다면서요?',
+		'show character p normal at right with fadeIn',
+		'p 응. 소라 씨도 만났어?',
+		's ...네.',
+		'show character s worried',
+		'소라가 고개를 숙인다.',
+		's 유우 선배를 보니까... 그때 생각이 났어요.',
+		's 혼자서 도서관에만 있던 시절. 아무도 말을 걸어주지 않던 날들.',
+		's 유우 선배가 처음으로... "같이 밥 먹을래?" 하고 물어봤어요.',
+		'소라의 눈가가 촉촉해진다.',
+		'show scene science_lab_06 with fadeIn',
+		's 그때부터... 사람과 함께하는 게 두렵지만은 않게 됐어요.',
+		's 그리고 {{player.name}} 씨를 만나서...',
+		'show character s surprised',
+		's 아, 죄송해요. 갑자기 이런 이야기를──',
+		'p 아니, 들려줘서 고마워요.',
+		'p 소라 씨의 이야기를 더 듣고 싶어.',
+		'show character s happy',
+		's ...감사해요, {{player.name}} 씨.',
+		'소라가 눈물을 닦으며 작게 웃는다.',
+		'hide character s with fadeOut',
+		'hide character p with fadeOut',
+		'jump Day4Evening'
+	]
+});

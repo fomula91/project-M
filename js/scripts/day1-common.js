@@ -87,6 +87,50 @@ monogatari.script ({
 		'hide character s with fadeOutLeft',
 		'hide character h with fadeOutRight',
 		'wait 400',
+		...fadeJump('Day1UnknownHint'),
+	],
+
+	// ---- UNKNOWN HINT: 빈 책상 복선 ----
+	'Day1UnknownHint': [
+		'show scene classroom_day with fadeFromBlack duration 1500',
+		'자리를 찾아 앉으려는데, 창가 맨 뒷줄에 빈 책상이 눈에 들어온다.',
+		'책상 위에 오래된 낙서가 희미하게 남아있다.',
+		'show character p surprised at center with fadeIn',
+		'p ...여기는 아무도 안 앉나?',
+		{
+			'Conditional': {
+				'Condition': function () {
+					return this.storage('helped_sora') ? 'SoraSays' : 'HanaSays';
+				},
+				'SoraSays': 'jump Day1UnknownHintSora',
+				'HanaSays': 'jump Day1UnknownHintHana'
+			}
+		}
+	],
+
+	'Day1UnknownHintSora': [
+		'show character s normal at left with fadeIn',
+		's 아, 그 자리요... 작년에 졸업한 선배가 앉던 자리예요.',
+		's 꽤 유명한 분이었는데... 소라와 하나, 둘 다 잘 알던 사이래요.',
+		'show character p normal',
+		'p 그렇구나... 어떤 사람이었을까.',
+		's ...좋은 사람이었다고 들었어요.',
+		'소라가 잠깐 창밖을 바라보며 말한다.',
+		'hide character s with fadeOut',
+		'hide character p with fadeOut',
+		...fadeJump('MorningEvent'),
+	],
+
+	'Day1UnknownHintHana': [
+		'show character h normal2 at right with fadeIn',
+		'h 아, 거기? 작년에 졸업한 선배 자리야.',
+		'h 나랑 소라 사이를 이어준 사람이기도 해.',
+		'show character p normal',
+		'p 오, 어떤 사람이었어?',
+		'h 음~... 특이한 사람? 밝은 것 같으면서도 어딘가 신비로운...',
+		'하나가 살짝 그리운 표정을 짓는다.',
+		'hide character h with fadeOut',
+		'hide character p with fadeOut',
 		...fadeJump('MorningEvent'),
 	],
 
@@ -184,7 +228,19 @@ monogatari.script ({
 		'p ...오늘 하루가 정말 빠르게 지나갔다.',
 		'show character p smile',
 		'p ...새 학교에서의 첫날, 좋은 사람들을 만났어.',
-		'집으로 돌아가는 길, 벚꽃 나무 아래서 오늘 하루를 떠올린다.',
+		'hide character p with fadeOut',
+		'집으로 돌아가는 길──',
+		'show scene another_building_day with fadeIn',
+		'교문 옆 구교사 건물이 눈에 들어온다.',
+		'show character p surprised at center with fadeIn',
+		'p ...어? 저 건물 유리창에 누가──',
+		'유리창 너머로 누군가의 실루엣이 보인 것 같았다.',
+		'p ...기분 탓인가.',
+		'고개를 갸웃하며 다시 걷기 시작한다.',
+		'hide character p with fadeOut',
+		'show scene school_grounds_evening with fadeIn',
+		'벚꽃 나무 아래서 오늘 하루를 떠올린다.',
+		'show character p normal at center with fadeIn',
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',

@@ -110,7 +110,11 @@ monogatari.script ({
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'show scene school_grounds_evening with fadeIn',
-		'centered ── 하나 엔딩: 변하지 않는 밝은 미소 ──',
-		'end'
+		'centered ── 하나: 변하지 않는 밝은 미소 ──',
+		'하지만... 이것으로 끝이 아닌 것 같다.',
+		function () {
+			this.storage({ day3_ending_type: 'hana_friend' });
+		},
+		...fadeJump('Day4Start'),
 	]
 });

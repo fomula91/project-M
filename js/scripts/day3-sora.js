@@ -103,7 +103,11 @@ monogatari.script ({
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',
 		'show scene auditorium_evening with fadeIn',
-		'centered ── 소라 엔딩: 소중한 거리 ──',
-		'end'
+		'centered ── 소라: 소중한 거리 ──',
+		'하지만... 이것으로 끝이 아닌 것 같다.',
+		function () {
+			this.storage({ day3_ending_type: 'sora_friend' });
+		},
+		...fadeJump('Day4Start'),
 	]
 });

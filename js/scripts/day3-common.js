@@ -14,6 +14,35 @@ monogatari.script ({
 		{
 			'Conditional': {
 				'Condition': function () {
+					return this.storage('unknown_interest') >= 1 ? 'PhotoEvent' : 'SkipPhoto';
+				},
+				'PhotoEvent': 'jump Day3PhotoDiscovery',
+				'SkipPhoto': 'jump Day3MainBranch'
+			}
+		}
+	],
+
+	'Day3PhotoDiscovery': [
+		'show scene auditorium_day with fadeIn',
+		'축제 게시판 앞을 지나가는데, 오래된 사진 한 장이 눈에 들어온다.',
+		'show character p surprised at center with fadeIn',
+		'p ...이건──?',
+		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
+		'p 이 사람... 어딘가에서 본 것 같은데.',
+		'p 정류장에서 본 사람과 닮은 것 같기도 하고...',
+		'hide character p with fadeOut',
+		function () {
+			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
+			AffinityHint.show('unknown');
+		},
+		'jump Day3MainBranch'
+	],
+
+	'Day3MainBranch': [
+		'show scene auditorium_day with fadeIn',
+		{
+			'Conditional': {
+				'Condition': function () {
 					var sora = this.storage ('sora_affection');
 					var hana = this.storage ('hana_affection');
 					if (sora >= 4 && hana >= 4) {

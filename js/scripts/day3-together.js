@@ -96,7 +96,7 @@ monogatari.script ({
 		'end'
 	],
 
-	// ---- FRIENDSHIP ENDING ----
+	// ---- FRIENDSHIP ENDING → Day 4 연결 ----
 	'FriendshipEnding': [
 		'show scene school_grounds_evening with fadeIn',
 		'show character s happy',
@@ -110,11 +110,14 @@ monogatari.script ({
 		'h 내일도, 모레도, 계속 이렇게 함께하자!',
 		'p 물론이지.',
 		'벚꽃 나무 아래, 세 사람의 웃음소리가 퍼진다.',
-		'이렇게, 사쿠라 학원에서의 새로운 이야기가 시작되었다.',
 		'hide character s',
 		'hide character h',
 		'show scene school_grounds_evening with fadeIn',
-		'centered ── 우정 엔딩: 세 사람의 봄 ──',
-		'end'
+		'centered ── 우정: 세 사람의 봄 ──',
+		'하지만... 이것으로 끝이 아닌 것 같다.',
+		function () {
+			this.storage({ day3_ending_type: 'friendship' });
+		},
+		...fadeJump('Day4Start'),
 	]
 });
