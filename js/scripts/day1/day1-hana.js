@@ -1,8 +1,29 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 1 — 하나 루트 (학교 탐험, 옥상)
+ *  파일: day1-hana.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - GoWithHana : 하나와 학교 탐험 (hana +2)
+ *    - Rooftop    : 옥상 점심 (hana +1)
+ *
+ *  흐름:
+ *    MorningEvent [cross-file] → GoWithHana → LunchTime [cross-file]
+ *    LunchTimeChoice [cross-file] → Rooftop → Day1Afternoon [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: hana_affection, helped_sora, chose_library
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- GO WITH HANA (hana +2) ----
+	// ──────────────────────────────────
+	//  GoWithHana — 하나와 학교 탐험 (hana +2)
+	// ──────────────────────────────────
 	'GoWithHana': [
 		'hide character s with fadeOut',
 		'hide character p',
@@ -30,7 +51,9 @@ monogatari.script ({
 		'jump LunchTime'
 	],
 
-	// ---- ROOFTOP (hana +1) ----
+	// ──────────────────────────────────
+	//  Rooftop — 옥상 점심 (hana +1)
+	// ──────────────────────────────────
 	'Rooftop': [
 		'hide character p',
 		'show scene auditorium_noon with slideRight',

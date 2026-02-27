@@ -1,8 +1,26 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 4 — 하나 오후 (유우 이야기 후 하나와 대화)
+ *  파일: day4-hana.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day4HanaAfternoon : 하나와 솔직한 대화 → Day4Evening
+ *
+ *  흐름:
+ *    Day4Lunch [cross-file] → Day4HanaAfternoon → Day4Evening [cross-file]
+ *
+ *  의존:
+ *    - storage: (없음)
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 4 HANA AFTERNOON ----
+	// ──────────────────────────────────
+	//  Day4HanaAfternoon — 하나와 솔직한 대화
+	// ──────────────────────────────────
 	'Day4HanaAfternoon': [
 		'show scene auditorium_afternoon with fadeIn',
 		'오후, 하나를 찾아 강당 뒤편으로 간다.',

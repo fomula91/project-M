@@ -1,7 +1,43 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 2 — 공통 (등교 인사, 과학실, 축제 준비, 저녁)
+ *  파일: day2-common.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day2Start             : 등교
+ *    - Day2SoraGreeting      : 소라 인사 분기
+ *    - Day2SoraGreetingHigh  : 소라 인사 (호감 높음)
+ *    - Day2SoraGreetingNormal: 소라 인사 (보통)
+ *    - Day2HanaGreeting      : 하나 인사 분기
+ *    - Day2HanaGreetingHigh  : 하나 인사 (호감 높음)
+ *    - Day2HanaGreetingNormal: 하나 인사 (보통)
+ *    - Day2ScienceLab        : 과학실 복선 (유우 노트)
+ *    - Day2ScienceLabSora    : 소라에게 노트 질문
+ *    - Day2ScienceLabHana    : 하나에게 노트 질문
+ *    - Day2ScienceLabSkip    : 조용히 넘어감
+ *    - Day2Morning           : 축제 준비 팀 선택
+ *    - Day2Evening           : 석양 분기
+ *    - Day2NeutralEvening    : 셋이서 하교
+ *    - Day2End               : 버스 정류장, 유우 실루엣 → Day3Start
+ *
+ *  흐름:
+ *    Day1Afternoon [cross-file] → Day2Start → Greeting → ScienceLab
+ *    → Day2Morning → (Day2WithSora / Day2WithHana) [cross-file]
+ *    → Day2Evening → Day2End → Day3Start [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: helped_sora, sora_affection, hana_affection, unknown_interest
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
+	// ──────────────────────────────────
+	//  Day2Start — 등교
+	// ──────────────────────────────────
 	'Day2Start': [
 		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 2일차: 가까워지는 마음 ──',
@@ -27,7 +63,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- Conditional greeting based on Day 1 (with affection-reactive variants) ----
+	// ──────────────────────────────────
+	//  Day2SoraGreeting — 소라 인사 분기
+	// ──────────────────────────────────
 	'Day2SoraGreeting': [
 		{
 			'Conditional': {
@@ -44,6 +82,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day2SoraGreetingHigh — 소라 인사 (호감 높음)
+	// ──────────────────────────────────
 	'Day2SoraGreetingHigh': [
 		'show character s happy at left with approachCloser',
 		's {{player.name}} 씨, 좋은 아침이에요!',
@@ -54,6 +95,9 @@ monogatari.script ({
 		'jump Day2ScienceLab'
 	],
 
+	// ──────────────────────────────────
+	//  Day2SoraGreetingNormal — 소라 인사 (보통)
+	// ──────────────────────────────────
 	'Day2SoraGreetingNormal': [
 		'show character s happy at left with fadeIn',
 		's {{player.name}} 씨, 좋은 아침이에요.',
@@ -64,6 +108,9 @@ monogatari.script ({
 		'jump Day2ScienceLab'
 	],
 
+	// ──────────────────────────────────
+	//  Day2HanaGreeting — 하나 인사 분기
+	// ──────────────────────────────────
 	'Day2HanaGreeting': [
 		{
 			'Conditional': {
@@ -80,6 +127,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day2HanaGreetingHigh — 하나 인사 (호감 높음)
+	// ──────────────────────────────────
 	'Day2HanaGreetingHigh': [
 		'show character h laugh at right with bounceIn',
 		'h {{player.name}}~! 좋은 아침! 어제 옥상 진짜 좋았지?!',
@@ -90,6 +140,9 @@ monogatari.script ({
 		'jump Day2ScienceLab'
 	],
 
+	// ──────────────────────────────────
+	//  Day2HanaGreetingNormal — 하나 인사 (보통)
+	// ──────────────────────────────────
 	'Day2HanaGreetingNormal': [
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 좋은 아침! 오늘도 재밌게 놀자!',
@@ -101,7 +154,9 @@ monogatari.script ({
 		'jump Day2ScienceLab'
 	],
 
-	// ---- DAY 2 SCIENCE LAB: 과학실 복선 ----
+	// ──────────────────────────────────
+	//  Day2ScienceLab — 과학실 복선 (유우 노트)
+	// ──────────────────────────────────
 	'Day2ScienceLab': [
 		'show scene science_lab_01 with fadeIn',
 		'1교시 과학 수업. 과학실에서 실험을 진행한다.',
@@ -131,6 +186,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day2ScienceLabSora — 소라에게 노트 질문
+	// ──────────────────────────────────
 	'Day2ScienceLabSora': [
 		'show character s normal at center with fadeIn',
 		's 그 노트... 어디서 찾으셨어요?',
@@ -150,6 +208,9 @@ monogatari.script ({
 		'jump Day2Morning'
 	],
 
+	// ──────────────────────────────────
+	//  Day2ScienceLabHana — 하나에게 노트 질문
+	// ──────────────────────────────────
 	'Day2ScienceLabHana': [
 		'show character h normal2 at center with fadeIn',
 		'h 앗, 그거! 유우 선배 노트다!',
@@ -167,6 +228,9 @@ monogatari.script ({
 		'jump Day2Morning'
 	],
 
+	// ──────────────────────────────────
+	//  Day2ScienceLabSkip — 조용히 넘어감
+	// ──────────────────────────────────
 	'Day2ScienceLabSkip': [
 		'show character p normal at center with fadeIn',
 		'p ...누군가의 물건이겠지. 조용히 넣어두자.',
@@ -175,7 +239,9 @@ monogatari.script ({
 		'jump Day2Morning'
 	],
 
-	// ---- DAY 2 MORNING ----
+	// ──────────────────────────────────
+	//  Day2Morning — 축제 준비 팀 선택
+	// ──────────────────────────────────
 	'Day2Morning': [
 		'show scene classroom2_morning with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
@@ -202,7 +268,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- DAY 2 EVENING ----
+	// ──────────────────────────────────
+	//  Day2Evening — 석양 분기
+	// ──────────────────────────────────
 	'Day2Evening': [
 		'show scene classroom_afternoon with fadeIn',
 		'해가 지고, 교실에 주황빛이 가득 찬다.',
@@ -227,6 +295,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day2NeutralEvening — 셋이서 하교
+	// ──────────────────────────────────
 	'Day2NeutralEvening': [
 		'show scene school_grounds_evening with fadeIn',
 		function () {
@@ -253,6 +324,9 @@ monogatari.script ({
 		'jump Day2End'
 	],
 
+	// ──────────────────────────────────
+	//  Day2End — 버스 정류장, 유우 실루엣
+	// ──────────────────────────────────
 	'Day2End': [
 		'show scene busstop_night with fadeIn',
 		'버스 정류장에서 혼자 버스를 기다린다.',

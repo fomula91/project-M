@@ -1,8 +1,41 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 1 — 공통 (프롤로그, 등교, 오전·점심 이벤트, 오후)
+ *  파일: day1-common.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Start               : 이름 입력
+ *    - Prologue            : 프롤로그 / 오프닝 CG
+ *    - SchoolArrival       : 교실 도착, 소라·하나 첫 만남
+ *    - Day1UnknownHint     : 빈 책상 복선 (분기)
+ *    - Day1UnknownHintSora : 빈 책상 — 소라 대사
+ *    - Day1UnknownHintHana : 빈 책상 — 하나 대사
+ *    - MorningEvent        : 쉬는 시간 첫 선택지
+ *    - LunchTime           : 점심시간 분기
+ *    - LunchTimeSoraWarm   : 점심 — 소라 호감 높음
+ *    - LunchTimeHanaWarm   : 점심 — 하나 호감 높음
+ *    - LunchTimeChoice     : 점심 장소 선택
+ *    - Day1Afternoon       : 하교, 구교사 복선 → Day2Start
+ *
+ *  흐름:
+ *    Start → Prologue → SchoolArrival → Day1UnknownHint
+ *    → MorningEvent → (HelpSora / GoWithHana) [cross-file]
+ *    → LunchTime → LunchTimeChoice → (Library / Rooftop) [cross-file]
+ *    → Day1Afternoon → Day2Start [cross-file]
+ *
+ *  의존:
+ *    - fadeJump()            (helpers/transitions.js)
+ *    - storage: player, helped_sora, sora_affection, hana_affection
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- START: Name Input ----
+	// ──────────────────────────────────
+	//  Start — 이름 입력
+	// ──────────────────────────────────
 	'Start': [
 		'play music sunny-day loop',
 		'show scene auditorium_sunrise with fadeIn',
@@ -34,7 +67,9 @@ monogatari.script ({
 		'jump Prologue'
 	],
 
-	// ---- PROLOGUE ----
+	// ──────────────────────────────────
+	//  Prologue — 프롤로그 / 오프닝 CG
+	// ──────────────────────────────────
 	'Prologue': [
 		'show scene school_front_day with fadeIn',
 		'centered ── 1일차: 벚꽃이 피는 아침 ──',
@@ -67,7 +102,9 @@ monogatari.script ({
 		...fadeJump('SchoolArrival'),
 	],
 
-	// ---- SCHOOL ARRIVAL: Meet both characters ----
+	// ──────────────────────────────────
+	//  SchoolArrival — 교실 도착, 소라·하나 첫 만남
+	// ──────────────────────────────────
 	'SchoolArrival': [
 		'show scene classroom_day with fadeFromBlack duration 1500',
 		'교실에 들어서자, 두 사람이 눈에 들어온다.',
@@ -90,7 +127,9 @@ monogatari.script ({
 		...fadeJump('Day1UnknownHint'),
 	],
 
-	// ---- UNKNOWN HINT: 빈 책상 복선 ----
+	// ──────────────────────────────────
+	//  Day1UnknownHint — 빈 책상 복선 (분기)
+	// ──────────────────────────────────
 	'Day1UnknownHint': [
 		'show scene classroom_day with fadeFromBlack duration 1500',
 		'자리를 찾아 앉으려는데, 창가 맨 뒷줄에 빈 책상이 눈에 들어온다.',
@@ -108,6 +147,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day1UnknownHintSora — 빈 책상 (소라 대사)
+	// ──────────────────────────────────
 	'Day1UnknownHintSora': [
 		'show character s normal at left with fadeIn',
 		's 아, 그 자리요... 작년에 졸업한 선배가 앉던 자리예요.',
@@ -121,6 +163,9 @@ monogatari.script ({
 		...fadeJump('MorningEvent'),
 	],
 
+	// ──────────────────────────────────
+	//  Day1UnknownHintHana — 빈 책상 (하나 대사)
+	// ──────────────────────────────────
 	'Day1UnknownHintHana': [
 		'show character h normal2 at right with fadeIn',
 		'h 아, 거기? 작년에 졸업한 선배 자리야.',
@@ -134,7 +179,9 @@ monogatari.script ({
 		...fadeJump('MorningEvent'),
 	],
 
-	// ---- MORNING EVENT: First Choice ----
+	// ──────────────────────────────────
+	//  MorningEvent — 쉬는 시간 첫 선택지
+	// ──────────────────────────────────
 	'MorningEvent': [
 		'show scene classroom2_morning with fadeFromBlack duration 1500',
 		'쉬는 시간, 복도에서 소란이 들린다.',
@@ -163,7 +210,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- LUNCH TIME: Reactive dialogue based on morning choice ----
+	// ──────────────────────────────────
+	//  LunchTime — 점심시간 분기
+	// ──────────────────────────────────
 	'LunchTime': [
 		'show scene classroom_day with fadeIn',
 		'점심시간이 되었다.',
@@ -183,6 +232,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  LunchTimeSoraWarm — 점심 (소라 호감 높음)
+	// ──────────────────────────────────
 	'LunchTimeSoraWarm': [
 		'show character s happy at left with fadeIn',
 		's {{player.name}} 씨! 아까 도와주신 덕분에 서류 정리가 빨리 끝났어요.',
@@ -193,6 +245,9 @@ monogatari.script ({
 		'jump LunchTimeChoice'
 	],
 
+	// ──────────────────────────────────
+	//  LunchTimeHanaWarm — 점심 (하나 호감 높음)
+	// ──────────────────────────────────
 	'LunchTimeHanaWarm': [
 		'show character s normal at left with fadeIn',
 		's {{player.name}} 씨, 혹시 시간 되시면... 도서관에서 같이 점심 드실래요?',
@@ -203,6 +258,9 @@ monogatari.script ({
 		'jump LunchTimeChoice'
 	],
 
+	// ──────────────────────────────────
+	//  LunchTimeChoice — 점심 장소 선택
+	// ──────────────────────────────────
 	'LunchTimeChoice': [
 		'show character p normal at center with fadeIn',
 		{
@@ -220,7 +278,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- DAY 1 AFTERNOON: Transition to Day 2 ----
+	// ──────────────────────────────────
+	//  Day1Afternoon — 하교, 구교사 복선
+	// ──────────────────────────────────
 	'Day1Afternoon': [
 		'show scene classroom_afternoon with fadeIn',
 		'오후 수업이 끝나고, 석양이 교실을 물들인다.',

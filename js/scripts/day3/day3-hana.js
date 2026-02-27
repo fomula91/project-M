@@ -1,8 +1,32 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 3 — 하나 루트 (축제 데이트, 고백, 친구 엔딩)
+ *  파일: day3-hana.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day3HanaRoute  : 하나와 축제 (hana +1)
+ *    - Day3HanaClimax : 하교길 고백 이벤트
+ *    - HanaConfess    : 하나 엔딩 (hana +2) → end
+ *    - HanaFriendEnd  : 친구 엔딩 → Day4Start
+ *
+ *  흐름:
+ *    Day3MainBranch [cross-file] → Day3HanaRoute → Day3HanaClimax
+ *    → HanaConfess (end) / HanaFriendEnd → Day4Start [cross-file]
+ *
+ *  의존:
+ *    - fadeScene(), fadeJump()  (helpers/transitions.js)
+ *    - AffinityHint.show()     (affinity-hint.js)
+ *    - storage: hana_affection, confessed, day3_ending_type
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- Day 3: Hana Route ----
+	// ──────────────────────────────────
+	//  Day3HanaRoute — 하나와 축제 (hana +1)
+	// ──────────────────────────────────
 	'Day3HanaRoute': [
 		'show scene auditorium_afternoon with slideRight',
 		function () {
@@ -30,6 +54,9 @@ monogatari.script ({
 		'jump Day3HanaClimax'
 	],
 
+	// ──────────────────────────────────
+	//  Day3HanaClimax — 하교길 고백 이벤트
+	// ──────────────────────────────────
 	'Day3HanaClimax': [
 		...fadeScene('busstop_evening'),
 		'stop music fade 2',
@@ -64,6 +91,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  HanaConfess — 하나 엔딩 (hana +2)
+	// ──────────────────────────────────
 	'HanaConfess': [
 		function () {
 			this.storage ({
@@ -95,6 +125,9 @@ monogatari.script ({
 		'end'
 	],
 
+	// ──────────────────────────────────
+	//  HanaFriendEnd — 친구 엔딩 → Day4Start
+	// ──────────────────────────────────
 	'HanaFriendEnd': [
 		'show character p normal at left',
 		'show character h worried',

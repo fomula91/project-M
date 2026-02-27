@@ -1,8 +1,38 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 4 — 공통 (유우 등장, 과학실, 수영장, 저녁 분기)
+ *  파일: day4-common.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day4Start            : 등교, 유우 첫 만남
+ *    - Day4MeetUnknownHigh  : 유우 만남 (관심 높음)
+ *    - Day4MeetUnknownNormal: 유우 만남 (보통)
+ *    - Day4Morning          : 과학실에서 유우와 대화
+ *    - Day4AskAboutSora     : 소라에 대해 질문
+ *    - Day4AskAboutHana     : 하나에 대해 질문
+ *    - Day4AskAboutAll      : 셋 관계 질문
+ *    - Day4Lunch            : 수영장 비밀 장소 → 오후 분기
+ *    - Day4Evening          : 유우 조언 + 최종 선택 → Day5
+ *
+ *  흐름:
+ *    Day3 Friend/Friendship [cross-file] → Day4Start → Day4Morning
+ *    → Day4Lunch → (Day4SoraAfternoon / Day4HanaAfternoon / Day4TogetherAfternoon) [cross-file]
+ *    → Day4Evening → (Day5SoraRoute / Day5HanaRoute / Day5TogetherRoute) [cross-file]
+ *
+ *  의존:
+ *    - fadeScene()          (helpers/transitions.js)
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: unknown_interest, met_unknown, sora_affection, hana_affection, day3_ending_type
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 4 START ----
+	// ──────────────────────────────────
+	//  Day4Start — 등교, 유우 첫 만남
+	// ──────────────────────────────────
 	'Day4Start': [
 		'stop music fade 2',
 		'play music acoustic-chill loop fade 2',
@@ -27,6 +57,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day4MeetUnknownHigh — 유우 만남 (관심 높음)
+	// ──────────────────────────────────
 	'Day4MeetUnknownHigh': [
 		'show character p surprised at right with fadeIn',
 		'p ...어제 정류장에서 본──?!',
@@ -34,7 +67,6 @@ monogatari.script ({
 		'u 안녕. 나는 유우. 작년에 이 학교를 졸업했어.',
 		function () {
 			this.storage({ met_unknown: true });
-			// Unknown 이름 변경
 			monogatari.characters()['u'].name = '유우';
 		},
 		'p 유우... 선배? 소라와 하나가 이야기하던──',
@@ -47,6 +79,9 @@ monogatari.script ({
 		'jump Day4Morning'
 	],
 
+	// ──────────────────────────────────
+	//  Day4MeetUnknownNormal — 유우 만남 (보통)
+	// ──────────────────────────────────
 	'Day4MeetUnknownNormal': [
 		'show character p surprised at right with fadeIn',
 		'p ...저기, 혹시 이 학교 학생이세요?',
@@ -65,7 +100,9 @@ monogatari.script ({
 		'jump Day4Morning'
 	],
 
-	// ---- DAY 4 MORNING: 유우와의 과학실 ----
+	// ──────────────────────────────────
+	//  Day4Morning — 과학실에서 유우와 대화
+	// ──────────────────────────────────
 	'Day4Morning': [
 		'show scene classroom_day with fadeIn',
 		'1교시가 끝나고, 유우와 함께 과학실로 향한다.',
@@ -95,6 +132,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day4AskAboutSora — 소라에 대해 질문
+	// ──────────────────────────────────
 	'Day4AskAboutSora': [
 		'u 소라는... 예전에는 아무에게도 마음을 열지 않는 아이였어.',
 		'u 혼자가 편하다고, 그게 안전하다고 생각했지.',
@@ -111,6 +151,9 @@ monogatari.script ({
 		'jump Day4Lunch'
 	],
 
+	// ──────────────────────────────────
+	//  Day4AskAboutHana — 하나에 대해 질문
+	// ──────────────────────────────────
 	'Day4AskAboutHana': [
 		'u 하나는 항상 밝게 웃잖아? 근데 그게 전부가 아니야.',
 		'u 중학교 때 왕따를 당한 적이 있어. 그래서... 밝은 척하는 거야.',
@@ -127,6 +170,9 @@ monogatari.script ({
 		'jump Day4Lunch'
 	],
 
+	// ──────────────────────────────────
+	//  Day4AskAboutAll — 셋 관계 질문
+	// ──────────────────────────────────
 	'Day4AskAboutAll': [
 		'u 우리 셋은... 특별했어. 서로 다른 결핍을 가진 세 사람이었지.',
 		'u 소라는 외로움, 하나는 불안, 나는... 음, 방향 상실?',
@@ -143,7 +189,9 @@ monogatari.script ({
 		'jump Day4Lunch'
 	],
 
-	// ---- DAY 4 LUNCH: 수영장 ----
+	// ──────────────────────────────────
+	//  Day4Lunch — 수영장 비밀 장소
+	// ──────────────────────────────────
 	'Day4Lunch': [
 		'show scene swimming_pool with fadeIn',
 		'유우가 데려간 곳은 학교 수영장 뒤편의 작은 공간.',
@@ -175,7 +223,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- DAY 4 EVENING: 유우의 조언 + 최종 분기 ----
+	// ──────────────────────────────────
+	//  Day4Evening — 유우 조언 + 최종 선택
+	// ──────────────────────────────────
 	'Day4Evening': [
 		...fadeScene('busstop_evening'),
 		'하교 시간. 유우가 버스 정류장까지 함께 걸어준다.',

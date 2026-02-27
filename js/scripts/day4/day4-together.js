@@ -1,8 +1,26 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 4 — Together 오후 (셋이서 유우 재회)
+ *  파일: day4-together.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day4TogetherAfternoon : 셋이서 유우 만남 → Day4Evening
+ *
+ *  흐름:
+ *    Day4Lunch [cross-file] → Day4TogetherAfternoon → Day4Evening [cross-file]
+ *
+ *  의존:
+ *    - storage: (없음)
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 4 TOGETHER AFTERNOON ----
+	// ──────────────────────────────────
+	//  Day4TogetherAfternoon — 셋이서 유우 만남
+	// ──────────────────────────────────
 	'Day4TogetherAfternoon': [
 		'show scene auditorium_noon with fadeIn',
 		'오후, 소라, 하나와 함께 유우를 만나러 간다.',

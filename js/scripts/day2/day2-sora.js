@@ -1,8 +1,29 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 2 — 소라 루트 (축제 준비, 석양 이벤트)
+ *  파일: day2-sora.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day2WithSora    : 소라와 축제 준비 (sora +2)
+ *    - Day2SoraEvening : 소라 석양 이벤트
+ *
+ *  흐름:
+ *    Day2Morning [cross-file] → Day2WithSora → Day2Evening [cross-file]
+ *    Day2Evening [cross-file] → Day2SoraEvening → Day2End [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: sora_affection, hana_affection, day2_studied_together
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 2: With Sora (sora +2) ----
+	// ──────────────────────────────────
+	//  Day2WithSora — 소라와 축제 준비 (sora +2)
+	// ──────────────────────────────────
 	'Day2WithSora': [
 		'show scene classroom_day with fadeIn',
 		function () {
@@ -42,6 +63,9 @@ monogatari.script ({
 		'jump Day2Evening'
 	],
 
+	// ──────────────────────────────────
+	//  Day2SoraEvening — 소라 석양 이벤트
+	// ──────────────────────────────────
 	'Day2SoraEvening': [
 		'show scene classroom2_evening with fadeIn',
 		'show character s normal at center with fadeIn',

@@ -1,7 +1,32 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 3 — 공통 (축제 시작, 사진 발견, 메인 분기)
+ *  파일: day3-common.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day3Start          : 축제 당일 아침
+ *    - Day3PhotoDiscovery : 사진 복선 (unknown_interest ≥ 1)
+ *    - Day3MainBranch     : 호감도 기반 메인 분기
+ *    - Day3BothHigh       : 양쪽 호감 높음 → 3자 선택
+ *    - Day3Balanced       : 호감 균형 → Together 루트
+ *
+ *  흐름:
+ *    Day2End [cross-file] → Day3Start → (Photo) → Day3MainBranch
+ *    → Day3SoraRoute / Day3HanaRoute / Day3TogetherRoute [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: unknown_interest, sora_affection, hana_affection
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
+	// ──────────────────────────────────
+	//  Day3Start — 축제 당일 아침
+	// ──────────────────────────────────
 	'Day3Start': [
 		'show scene school_grounds_early with fadeIn',
 		'centered ── 3일차: 축제, 그리고... ──',
@@ -22,6 +47,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  Day3PhotoDiscovery — 사진 복선
+	// ──────────────────────────────────
 	'Day3PhotoDiscovery': [
 		'show scene auditorium_day with fadeIn',
 		'축제 게시판 앞을 지나가는데, 오래된 사진 한 장이 눈에 들어온다.',
@@ -38,6 +66,9 @@ monogatari.script ({
 		'jump Day3MainBranch'
 	],
 
+	// ──────────────────────────────────
+	//  Day3MainBranch — 호감도 기반 메인 분기
+	// ──────────────────────────────────
 	'Day3MainBranch': [
 		'show scene auditorium_day with fadeIn',
 		{
@@ -63,7 +94,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- Hidden Ending Path: Both affections high ----
+	// ──────────────────────────────────
+	//  Day3BothHigh — 양쪽 호감 높음 → 3자 선택
+	// ──────────────────────────────────
 	'Day3BothHigh': [
 		'show scene classroom4_morning with slideRight',
 		'교실에 들어서자 소라와 하나가 동시에 다가온다.',
@@ -95,7 +128,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- Day 3: Balanced (equal affection) ----
+	// ──────────────────────────────────
+	//  Day3Balanced — 호감 균형 → Together 루트
+	// ──────────────────────────────────
 	'Day3Balanced': [
 		'show scene classroom4_morning with fadeIn',
 		'교실에 들어서자 소라와 하나가 나란히 앉아 이야기를 나누고 있다.',

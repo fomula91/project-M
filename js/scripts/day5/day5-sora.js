@@ -1,8 +1,32 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 5 — 소라 루트 (과학실 재고백, 트루러브/온기 엔딩)
+ *  파일: day5-sora.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day5SoraRoute   : 5일차 시작 → 과학실
+ *    - Day5SoraScience : 소라 재고백 이벤트
+ *    - Day5SoraConfess2: 재고백 선택
+ *    - SoraTrueLoveEnd : 소라 트루 러브 엔딩 → end
+ *    - SoraWarmEnd     : 소라 온기 엔딩 → end
+ *
+ *  흐름:
+ *    Day4Evening [cross-file] → Day5SoraRoute → Day5SoraScience
+ *    → Day5SoraConfess2 → SoraTrueLoveEnd (end) / SoraWarmEnd (end)
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: sora_affection
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 5 SORA ROUTE ----
+	// ──────────────────────────────────
+	//  Day5SoraRoute — 5일차 시작
+	// ──────────────────────────────────
 	'Day5SoraRoute': [
 		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 5일차: 다시 전하는 마음 ──',
@@ -16,6 +40,9 @@ monogatari.script ({
 		'jump Day5SoraScience'
 	],
 
+	// ──────────────────────────────────
+	//  Day5SoraScience — 소라 재고백 이벤트
+	// ──────────────────────────────────
 	'Day5SoraScience': [
 		'show scene science_lab_06 with fadeIn',
 		'stop music fade 2',
@@ -49,7 +76,9 @@ monogatari.script ({
 		'jump Day5SoraConfess2'
 	],
 
-	// ---- DAY 5 SORA: 재고백 선택 ----
+	// ──────────────────────────────────
+	//  Day5SoraConfess2 — 재고백 선택
+	// ──────────────────────────────────
 	'Day5SoraConfess2': [
 		'show scene science_lab_08 with fadeIn',
 		'show character s worried at center with fadeIn',
@@ -69,7 +98,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- SORA TRUE LOVE ENDING ----
+	// ──────────────────────────────────
+	//  SoraTrueLoveEnd — 소라 트루 러브 엔딩
+	// ──────────────────────────────────
 	'SoraTrueLoveEnd': [
 		function () {
 			this.storage({ sora_affection: this.storage('sora_affection') + 3 });
@@ -97,7 +128,9 @@ monogatari.script ({
 		'end'
 	],
 
-	// ---- SORA WARM ENDING ----
+	// ──────────────────────────────────
+	//  SoraWarmEnd — 소라 온기 엔딩
+	// ──────────────────────────────────
 	'SoraWarmEnd': [
 		function () {
 			this.storage({ sora_affection: this.storage('sora_affection') + 2 });

@@ -1,8 +1,29 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 2 — 하나 루트 (축제 준비, 석양 이벤트)
+ *  파일: day2-hana.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day2WithHana    : 하나와 축제 준비 (hana +2)
+ *    - Day2HanaEvening : 하나 석양 이벤트
+ *
+ *  흐름:
+ *    Day2Morning [cross-file] → Day2WithHana → Day2Evening [cross-file]
+ *    Day2Evening [cross-file] → Day2HanaEvening → Day2End [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: hana_affection, sora_affection
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 2: With Hana (hana +2) ----
+	// ──────────────────────────────────
+	//  Day2WithHana — 하나와 축제 준비 (hana +2)
+	// ──────────────────────────────────
 	'Day2WithHana': [
 		'hide character p',
 		'show scene classroom_day with slideRight',
@@ -43,6 +64,9 @@ monogatari.script ({
 		'jump Day2Evening'
 	],
 
+	// ──────────────────────────────────
+	//  Day2HanaEvening — 하나 석양 이벤트
+	// ──────────────────────────────────
 	'Day2HanaEvening': [
 		'show scene school_grounds_evening with fadeIn',
 		'show character h happy at center with fadeIn',

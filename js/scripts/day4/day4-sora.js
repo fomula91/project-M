@@ -1,8 +1,26 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 4 — 소라 오후 (유우 이야기 후 소라와 대화)
+ *  파일: day4-sora.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day4SoraAfternoon : 소라와 과거 이야기 → Day4Evening
+ *
+ *  흐름:
+ *    Day4Lunch [cross-file] → Day4SoraAfternoon → Day4Evening [cross-file]
+ *
+ *  의존:
+ *    - storage: (없음)
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- DAY 4 SORA AFTERNOON ----
+	// ──────────────────────────────────
+	//  Day4SoraAfternoon — 소라와 과거 이야기
+	// ──────────────────────────────────
 	'Day4SoraAfternoon': [
 		'show scene classroom3_afternoon with fadeIn',
 		'오후, 소라를 찾아 교실로 간다.',

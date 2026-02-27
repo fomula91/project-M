@@ -1,8 +1,31 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 3 — Together 루트 (셋이서 축제, 히든/우정 엔딩)
+ *  파일: day3-together.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day3TogetherRoute  : 셋이서 축제
+ *    - Day3TogetherClimax : 옥상 석양
+ *    - HiddenEnding       : 히든 엔딩 (벚꽃의 약속) → end
+ *    - FriendshipEnding   : 우정 엔딩 → Day4Start
+ *
+ *  흐름:
+ *    Day3BothHigh / Day3Balanced [cross-file] → Day3TogetherRoute
+ *    → Day3TogetherClimax → HiddenEnding (end) / FriendshipEnding → Day4Start [cross-file]
+ *
+ *  의존:
+ *    - fadeJump()  (helpers/transitions.js)
+ *    - storage: chose_both, sora_affection, hana_affection, day3_ending_type
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- Day 3: Together Route (friendship or hidden) ----
+	// ──────────────────────────────────
+	//  Day3TogetherRoute — 셋이서 축제
+	// ──────────────────────────────────
 	'Day3TogetherRoute': [
 		'hide character p',
 		'show scene auditorium_noon with slideRight',
@@ -29,6 +52,9 @@ monogatari.script ({
 		'jump Day3TogetherClimax'
 	],
 
+	// ──────────────────────────────────
+	//  Day3TogetherClimax — 옥상 석양
+	// ──────────────────────────────────
 	'Day3TogetherClimax': [
 		'show scene auditorium_evening with fadeIn',
 		'stop music fade 2',
@@ -43,7 +69,7 @@ monogatari.script ({
 		'h {{player.name}}... 우리 앞으로도 계속 이렇게 지내자!',
 		's 네... 저도 같은 마음이에요.',
 		'hide character p with fadeOut',
-		{	
+		{
 			'Conditional': {
 				'Condition': function () {
 					var sora = this.storage ('sora_affection');
@@ -60,7 +86,9 @@ monogatari.script ({
 		}
 	],
 
-	// ---- HIDDEN ENDING: Sakura Promise ----
+	// ──────────────────────────────────
+	//  HiddenEnding — 히든 엔딩 (벚꽃의 약속)
+	// ──────────────────────────────────
 	'HiddenEnding': [
 		'show scene auditorium_sunrise with fadeIn',
 		'갑자기 바람이 불며 벚꽃잎이 옥상 위로 솟구친다.',
@@ -96,7 +124,9 @@ monogatari.script ({
 		'end'
 	],
 
-	// ---- FRIENDSHIP ENDING → Day 4 연결 ----
+	// ──────────────────────────────────
+	//  FriendshipEnding — 우정 엔딩 → Day4Start
+	// ──────────────────────────────────
 	'FriendshipEnding': [
 		'show scene school_grounds_evening with fadeIn',
 		'show character s happy',

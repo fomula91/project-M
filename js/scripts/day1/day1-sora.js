@@ -1,8 +1,29 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 1 — 소라 루트 (서류 돕기, 도서관)
+ *  파일: day1-sora.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - HelpSora : 소라 서류 돕기 (sora +2)
+ *    - Library  : 도서관 점심 (sora +1)
+ *
+ *  흐름:
+ *    MorningEvent [cross-file] → HelpSora → LunchTime [cross-file]
+ *    LunchTimeChoice [cross-file] → Library → Day1Afternoon [cross-file]
+ *
+ *  의존:
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: sora_affection, helped_sora, chose_library
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- HELP SORA (sora +2) ----
+	// ──────────────────────────────────
+	//  HelpSora — 소라 서류 돕기 (sora +2)
+	// ──────────────────────────────────
 	'HelpSora': [
 		'hide character h with fadeOut',
 		'hide character p',
@@ -32,7 +53,9 @@ monogatari.script ({
 		'jump LunchTime'
 	],
 
-	// ---- LIBRARY (sora +1) ----
+	// ──────────────────────────────────
+	//  Library — 도서관 점심 (sora +1)
+	// ──────────────────────────────────
 	'Library': [
 		'show scene classroom3_morning with slideLeft',
 		function () {

@@ -1,8 +1,32 @@
 /* global monogatari */
+/**
+ * ═══════════════════════════════════════════
+ *  Day 3 — 소라 루트 (축제 데이트, 고백, 친구 엔딩)
+ *  파일: day3-sora.js
+ * ═══════════════════════════════════════════
+ *
+ *  라벨 목록:
+ *    - Day3SoraRoute  : 소라와 축제 (sora +1)
+ *    - Day3SoraClimax : 석양 고백 이벤트
+ *    - SoraConfess    : 소라 엔딩 (sora +2) → end
+ *    - SoraFriendEnd  : 친구 엔딩 → Day4Start
+ *
+ *  흐름:
+ *    Day3MainBranch [cross-file] → Day3SoraRoute → Day3SoraClimax
+ *    → SoraConfess (end) / SoraFriendEnd → Day4Start [cross-file]
+ *
+ *  의존:
+ *    - fadeJump()            (helpers/transitions.js)
+ *    - AffinityHint.show()  (affinity-hint.js)
+ *    - storage: sora_affection, confessed, day3_ending_type
+ * ═══════════════════════════════════════════
+ */
 
 monogatari.script ({
 
-	// ---- Day 3: Sora Route ----
+	// ──────────────────────────────────
+	//  Day3SoraRoute — 소라와 축제 (sora +1)
+	// ──────────────────────────────────
 	'Day3SoraRoute': [
 		'show scene classroom3_afternoon with slideLeft',
 		function () {
@@ -31,6 +55,9 @@ monogatari.script ({
 		'jump Day3SoraClimax'
 	],
 
+	// ──────────────────────────────────
+	//  Day3SoraClimax — 석양 고백 이벤트
+	// ──────────────────────────────────
 	'Day3SoraClimax': [
 		'show scene school_grounds_evening with fadeIn',
 		'stop music fade 2',
@@ -61,6 +88,9 @@ monogatari.script ({
 		}
 	],
 
+	// ──────────────────────────────────
+	//  SoraConfess — 소라 엔딩 (sora +2)
+	// ──────────────────────────────────
 	'SoraConfess': [
 		function () {
 			this.storage ({
@@ -91,6 +121,9 @@ monogatari.script ({
 		'end'
 	],
 
+	// ──────────────────────────────────
+	//  SoraFriendEnd — 친구 엔딩 → Day4Start
+	// ──────────────────────────────────
 	'SoraFriendEnd': [
 		'show character p normal at right',
 		'show character s worried',
