@@ -56,7 +56,6 @@ monogatari.script ({
 		'조용하지만 단정한 인상의 소녀가 차분하게 인사한다.',
 		'show character h happy at right with slideInRight',
 		'wait 400',
-		'show character h happy at right with approachCloser',
 		'h 앗! 새로운 친구다! 안녕안녕~! 나는 하나!',
 		'h 우리 같은 반이네! 앞으로 잘 지내자~!',
 		'밝은 미소로 다가오는 활발한 소녀.',
