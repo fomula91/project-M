@@ -4,7 +4,7 @@ monogatari.script ({
 
 	// ---- START: Name Input ----
 	'Start': [
-		'play music sunny-day',
+		'play music sunny-day loop',
 		'show scene auditorium_sunrise with fadeIn',
 		'centered 사쿠라 학원에 오신 것을 환영합니다.',
 		{
@@ -99,16 +99,47 @@ monogatari.script ({
 		}
 	],
 
-	// ---- LUNCH TIME: Second Choice ----
+	// ---- LUNCH TIME: Reactive dialogue based on morning choice ----
 	'LunchTime': [
 		'show scene classroom_day with fadeIn',
 		'점심시간이 되었다.',
 		'오늘은 어디서 점심을 먹을까 고민하는데...',
+		{
+			'Conditional': {
+				'Condition': function () {
+					if (this.storage ('helped_sora') === true) {
+						return 'SoraWarm';
+					} else {
+						return 'HanaWarm';
+					}
+				},
+				'SoraWarm': 'jump LunchTimeSoraWarm',
+				'HanaWarm': 'jump LunchTimeHanaWarm'
+			}
+		}
+	],
+
+	'LunchTimeSoraWarm': [
+		'show character s happy at left with fadeIn',
+		's {{player.name}} 씨! 아까 도와주신 덕분에 서류 정리가 빨리 끝났어요.',
+		's 혹시 시간 되시면... 도서관에서 같이 점심 드실래요?',
+		's 조용하고 좋은 자리가 있어요. 감사 인사도 제대로 드리고 싶어서...',
+		'show character h happy at right with fadeIn',
+		'h {{player.name}}~! 옥상에서 같이 밥 먹자! 바람도 시원하고 좋아!',
+		'jump LunchTimeChoice'
+	],
+
+	'LunchTimeHanaWarm': [
 		'show character s normal at left with fadeIn',
 		's {{player.name}} 씨, 혹시 시간 되시면... 도서관에서 같이 점심 드실래요?',
 		's 조용하고 좋은 자리가 있어요.',
-		'show character h happy at right with fadeIn',
-		'h {{player.name}}~! 옥상에서 같이 밥 먹자! 바람도 시원하고 좋아!',
+		'show character h laugh at right with fadeIn',
+		'h {{player.name}}~! 아까 매점 탐험 재밌었지? 옥상에서 같이 밥 먹자!',
+		'h 바람도 시원하고, 아까 산 빵도 같이 먹자~!',
+		'jump LunchTimeChoice'
+	],
+
+	'LunchTimeChoice': [
 		'show character p normal at center with fadeIn',
 		{
 			'Choice': {
