@@ -1,0 +1,88 @@
+/**
+ * =============================================================================
+ * Character Position System
+ * 캐릭터 위치 전용 CSS — 기본 + 커스텀 클래스
+ * =============================================================================
+**/
+
+/**
+ * ===========================
+ * Base Character Styles
+ * ===========================
+**/
+
+[data-screen="game"] [data-character] {
+	transition: all 0.5s ease;
+	bottom: 0 !important;
+	height: 70vh;
+}
+
+/**
+ * ===========================
+ * Built-in Position Classes
+ * (Monogatari 내장: left, right, center)
+ * ===========================
+**/
+
+[data-screen="game"] [data-character].left {
+	left: 12% !important;
+}
+
+[data-screen="game"] [data-character].right {
+	right: 12% !important;
+}
+
+[data-screen="game"] [data-character].center {
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+}
+
+/**
+ * ===========================
+ * Custom Position Classes
+ * 사용법: show character s normal at far-left with fadeIn
+ * ===========================
+**/
+
+[data-screen="game"] [data-character].far-left {
+	left: 2% !important;
+}
+
+[data-screen="game"] [data-character].far-right {
+	right: 2% !important;
+}
+
+[data-screen="game"] [data-character].close-left {
+	left: 25% !important;
+}
+
+[data-screen="game"] [data-character].close-right {
+	right: 25% !important;
+}
+
+/**
+ * ===========================
+ * Multi-Character Overlap Prevention
+ * ===========================
+**/
+
+game-screen:has([data-character].left):has([data-character].right) [data-character] {
+	max-width: 20%;
+	height: auto !important;
+	max-height: 70vh;
+	bottom: 18vh !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].left {
+	left: 2% !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].center {
+	left: 37% !important;
+	right: auto !important;
+	transform: none !important;
+}
+
+game-screen:has([data-character].left):has([data-character].right) [data-character].right {
+	right: 2% !important;
+}

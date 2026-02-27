@@ -409,48 +409,6 @@ game-screen:has([data-component="choice-container"])::after {
 	padding: 30px 50px;
 }
 
-/* Character Images */
-[data-screen="game"] [data-character] {
-	transition: all 0.5s ease;
-	bottom: 0 !important;
-	height: 70vh;
-}
-
-[data-screen="game"] [data-character].left {
-	left: 12% !important;
-}
-
-[data-screen="game"] [data-character].right {
-	right: 12% !important;
-}
-
-[data-screen="game"] [data-character].center {
-	left: 50% !important;
-	transform: translateX(-50%) !important;
-}
-
-/* Prevent character overlap in multi-character scenes */
-game-screen:has([data-character].left):has([data-character].right) [data-character] {
-	max-width: 20%;
-	height: auto !important;
-	max-height: 70vh;
-	bottom: 18vh !important;
-}
-
-game-screen:has([data-character].left):has([data-character].right) [data-character].left {
-	left: 2% !important;
-}
-
-game-screen:has([data-character].left):has([data-character].right) [data-character].center {
-	left: 37% !important;
-	right: auto !important;
-	transform: none !important;
-}
-
-game-screen:has([data-character].left):has([data-character].right) [data-character].right {
-	right: 2% !important;
-}
-
 [data-screen="game"] [data-image] {
 	transition: all 0.5s ease;
 }
@@ -635,20 +593,6 @@ loading-screen {
 
 /** Mobile Devices (600px and below) **/
 @media screen and (max-width: 37.5em) {
-	/* Character Size & Position */
-	[data-screen="game"] [data-character] {
-		height: min(50vh, 65vw);
-		bottom: 5vh !important;
-	}
-
-	/* Character Positions */
-	[data-screen="game"] [data-character].left {
-		left: 2% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 2% !important;
-	}
-
 	/* Game Title */
 	[data-screen="main"] [data-content="title"] {
 		font-size: 2.2em;
@@ -707,17 +651,6 @@ loading-screen {
 
 /** Small Mobile Devices (360px and below) **/
 @media screen and (max-width: 22.5em) {
-	[data-screen="game"] [data-character] {
-		height: min(45vh, 60vw);
-		bottom: 8vh !important;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 0% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 0% !important;
-	}
-
 	[data-screen="main"] [data-content="title"] {
 		font-size: 1.8em;
 	}
@@ -753,16 +686,6 @@ loading-screen {
 
 /** Medium Devices, Tablets (992px)**/
 @media screen and (min-width: 62em) {
-	[data-screen="game"] [data-character] {
-		height: 70vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 15% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 15% !important;
-	}
-
 	[data-component="text-box"] {
 		max-width: 85%;
 		margin: 0 auto;
@@ -771,83 +694,8 @@ loading-screen {
 
 /** HD Screen, Large Devices, Wide Screens, Desktop (1200px) **/
 @media screen and (min-width: 75em) {
-	[data-screen="game"] [data-character] {
-		height: 75vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 18% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 18% !important;
-	}
-
 	[data-component="text-box"] {
 		max-width: 80%;
-	}
-}
-
-/** Full HD Screen **/
-@media screen and (min-width: 120em) {
-	[data-screen="game"] [data-character] {
-		height: 80vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 22% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 22% !important;
-	}
-}
-
-/** Retina Screen **/
-@media screen and (min-width: 160em) {
-	[data-screen="game"] [data-character] {
-		height: 80vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 25% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 25% !important;
-	}
-}
-
-/** 4k Screens **/
-@media screen and (min-width: 240em) {
-	[data-screen="game"] [data-character] {
-		height: 85vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 28% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 28% !important;
-	}
-}
-
-/** 5k Screens **/
-@media screen and (min-width: 312.5em) {
-	[data-screen="game"] [data-character] {
-		height: 85vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 30% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 30% !important;
-	}
-}
-
-/** 8k Screens **/
-@media screen and (min-width: 500em) {
-	[data-screen="game"] [data-character] {
-		height: 85vh;
-	}
-	[data-screen="game"] [data-character].left {
-		left: 35% !important;
-	}
-	[data-screen="game"] [data-character].right {
-		right: 35% !important;
 	}
 }
 
@@ -990,28 +838,6 @@ loading-screen {
 
 /**
  * ===========================
- * Landscape Mode - Mobile
- * ===========================
-**/
-
-/** Landscape on short viewports (phones) **/
-@media screen and (orientation: landscape) and (max-height: 500px) {
-	[data-screen="game"] [data-character] {
-		height: 50vh;
-		bottom: 18vh !important;
-	}
-}
-
-/** Landscape on very short viewports (small phones) **/
-@media screen and (orientation: landscape) and (max-height: 380px) {
-	[data-screen="game"] [data-character] {
-		height: 45vh;
-		bottom: 22vh !important;
-	}
-}
-
-/**
- * ===========================
  * Mobile Portrait - Force Landscape
  * ===========================
 **/
@@ -1031,11 +857,6 @@ loading-screen {
 		position: absolute;
 		top: 100%;
 		left: 0;
-	}
-
-	[data-screen="game"] [data-character] {
-		height: 50vw !important;
-		bottom: 2vw !important;
 	}
 
 	[data-component="text-box"] {
