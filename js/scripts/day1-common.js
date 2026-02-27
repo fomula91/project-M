@@ -4,6 +4,7 @@ monogatari.script ({
 
 	// ---- START: Name Input ----
 	'Start': [
+		'play music sunny-day',
 		'show scene auditorium_sunrise with fadeIn',
 		'centered 사쿠라 학원에 오신 것을 환영합니다.',
 		{
