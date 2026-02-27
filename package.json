@@ -39,6 +39,7 @@
     "afterSign": "engine/electron/notarize.js"
   },
   "scripts": {
+    "dev": "http-server . -p $PORT",
     "serve": "yarn http-server . -o -p 3000",
     "start": "yarn electron . --enable-logging",
     "build": "yarn electron-builder -mwl",
