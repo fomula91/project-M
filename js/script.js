@@ -32,7 +32,7 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-
+	'acoustic-chill': 'acoustic-chill.mp3'
 });
 
 // Define the voice files used in the game.

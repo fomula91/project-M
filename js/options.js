@@ -38,7 +38,7 @@ monogatari.settings({
 	'LanguageSelectionScreen': false,
 
 	// Music for the Main Menu.
-	'MainScreenMusic': '',
+	'MainScreenMusic': 'acoustic-chill',
 
 	// Prefix for the Save Slots in Local Storage.
 	'SaveLabel': 'Save',
