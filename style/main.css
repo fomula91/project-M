@@ -297,21 +297,32 @@ game-screen:has([data-component="choice-container"])::after {
 }
 
 [data-component="choice-container"] button {
-	background: linear-gradient(135deg, rgba(244, 143, 177, 0.85) 0%, rgba(206, 147, 216, 0.85) 100%);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	/* 파스텔 벚꽃 그라데이션 + 글래스 */
+	background: linear-gradient(
+		135deg,
+		rgba(255, 183, 197, 0.55) 0%,
+		rgba(255, 218, 225, 0.45) 50%,
+		rgba(248, 187, 208, 0.55) 100%
+	);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	/* 벚꽃잎 같은 부드러운 보더 */
+	border: 1px solid rgba(255, 210, 220, 0.5);
 	color: #fff;
-	padding: 14px 50px;
-	border-radius: 30px;
+	padding: 16px 48px;
+	border-radius: 28px;
 	font-size: 1.05em;
 	font-weight: 500;
-	letter-spacing: 0.05em;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	letter-spacing: 0.06em;
+	text-shadow: 0 1px 3px rgba(180, 80, 100, 0.3);
 	min-width: 280px;
-	transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	animation: choiceFadeIn 0.5s ease-out backwards;
-	box-shadow: 0 0 20px rgba(244, 143, 177, 0.3), 0 0 40px rgba(206, 147, 216, 0.15);
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	animation: choiceFadeIn 0.6s ease-out backwards;
+	/* 은은한 벚꽃 글로우 */
+	box-shadow:
+		0 4px 20px rgba(255, 183, 197, 0.25),
+		0 0 40px rgba(255, 218, 225, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 [data-component="choice-container"] button:nth-child(1) {
@@ -327,17 +338,23 @@ game-screen:has([data-component="choice-container"])::after {
 }
 
 [data-component="choice-container"] button:hover {
-	background: linear-gradient(135deg, rgba(244, 143, 177, 1) 0%, rgba(206, 147, 216, 1) 100%);
-	transform: translateY(-4px) scale(1.03);
+	background: linear-gradient(
+		135deg,
+		rgba(255, 183, 197, 0.8) 0%,
+		rgba(255, 218, 225, 0.7) 50%,
+		rgba(248, 187, 208, 0.8) 100%
+	);
+	transform: translateY(-3px) scale(1.02);
 	box-shadow:
-		0 10px 30px rgba(244, 143, 177, 0.5),
-		0 0 25px rgba(206, 147, 216, 0.4),
-		0 0 50px rgba(244, 143, 177, 0.2);
-	border-color: rgba(255, 255, 255, 0.6);
+		0 8px 32px rgba(255, 183, 197, 0.45),
+		0 0 20px rgba(255, 210, 220, 0.35),
+		0 0 60px rgba(255, 183, 197, 0.15),
+		inset 0 1px 0 rgba(255, 255, 255, 0.3);
+	border-color: rgba(255, 230, 235, 0.7);
 }
 
 [data-component="choice-container"] button:active {
-	transform: translateY(-1px) scale(1.01);
+	transform: translateY(-1px) scale(1.0);
 }
 
 /* Text Box */
@@ -606,11 +623,13 @@ loading-screen {
 @keyframes choiceFadeIn {
 	from {
 		opacity: 0;
-		transform: translateY(25px) scale(0.95);
+		transform: translateY(20px) scale(0.96);
+		filter: blur(4px);
 	}
 	to {
 		opacity: 1;
 		transform: translateY(0) scale(1);
+		filter: blur(0);
 	}
 }
 
@@ -829,6 +848,143 @@ loading-screen {
 	}
 	[data-screen="game"] [data-character].right {
 		right: 35% !important;
+	}
+}
+
+/**
+ * ===========================
+ * Choice Statistics Overlay
+ * ===========================
+**/
+
+/* Active stats state: disable hover transforms */
+.choice-stats-active [data-choice] {
+	pointer-events: none;
+	cursor: default;
+}
+
+.choice-stats-active [data-choice]:hover {
+	transform: none !important;
+	box-shadow:
+		0 4px 20px rgba(255, 183, 197, 0.25),
+		0 0 40px rgba(255, 218, 225, 0.1) !important;
+}
+
+/* Percentage bar inside button */
+.choice-stats-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 30px;
+	transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* Selected choice: sakura pink glow */
+.choice-stats-selected .choice-stats-bar {
+	background: linear-gradient(135deg, rgba(255, 183, 197, 0.5) 0%, rgba(255, 218, 225, 0.4) 50%, rgba(248, 187, 208, 0.5) 100%);
+}
+
+/* Unselected choice: dim bar */
+.choice-stats-unselected .choice-stats-bar {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+/* Selected button styling */
+.choice-stats-selected {
+	border-color: rgba(255, 210, 220, 0.7) !important;
+	box-shadow:
+		0 0 25px rgba(255, 183, 197, 0.45),
+		0 0 50px rgba(255, 218, 225, 0.2) !important;
+}
+
+/* Unselected button styling */
+.choice-stats-unselected {
+	opacity: 0.6;
+	transform: scale(0.97);
+	background: linear-gradient(135deg, rgba(255, 183, 197, 0.35) 0%, rgba(255, 218, 225, 0.3) 50%, rgba(248, 187, 208, 0.35) 100%) !important;
+}
+
+/* Percentage label */
+.choice-stats-percent {
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: 700;
+	font-size: 1.1em;
+	color: #fff;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	opacity: 0;
+	animation: statsFadeIn 0.4s ease-out 0.6s forwards;
+}
+
+@keyframes statsFadeIn {
+	from { opacity: 0; transform: translateY(-50%) translateX(8px); }
+	to { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+/* Mobile: adjust percent label position */
+@media screen and (max-width: 37.5em) {
+	.choice-stats-percent {
+		right: 12px;
+		font-size: 0.95em;
+	}
+}
+
+/**
+ * ===========================
+ * Choice Statistics Preview
+ * ===========================
+**/
+
+/* Preview state: keep buttons clickable */
+.choice-stats-preview [data-choice] {
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+/* Preview percentage bar */
+.choice-stats-preview-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 30px;
+	background: rgba(255, 210, 220, 0.15);
+	transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	z-index: 0;
+	pointer-events: none;
+}
+
+/* Preview percentage label */
+.choice-stats-preview-percent {
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: 500;
+	font-size: 0.9em;
+	color: #fff;
+	text-shadow: 0 1px 4px rgba(180, 80, 100, 0.4);
+	z-index: 1;
+	opacity: 0;
+	animation: previewStatsFadeIn 0.4s ease-out 0.6s forwards;
+}
+
+@keyframes previewStatsFadeIn {
+	from { opacity: 0; transform: translateY(-50%) translateX(8px); }
+	to { opacity: 0.6; transform: translateY(-50%) translateX(0); }
+}
+
+/* Mobile: adjust preview label */
+@media screen and (max-width: 37.5em) {
+	.choice-stats-preview-percent {
+		right: 12px;
+		font-size: 0.8em;
 	}
 }
 

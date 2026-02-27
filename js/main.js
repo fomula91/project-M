@@ -57,6 +57,8 @@ $_ready (() => {
 
 	monogatari.init ('#monogatari').then (() => {
 		// 3. Inside the init function:
-
+		ChoiceStats.init();
+		ChoiceStats.installHook();
+		ChoiceStats.installPreviewObserver();
 	});
 });
