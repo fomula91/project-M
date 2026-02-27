@@ -80,7 +80,21 @@ monogatari.assets ('scenes', {
 	'auditorium_afternoon': 'Auditorium_Outside_Afternoon.jpg',
 	'auditorium_evening': 'Auditorium_Outside_Evening.jpg',
 	'busstop_evening': 'bus stop evening.jpg',
-	'busstop_night': 'bus stop night.jpg'
+	'busstop_night': 'bus stop night.jpg',
+	'busstop_morning': 'bus stop morning.jpg',
+	'busstop_noon': 'bus stop noon.jpg',
+	'science_lab_01': 'school_science_lab_day01.jpg',
+	'science_lab_02': 'school_science_lab_day02.jpg',
+	'science_lab_03': 'school_science_lab_day03.jpg',
+	'science_lab_04': 'school_science_lab_day04.jpg',
+	'science_lab_05': 'school_science_lab_day05.jpg',
+	'science_lab_06': 'school_science_lab_day06.jpg',
+	'science_lab_07': 'school_science_lab_day07.jpg',
+	'science_lab_08': 'school_science_lab_day08.jpg',
+	'swimming_pool': 'school_swimming_pool.jpg',
+	'another_building_day': 'another_school_building_day.jpg',
+	'classroom_night': 'classroom_01_night.jpg',
+	'classroom3_evening': 'classroom_03_evening.jpg'
 });
 
 // Define the Characters
@@ -122,15 +136,16 @@ monogatari.characters ({
 			angry: 'hana_A202.png',
 			worried: 'hana_A203.png',
 			surprised: 'hana_A204.png',
-			yandere: 'hana_B199.png'
+			yandere: 'hana_B199.png',
+			shy: 'hana_A199.png'
 		}
 	},
 	'u': {
 		name: "???",
-		color: '#000000',
+		color: '#9370db',
 		directory: 'unknown',
 		sprites: {
-			normal: 'unknown_A100.png',
+			normal: 'unknown_B290.png',
 
 	}}
 });

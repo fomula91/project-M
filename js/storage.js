@@ -14,5 +14,9 @@ monogatari.storage ({
 	day2_studied_together: false,
 	// Day 3 variables
 	confessed: false,
-	chose_both: false
+	chose_both: false,
+	// Day 4~5 variables
+	unknown_interest: 0,
+	met_unknown: false,
+	day3_ending_type: ''
 });

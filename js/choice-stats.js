@@ -15,9 +15,13 @@ const ChoiceStats = (function () {
 		'MorningEvent': true,
 		'LunchTime': true,
 		'Day2Morning': true,
+		'Day2ScienceLab': true,
 		'Day3BothHigh': true,
 		'Day3SoraClimax': true,
-		'Day3HanaClimax': true
+		'Day3HanaClimax': true,
+		'Day4Evening': true,
+		'Day5SoraConfess2': true,
+		'Day5HanaConfess2': true
 	};
 
 	let isReplayingClick = false;
