@@ -9,6 +9,7 @@ monogatari.script ({
 			this.storage ({
 				hana_affection: this.storage ('hana_affection') + 1
 			});
+			AffinityHint.show ('hana');
 		},
 		'show character h laugh at center with fadeIn',
 		'하나와 함께 축제를 돌아본다.',
@@ -67,6 +68,7 @@ monogatari.script ({
 				hana_affection: this.storage ('hana_affection') + 2,
 				confessed: true
 			});
+			AffinityHint.show ('hana');
 		},
 		'show character p smile at left',
 		'p 하나, 나도... 너 좋아해.',

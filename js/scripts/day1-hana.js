@@ -12,6 +12,7 @@ monogatari.script ({
 				hana_affection: this.storage ('hana_affection') + 2,
 				helped_sora: false
 			});
+			AffinityHint.show ('hana');
 		},
 		'show character h laugh at center with fadeIn',
 		'show character p smile at left with fadeIn',
@@ -38,6 +39,7 @@ monogatari.script ({
 				hana_affection: this.storage ('hana_affection') + 1,
 				chose_library: false
 			});
+			AffinityHint.show ('hana');
 		},
 		'show character h happy at center with fadeIn',
 		'show character p smile at left with fadeIn',

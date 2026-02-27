@@ -27,8 +27,34 @@ monogatari.script ({
 		}
 	],
 
-	// ---- Conditional greeting based on Day 1 ----
+	// ---- Conditional greeting based on Day 1 (with affection-reactive variants) ----
 	'Day2SoraGreeting': [
+		{
+			'Conditional': {
+				'Condition': function () {
+					if (this.storage ('sora_affection') >= 3) {
+						return 'High';
+					} else {
+						return 'Normal';
+					}
+				},
+				'High': 'jump Day2SoraGreetingHigh',
+				'Normal': 'jump Day2SoraGreetingNormal'
+			}
+		}
+	],
+
+	'Day2SoraGreetingHigh': [
+		'show character s happy at left with approachCloser',
+		's {{player.name}} 씨, 좋은 아침이에요!',
+		's 어제 도서관에서도 정말 즐거웠어요. 오늘도... 같이 있고 싶어요.',
+		'소라가 평소보다 한 걸음 더 가까이 다가와 인사한다.',
+		'show character h surprised at right with fadeIn',
+		'h 앗! 소라가 웃고 있어?! 너희 둘 대체 어제 뭐 한 거야~?!',
+		'jump Day2Morning'
+	],
+
+	'Day2SoraGreetingNormal': [
 		'show character s happy at left with fadeIn',
 		's {{player.name}} 씨, 좋은 아침이에요.',
 		's 어제 도와주셔서 정말 감사했어요. 오늘도 잘 부탁드려요.',
@@ -39,6 +65,32 @@ monogatari.script ({
 	],
 
 	'Day2HanaGreeting': [
+		{
+			'Conditional': {
+				'Condition': function () {
+					if (this.storage ('hana_affection') >= 3) {
+						return 'High';
+					} else {
+						return 'Normal';
+					}
+				},
+				'High': 'jump Day2HanaGreetingHigh',
+				'Normal': 'jump Day2HanaGreetingNormal'
+			}
+		}
+	],
+
+	'Day2HanaGreetingHigh': [
+		'show character h laugh at right with bounceIn',
+		'h {{player.name}}~! 좋은 아침! 어제 옥상 진짜 좋았지?!',
+		'h 오늘은 더 재밌는 데 가자! 나 이미 계획 다 세웠어~!',
+		'하나가 신나서 달려와 팔짱을 낀다.',
+		'show character s normal at left with fadeIn',
+		's ...좋은 아침이에요. 하나 씨가 유독 밝네요, 오늘.',
+		'jump Day2Morning'
+	],
+
+	'Day2HanaGreetingNormal': [
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 좋은 아침! 오늘도 재밌게 놀자!',
 		'h 어제 매점 빵 맛있었지? 오늘은 다른 맛 먹어보자!',
@@ -108,6 +160,9 @@ monogatari.script ({
 				sora_affection: this.storage ('sora_affection') + 1,
 				hana_affection: this.storage ('hana_affection') + 1
 			});
+			var sora = this.storage ('sora_affection');
+			var hana = this.storage ('hana_affection');
+			AffinityHint.show (sora >= hana ? 'sora' : 'hana');
 		},
 		'교문을 나서려는데, 소라와 하나가 나란히 서 있다.',
 		'show character s normal at left with fadeIn',

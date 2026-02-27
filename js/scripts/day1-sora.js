@@ -12,6 +12,7 @@ monogatari.script ({
 				sora_affection: this.storage ('sora_affection') + 2,
 				helped_sora: true
 			});
+			AffinityHint.show ('sora');
 		},
 		'show character s normal at center with fadeIn',
 		'show character p smile at right with fadeIn',
@@ -39,6 +40,7 @@ monogatari.script ({
 				sora_affection: this.storage ('sora_affection') + 1,
 				chose_library: true
 			});
+			AffinityHint.show ('sora');
 		},
 		'show character s normal at center with fadeIn',
 		'show character p smile at right with fadeIn',

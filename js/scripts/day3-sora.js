@@ -9,6 +9,7 @@ monogatari.script ({
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 1
 			});
+			AffinityHint.show ('sora');
 		},
 		'show character s normal at center with fadeIn',
 		'소라와 함께 축제를 돌아본다.',
@@ -64,6 +65,7 @@ monogatari.script ({
 				sora_affection: this.storage ('sora_affection') + 2,
 				confessed: true
 			});
+			AffinityHint.show ('sora');
 		},
 		'show character p smile at right',
 		'p 소라 씨, 저도... 같은 마음이에요.',
