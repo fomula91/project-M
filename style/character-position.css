@@ -24,9 +24,9 @@
 }
 
 /* DEBUG — 확인 후 삭제 */
-[data-screen="game"] [data-character] {
+/* [data-screen="game"] [data-character] {
 	outline: 3px dashed red;
 }
 [data-screen="game"] [data-character].center {
 	outline-color: lime;
-}
+} */
