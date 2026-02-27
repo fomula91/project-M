@@ -3,7 +3,7 @@
 monogatari.script ({
 
 	'Day2Start': [
-		'show scene school_front_early with fadeIn',
+		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 2일차: 가까워지는 마음 ──',
 		'show scene school_grounds_day with fadeIn',
 		'사쿠라 학원에서의 둘째 날.',

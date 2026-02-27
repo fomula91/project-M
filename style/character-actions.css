@@ -158,3 +158,28 @@
 		font-size: 1.1em;
 	}
 }
+
+/* =============================================================================
+ * Scene Transition Animations
+ * 씬 전환용 CSS 애니메이션
+ * ============================================================================= */
+
+/* fadeToBlack: 현재 씬 → 검정 (ease-in: 서서히 어두워지다 빠르게 완전 검정) */
+@keyframes fadeToBlack {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+.fadeToBlack {
+	animation-name: fadeToBlack;
+	animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+/* fadeFromBlack: 검정 → 새 씬 (ease-out + blur: 빠르게 나타나고 부드럽게 안착) */
+@keyframes fadeFromBlack {
+	from { opacity: 0; filter: blur(8px); }
+	to { opacity: 1; filter: blur(0); }
+}
+.fadeFromBlack {
+	animation-name: fadeFromBlack;
+	animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+}

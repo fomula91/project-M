@@ -64,12 +64,12 @@ monogatari.script ({
 			}
 		}},
 		'gallery unlock opening-unknown',
-		'jump SchoolArrival'
+		...fadeJump('SchoolArrival'),
 	],
 
 	// ---- SCHOOL ARRIVAL: Meet both characters ----
 	'SchoolArrival': [
-		'show scene classroom_day with slideRight',
+		'show scene classroom_day with fadeFromBlack duration 1500',
 		'교실에 들어서자, 두 사람이 눈에 들어온다.',
 		'show character s normal at left with slideInLeft',
 		's 안녕하세요. 저는 이 반의 학급위원 소라입니다.',
@@ -87,12 +87,12 @@ monogatari.script ({
 		'hide character s with fadeOutLeft',
 		'hide character h with fadeOutRight',
 		'wait 400',
-		'jump MorningEvent'
+		...fadeJump('MorningEvent'),
 	],
 
 	// ---- MORNING EVENT: First Choice ----
 	'MorningEvent': [
-		'show scene classroom2_morning with slideLeft',
+		'show scene classroom2_morning with fadeFromBlack duration 1500',
 		'쉬는 시간, 복도에서 소란이 들린다.',
 		'show character s worried at left with slideInLeft',
 		'wait 300',
@@ -188,6 +188,6 @@ monogatari.script ({
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
-		'jump Day2Start'
+		...fadeJump('Day2Start', { duration: 800 }),
 	]
 });
