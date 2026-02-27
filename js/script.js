@@ -27,7 +27,7 @@ monogatari.configuration ('credits', {
 
 // Define the images that will be available on your game's image gallery
 monogatari.assets ('gallery', {
-
+	'opening-unknown': 'opening.png',
 });
 
 // Define the music used in the game.
