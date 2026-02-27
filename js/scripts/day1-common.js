@@ -44,6 +44,26 @@ monogatari.script ({
 		'p 후아... 드디어 새 학기다. 어떤 만남이 기다리고 있을까.',
 		'hide character p with fadeOut',
 		'교문을 지나 교실로 향하는 길, 벚꽃 나무 아래에서 한 소녀가 서 있다.',
+		{'Function': {
+			'Apply': function () {
+				monogatari.distractionFree();
+			},
+			'Revert': function () {
+				monogatari.distractionFree();
+			}
+		}},
+		'show scene opening_cg with fadeIn',
+		'wait 5000',
+		'show scene school_front_day with fadeIn',
+		{'Function': {
+			'Apply': function () {
+				monogatari.distractionFree();
+			},
+			'Revert': function () {
+				monogatari.distractionFree();
+			}
+		}},
+		'gallery unlock opening-unknown',
 		'jump SchoolArrival'
 	],
 

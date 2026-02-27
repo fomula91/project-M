@@ -58,6 +58,7 @@ monogatari.assets ('images', {
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
+	'opening_cg': 'opening.png',
 	'school_front_early': 'early01.jpg',
 	'school_front_day': 'day01.jpg',
 	'school_grounds_early': 'early02.jpg',
