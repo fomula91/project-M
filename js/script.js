@@ -120,5 +120,13 @@ monogatari.characters ({
 			surprised: 'hana_A204.png',
 			yandere: 'hana_B199.png'
 		}
-	}
+	},
+	'u': {
+		name: "???",
+		color: '#000000',
+		directory: 'unknown',
+		sprites: {
+			normal: 'unknown_A100.png',
+
+	}}
 });
