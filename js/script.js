@@ -29,6 +29,7 @@ monogatari.configuration ('credits', {
 monogatari.assets ('gallery', {
 	'opening-unknown': 'opening.png',
 	'silhouette': 'silhouette.png',
+	'rooftop-hana': 'rooftop-hana.png',
 });
 
 // Define the music used in the game.
