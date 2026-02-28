@@ -173,6 +173,8 @@ monogatari.script ({
 		'u 그리고 지금... 그 자리에 네가 있는 거야.',
 		'p 저는 그런 대단한 사람이──',
 		'u 대단할 필요 없어. 그냥 곁에 있어주는 것만으로도 충분해.',
+		'hide character u with fadeOut',
+		'hide character p with fadeOut',
 		'jump Day4Lunch'
 	],
 
