@@ -26,7 +26,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'GoWithHana': [
 		'hide character s with fadeOut',
-		'hide character p',
+		'hide character p with fadeOut',
 		'show scene auditorium_day with slideRight',
 		function () {
 			this.storage ({
@@ -57,7 +57,7 @@ monogatari.script ({
 	//  Rooftop — 옥상 점심 (hana +1)
 	// ──────────────────────────────────
 	'Rooftop': [
-		'hide character p',
+		'hide character p with fadeOut',
 		'show scene auditorium_noon with slideRight',
 		function () {
 			this.storage ({

@@ -79,6 +79,7 @@ monogatari.script ({
 		'p 후아... 드디어 새 학기다. 어떤 만남이 기다리고 있을까.',
 		'hide character p with fadeOut',
 		'교문을 지나 교실로 향하는 길, 벚꽃 나무 아래에서 한 소녀가 서 있다.',
+		'말을 걸어볼까 싶었지만, 흩날리는 벚꽃잎에 시선을 빼앗긴다.',
 		'하늘을 가득 메운 벚꽃잎이 분홍빛 눈처럼 흩날린다.',
 		'잠깐 발을 멈추고 올려다본다. ...아름답다.',
 		{'Function': {
@@ -195,9 +196,7 @@ monogatari.script ({
 	'MorningEvent': [
 		'show scene classroom2_morning with fadeFromBlack duration 1500',
 		'쉬는 시간, 복도에서 소란이 들린다.',
-		'show character s worried at left with slideInLeft',
-		'wait 300',
-		'show character s worried at center with fadeIn',
+		'show character s worried at center with slideInLeft',
 		's 저기... 죄송한데, 이 서류들을 교무실까지 옮겨야 하는데...',
 		'소라가 잔뜩 쌓인 서류를 들고 힘겨워하고 있다.',
 		'show character s worried at left with fadeIn',
@@ -319,6 +318,7 @@ monogatari.script ({
 		'show character p normal at center with fadeIn',
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
+		'show scene bedroom_night with fadeIn',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
 		'이불 속에서 오늘 하루를 되짚는다.',
 		'벚꽃 나무 아래의 실루엣, 소라의 조용한 미소, 하나의 끝없는 활력.',

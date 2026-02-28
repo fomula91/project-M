@@ -26,7 +26,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'HelpSora': [
 		'hide character h with fadeOut',
-		'hide character p',
+		'hide character p with fadeOut',
 		'show scene classroom4_morning with fadeIn',
 		function () {
 			this.storage ({
@@ -48,7 +48,6 @@ monogatari.script ({
 		'p 아닙니다. 당연한 거죠.',
 		's ...고마워요. 사실 저는 사람들에게 부탁하는 게 좀 어려워서...',
 		's 앞으로도 잘 부탁드려요, {{player.name}} 씨.',
-		'show character s happy',
 		'소라가 작게 미소 짓는다. 왠지 가슴이 따뜻해진다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',

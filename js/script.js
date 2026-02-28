@@ -94,7 +94,8 @@ monogatari.assets ('scenes', {
 	'swimming_pool': 'school_swimming_pool.jpg',
 	'another_building_day': 'another_school_building_day.jpg',
 	'classroom_night': 'classroom_01_night.jpg',
-	'classroom3_evening': 'classroom_03_evening.jpg'
+	'classroom3_evening': 'classroom_03_evening.jpg',
+	'bedroom_night': 'classroom_01_night.jpg'
 });
 
 // Define the Characters
