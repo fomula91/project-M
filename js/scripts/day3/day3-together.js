@@ -27,7 +27,6 @@ monogatari.script ({
 	//  Day3TogetherRoute — 셋이서 축제
 	// ──────────────────────────────────
 	'Day3TogetherRoute': [
-		'hide character p',
 		'show scene auditorium_noon with slideRight',
 		function () {
 			this.storage ({
@@ -41,11 +40,14 @@ monogatari.script ({
 		'show character s surprised',
 		's 에... 저는 달콤한 건 좀...',
 		'h 에이~ 맛있으니까 먹어봐!',
+		'show character s fadeOut',
+		'show character h fadeOut',
 		'소라와 하나가 티격태격하는 모습에 나도 모르게 웃음이 난다.',
 		'show character p smile at center with fadeIn',
 		'p 하하, 너희 둘 정말 사이좋다.',
+		'show character s normal at left with fadeIn',
 		's 에...? 그, 그런가요?',
-		'show character h happy',
+		'show character h happy at right with fadeIn',
 		'h 어? 우리 사이 좋았어? 에헤~',
 		'셋이서 점술 카페, 전시실, 매점을 돌아다닌다.',
 		'정신없이 즐거운 시간이 흘러간다.',
@@ -57,8 +59,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day3TogetherClimax': [
 		'show scene auditorium_evening with fadeIn',
-		'stop music fade 2',
-		'wait 2000',
+		'stop music',
 		'play music harem-ending loop fade 2',
 		'show character s happy at left with fadeIn',
 		'show character h happy at right with fadeIn',
@@ -149,6 +150,7 @@ monogatari.script ({
 		function () {
 			this.storage({ day3_ending_type: 'friendship' });
 		},
+		'stop music',
 		...fadeJump('Day4Start'),
 	]
 });
