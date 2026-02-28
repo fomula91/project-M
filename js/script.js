@@ -31,6 +31,7 @@ monogatari.assets ('gallery', {
 	'silhouette': 'silhouette.png',
 	'rooftop-hana': 'rooftop-hana.png',
 	'library-sora': 'library-sora.png',
+	'photo-discovery': 'photo-discovery.png',
 });
 
 // Define the music used in the game.
@@ -40,6 +41,7 @@ monogatari.assets ('music', {
 	'sora-ending': 'sora-ending.mp3',
 	'hana-ending': 'hana-ending.mp3',
 	'harem-ending': 'harem-ending.mp3'
+	
 });
 
 // Define the voice files used in the game.
@@ -103,7 +105,8 @@ monogatari.assets ('scenes', {
 	'bedroom_night': 'classroom_01_night.jpg',
 	'silhouette_cg': '../gallery/silhouette.png',
 	'rooftop-hana_cg': '../gallery/rooftop-hana.png',
-	'library-sora_cg': '../gallery/library-sora.png'
+	'library-sora_cg': '../gallery/library-sora.png',
+	'photo-discovery_cg': '../gallery/photo-discovery.png',
 });
 
 // Define the Characters

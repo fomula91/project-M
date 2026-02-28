@@ -59,10 +59,23 @@ monogatari.script ({
 		'축제 게시판 앞을 지나가는데, 오래된 사진 한 장이 눈에 들어온다.',
 		'show character p surprised at center with fadeIn',
 		'p ...이건──?',
+		// TODO: [CG] photo-discovery — 축제 게시판 앞, 사진 복선
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene photo-discovery with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock photo-discovery_cg',
+		'show scene auditorium_day with fadeIn',
 		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
 		'p 이 사람... 어딘가에서 본 것 같은데.',
 		'p 정류장에서 본 사람과 닮은 것 같기도 하고...',
-		'사진을 뒤집자 손글씨가 보인다── "이 봄을 잊지 마."',
+		'사진을 밑에 손글씨가 보인다── "이 봄을 잊지 마."',
 		'...빈 책상 낙서와 같은 필체다.',
 		'hide character p with fadeOut',
 		function () {
