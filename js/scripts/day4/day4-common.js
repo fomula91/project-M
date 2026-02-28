@@ -111,6 +111,8 @@ monogatari.script ({
 		'show character p normal at right with fadeIn',
 		'p 유우 선배, 소라와 하나에 대해... 좀 더 알려주실 수 있나요?',
 		'show scene science_lab_04 with fadeIn',
+		'show character u normal at left with fadeIn',
+		'show character p normal at right with fadeIn',
 		'u 그래, 궁금하겠지.',
 		'p ...유우 선배라면 분명 많은 걸 알고 있을 거다.',
 		'가장 듣고 싶은 이야기가 뭔지, 스스로에게 물어본다.',

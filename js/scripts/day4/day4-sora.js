@@ -38,6 +38,8 @@ monogatari.script ({
 		'소라의 손이 무의식적으로 책상 모서리를 잡는다. 잠깐의 정적.',
 		'wait 600',
 		'show scene science_lab_06 with fadeIn',
+		'show character s worried at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		's 그때부터... 사람과 함께하는 게 두렵지만은 않게 됐어요.',
 		's 그리고 {{player.name}} 씨를 만나서...',
 		'show character s surprised',

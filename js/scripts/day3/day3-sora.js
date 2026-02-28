@@ -64,7 +64,7 @@ monogatari.script ({
 		'show scene school_grounds_evening with fadeIn',
 		'stop music',
 		'play music sora-ending loop',
-		'show character s normal',
+		'show character s normal at center with fadeIn',
 		'축제가 끝나고, 석양이 학교를 물들인다.',
 		'play sound footsteps loop',
 		'소라와 함께 교정을 걷는다.',
@@ -79,6 +79,7 @@ monogatari.script ({
 		'소라의 눈에 석양빛이 반사된다.',
 		'혼자이던 소라가 마음을 열고 있다── 그 사실이 가슴을 뜨겁게 한다.',
 		'심장이 크게 뛴다. 한 번, 두 번.',
+		'show character p normal at right with fadeIn',
 		'p ...도망치지 않을 거야. 소라 씨의 용기에 제대로 응답해야 해.',
 		'wait 800',
 		makeChoice('p 소라 씨...', {

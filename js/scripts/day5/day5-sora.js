@@ -62,6 +62,8 @@ monogatari.script ({
 		'p 소라 씨, 이야기 좀 해도 될까요?',
 		's ...네, 물론이에요.',
 		'show scene science_lab_07 with fadeIn',
+		'show character s normal at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		'p 유우 선배를 만나고... 소라 씨에 대해 더 알게 됐어요.',
 		'p 혼자이던 시절의 이야기도, 마음을 여는 게 무서웠다는 것도.',
 		'show character s worried',
@@ -69,6 +71,7 @@ monogatari.script ({
 		'p 그리고 그런 소라 씨가... 저는 더 소중해졌어요.',
 		'p 약한 모습도, 두려워하는 모습도 전부.',
 		'show scene science_lab_08 with fadeIn',
+		'show character s normal at center with fadeIn',
 		'소라가 책을 내려놓고 천천히 일어선다.',
 		's 전에... {{player.name}} 씨가 좋은 친구로 지내자고 했을 때요.',
 		's 솔직히... 마음이 많이 아팠어요.',
@@ -79,7 +82,6 @@ monogatari.script ({
 		's 친구가 아니라... 한 사람으로서.',
 		'석양빛 과학실에서, 소라의 고백이 조용히 울려 퍼진다.',
 		'hide character s',
-		'hide character p',
 		'jump Day5SoraConfess2'
 	],
 
