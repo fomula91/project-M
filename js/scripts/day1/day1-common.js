@@ -310,7 +310,7 @@ monogatari.script ({
 		'show character p normal at center with fadeIn',
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
-		'show scene bedroom_night with fadeIn',
+		'show scene #000000 with fadeIn',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
 		'이불 속에서 오늘 하루를 되짚는다.',
 		'벚꽃 나무 아래의 실루엣, 소라의 조용한 미소, 하나의 끝없는 활력.',
