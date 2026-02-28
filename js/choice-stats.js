@@ -132,24 +132,35 @@ const ChoiceStats = (function () {
 					btn.classList.add('choice-stats-unselected');
 				}
 
-				// Create percentage bar overlay
-				const bar = document.createElement('div');
-				bar.className = 'choice-stats-bar';
-				bar.style.width = '0%';
-				btn.style.position = 'relative';
-				btn.style.overflow = 'hidden';
-				btn.appendChild(bar);
+				// Wrap button in .choice-row
+				var row = document.createElement('div');
+				row.className = 'choice-row';
+				btn.parentNode.insertBefore(row, btn);
+				row.appendChild(btn);
 
-				// Create percentage label
-				const label = document.createElement('span');
+				// Create sidebar
+				var sidebar = document.createElement('div');
+				sidebar.className = 'choice-stats-sidebar ' + (isSelected ? 'selected' : 'unselected');
+
+				var track = document.createElement('div');
+				track.className = 'choice-stats-bar-track';
+				var fill = document.createElement('div');
+				fill.className = 'choice-stats-bar-fill';
+				fill.style.width = '0%';
+				track.appendChild(fill);
+				sidebar.appendChild(track);
+
+				var label = document.createElement('span');
 				label.className = 'choice-stats-percent';
 				label.textContent = stat.percent + '%';
-				btn.appendChild(label);
+				sidebar.appendChild(label);
+
+				row.appendChild(sidebar);
 
 				// Animate bar width
 				requestAnimationFrame(function () {
 					requestAnimationFrame(function () {
-						bar.style.width = stat.percent + '%';
+						fill.style.width = stat.percent + '%';
 					});
 				});
 			});
@@ -169,22 +180,34 @@ const ChoiceStats = (function () {
 			var stat = percentages.find(function (p) { return p.choice_key === choiceKey; });
 			if (!stat) return;
 
-			btn.style.position = 'relative';
-			btn.style.overflow = 'hidden';
+			// Wrap button in .choice-row
+			var row = document.createElement('div');
+			row.className = 'choice-row';
+			btn.parentNode.insertBefore(row, btn);
+			row.appendChild(btn);
 
-			var bar = document.createElement('div');
-			bar.className = 'choice-stats-preview-bar';
-			bar.style.width = '0%';
-			btn.appendChild(bar);
+			// Create preview sidebar
+			var sidebar = document.createElement('div');
+			sidebar.className = 'choice-stats-sidebar preview';
+
+			var track = document.createElement('div');
+			track.className = 'choice-stats-bar-track';
+			var fill = document.createElement('div');
+			fill.className = 'choice-stats-bar-fill';
+			fill.style.width = '0%';
+			track.appendChild(fill);
+			sidebar.appendChild(track);
 
 			var label = document.createElement('span');
-			label.className = 'choice-stats-preview-percent';
+			label.className = 'choice-stats-percent';
 			label.textContent = stat.percent + '%';
-			btn.appendChild(label);
+			sidebar.appendChild(label);
+
+			row.appendChild(sidebar);
 
 			requestAnimationFrame(function () {
 				requestAnimationFrame(function () {
-					bar.style.width = stat.percent + '%';
+					fill.style.width = stat.percent + '%';
 				});
 			});
 		});
@@ -193,8 +216,13 @@ const ChoiceStats = (function () {
 	function cleanupPreview (container) {
 		if (!container) return;
 		container.classList.remove('choice-stats-preview');
-		container.querySelectorAll('.choice-stats-preview-bar, .choice-stats-preview-percent').forEach(function (el) {
-			el.remove();
+		// Unwrap buttons from .choice-row wrappers
+		container.querySelectorAll('.choice-row').forEach(function (row) {
+			var btn = row.querySelector('[data-choice]');
+			if (btn) {
+				row.parentNode.insertBefore(btn, row);
+			}
+			row.remove();
 		});
 	}
 
@@ -237,7 +265,7 @@ const ChoiceStats = (function () {
 						container = node.querySelector('[data-component="choice-container"]');
 					}
 
-					if (container && !container.querySelector('.choice-stats-preview-bar')) {
+					if (container && !container.querySelector('.choice-stats-sidebar')) {
 						handlePreview(container);
 					}
 				}
@@ -286,8 +314,13 @@ const ChoiceStats = (function () {
 
 			if (info.container) {
 				info.container.classList.remove('choice-stats-active');
-				info.container.querySelectorAll('.choice-stats-bar, .choice-stats-percent').forEach(function (el) {
-					el.remove();
+				// Unwrap buttons from .choice-row wrappers and remove sidebars
+				info.container.querySelectorAll('.choice-row').forEach(function (row) {
+					var btn = row.querySelector('[data-choice]');
+					if (btn) {
+						row.parentNode.insertBefore(btn, row);
+					}
+					row.remove();
 				});
 				info.container.querySelectorAll('[data-choice]').forEach(function (btn) {
 					btn.classList.remove('choice-stats-revealed', 'choice-stats-selected', 'choice-stats-unselected');
