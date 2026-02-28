@@ -175,6 +175,7 @@ monogatari.script ({
 		'정성스러운 필체가 눈에 밟힌다. 물어볼까, 그냥 넘어갈까.',
 		'show character p normal at center with fadeIn',
 		'p ...조금 신경 쓰이는데.',
+		'show character p fadeOut',
 		makeChoice('p 이 노트에 대해...', {
 			AskSora: ['소라에게 물어본다', 'Day2ScienceLabSora'],
 			AskHana: ['하나에게 물어본다', 'Day2ScienceLabHana'],
@@ -188,7 +189,7 @@ monogatari.script ({
 	'Day2ScienceLabSora': [
 		'show character s normal at center with fadeIn',
 		's 그 노트... 어디서 찾으셨어요?',
-		'show character s angry2',
+		'show character s worried',
 		's ...유우 선배의 거예요. 작년에 졸업한...',
 		'소라가 순간 동요한 표정을 짓지만 이내 침착해진다.',
 		'show character s normal',
