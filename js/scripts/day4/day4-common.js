@@ -171,6 +171,7 @@ monogatari.script ({
 		function () {
 			this.storage({ sora_affection: this.storage('sora_affection') + 1 });
 			this.storage({ hana_affection: this.storage('hana_affection') + 1 });
+			AffinityHint.show('both');
 		},
 		'u 그리고 지금... 그 자리에 네가 있는 거야.',
 		'p 저는 그런 대단한 사람이──',

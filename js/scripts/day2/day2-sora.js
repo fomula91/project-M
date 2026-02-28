@@ -32,7 +32,7 @@ monogatari.script ({
 				hana_affection: this.storage ('hana_affection') + 1,
 				day2_studied_together: true
 			});
-			AffinityHint.show ('sora');
+			AffinityHint.show ('both');
 		},
 		'show character s surprised at center with fadeIn',
 		'show character p smile at left with fadeIn',

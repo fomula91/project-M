@@ -10,6 +10,7 @@ const AffinityHint = (function () {
 	var CONFIG = {
 		sora: { icon: '✧', text: '소라의 마음이 가까워진 것 같다.', cls: 'affinity-hint--sora' },
 		hana: { icon: '✨', text: '하나의 마음이 가까워진 것 같다.', cls: 'affinity-hint--hana' },
+		both: { icon: '✧✨', text: '소라와 하나의 마음이 가까워진 것 같다.', cls: 'affinity-hint--both' },
 		unknown: { icon: '?', text: '누군가의 존재가 느껴진다...', cls: 'affinity-hint--unknown' }
 	};
 

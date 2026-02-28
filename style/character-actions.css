@@ -105,6 +105,13 @@
 	text-shadow: 0 1px 4px rgba(232, 123, 161, 0.4);
 }
 
+/* Both: purple-lavender (sora blue + hana pink) */
+.affinity-hint--both {
+	background: linear-gradient(135deg, rgba(140, 130, 210, 0.35), rgba(200, 140, 180, 0.3));
+	color: #f0e8ff;
+	text-shadow: 0 1px 4px rgba(160, 130, 200, 0.4);
+}
+
 /* Unknown: silver-gray (mysterious) */
 .affinity-hint--unknown {
 	background: linear-gradient(135deg, rgba(160, 170, 190, 0.35), rgba(130, 140, 160, 0.3));
