@@ -49,9 +49,8 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day5SoraScience': [
 		'show scene science_lab_06 with fadeIn',
-		'stop music fade 2',
-		'wait 2000',
-		'play music sora-ending loop fade 2',
+		'stop music',
+		'play music sora-ending loop',
 		'과학실. 석양 빛이 실험 기구들을 주황색으로 물들인다.',
 		'비커와 시험관이 호박색으로 빛난다. 창틈으로 마지막 벚꽃잎이 날아든다.',
 		'시간이 멈춘 것 같은 고요한 공간.',
