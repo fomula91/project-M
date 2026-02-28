@@ -50,7 +50,7 @@ monogatari.script ({
 		'show character s normal at left with fadeIn',
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}! 이거 봐! 유우 선배가 편지를 남겼대!',
-		'show character s happy',
+		'show character s happy at left',
 		's 우리 사물함에 하나씩 들어있었어요.',
 		'show character p normal at center with fadeIn',
 		'p 나한테도 왔어. 같이 읽어볼까?',
