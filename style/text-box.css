@@ -32,6 +32,10 @@
 	line-height: 1.85;
 }
 
+[data-component="text-box"] [data-content="text"] {
+	justify-content: center;
+}
+
 /**
  * ===========================
  * Responsive - Mobile (max-width: 37.5em / 600px)
