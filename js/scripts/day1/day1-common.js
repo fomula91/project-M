@@ -136,12 +136,12 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day1UnknownHint': [
 		'show scene classroom_day with fadeFromBlack duration 1500',
-		'자리를 찾아 앉으려는데, 창가 맨 뒷줄에 빈 책상이 눈에 들어온다.',
-		'책상 위에 오래된 낙서가 희미하게 남아있다.',
+		'자리를 찾아 앉으려는데, 창틀에 작게 새겨진 글씨가 눈에 들어온다.',
+		'오래된 듯 희미하게 파묻힌 글씨.',
 		'"봄은 금방 지나간다"── 누군가 정성스레 새긴 듯한 필체.',
 		'왠지 마음에 걸리는 문장이다.',
 		'show character p surprised at center with fadeIn',
-		'p ...여기는 아무도 안 앉나?',
+		'p ...누가 새긴 걸까?',
 		{
 			'Choice': {
 				'Dialog': 'p ...누구에게 물어볼까?',
@@ -162,11 +162,11 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day1UnknownHintSora': [
 		'show character s normal at left with fadeIn',
-		's 아, 그 자리요... 작년에 졸업한 선배가 앉던 자리예요.',
-		's 꽤 유명한 분이었는데... 소라와 하나, 둘 다 잘 알던 사이래요.',
+		's 아, 그 낙서요... 작년에 졸업한 선배가 새긴 거예요.',
+		's 저와 하나 둘 다 잘 알던 분이었어요.',
 		'show character p normal',
-		'p 그렇구나... 어떤 사람이었을까.',
-		's ...좋은 사람이었다고 들었어요.',
+		'p 그렇구나... 어떤 사람이었어?',
+		's ...좋은 분이었어요. 가끔 생각나요.',
 		'소라가 잠깐 창밖을 바라보며 말한다.',
 		'hide character s with fadeOut',
 		'hide character p with fadeOut',
@@ -178,7 +178,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day1UnknownHintHana': [
 		'show character h normal2 at right with fadeIn',
-		'h 아, 거기? 작년에 졸업한 선배 자리야.',
+		'h 아, 그거? 작년에 졸업한 선배가 새긴 거야.',
 		'h 나랑 소라 사이를 이어준 사람이기도 해.',
 		'show character p normal',
 		'p 오, 어떤 사람이었어?',
@@ -322,7 +322,7 @@ monogatari.script ({
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
 		'이불 속에서 오늘 하루를 되짚는다.',
 		'벚꽃 나무 아래의 실루엣, 소라의 조용한 미소, 하나의 끝없는 활력.',
-		'그리고 빈 책상에 새겨진 낙서── "봄은 금방 지나간다."',
+		'그리고 창틀에 새겨진 낙서── "봄은 금방 지나간다."',
 		'p ...내일은 어떤 하루가 될까.',
 		...fadeJump('Day2Start', { duration: 800 }),
 	]
