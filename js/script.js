@@ -30,6 +30,7 @@ monogatari.assets ('gallery', {
 	'opening-unknown': 'opening.png',
 	'silhouette': 'silhouette.png',
 	'rooftop-hana': 'rooftop-hana.png',
+	'library-sora': 'library-sora.png',
 });
 
 // Define the music used in the game.
@@ -101,7 +102,8 @@ monogatari.assets ('scenes', {
 	'classroom3_evening': 'classroom_03_evening.jpg',
 	'bedroom_night': 'classroom_01_night.jpg',
 	'silhouette_cg': 'silhouette.png',
-	'rooftop-hana_cg': 'rooftop-hana.png'
+	'rooftop-hana_cg': 'rooftop-hana.png',
+	'library-sora_cg': 'library-sora.png'
 });
 
 // Define the Characters

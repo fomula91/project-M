@@ -82,10 +82,21 @@ monogatari.script ({
 		'소라가 얼굴을 살짝 붉히며 말한다.',
 		's {{player.name}} 씨는... 왠지 편안해요.',
 		// TODO: [CG] library-sora — 도서관 창가, 햇살 속 소라
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene library-sora_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock library-sora',
+		'show scene classroom3_morning with fadeIn',
+		'show character p smile at right with fadeIn',
 		'p ...소라의 이런 모습은 처음 보네. 귀엽다.',
 		'창밖으로 벚꽃잎이 흩날린다. 평화로운 점심시간.',
-		'hide character p with fadeOut',
-		'hide character s with fadeOut',
 		'jump Day1Afternoon'
 	]
 });
