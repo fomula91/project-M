@@ -113,6 +113,8 @@ monogatari.script ({
 		'p 유우 선배, 소라와 하나에 대해... 좀 더 알려주실 수 있나요?',
 		'show scene science_lab_04 with fadeIn',
 		'u 그래, 궁금하겠지.',
+		'p ...유우 선배라면 분명 많은 걸 알고 있을 거다.',
+		'가장 듣고 싶은 이야기가 뭔지, 스스로에게 물어본다.',
 		{
 			'Choice': {
 				'Dialog': 'p 유우 선배에게...',
@@ -205,6 +207,8 @@ monogatari.script ({
 		'p ...두 사람 모두, 겉으로는 안 보이는 아픔이 있었군요.',
 		'u 누구나 그렇지. 너도 마찬가지일 거야.',
 		'유우가 하늘을 올려다보며 말한다.',
+		'수면 위로 잔물결이 퍼진다. 햇살이 물결 위에서 부서진다.',
+		'wait 800',
 		'u 중요한 건... 그 아픔을 나눌 수 있는 사람이 곁에 있느냐야.',
 		'hide character u with fadeOut',
 		'hide character p with fadeOut',
@@ -246,6 +250,11 @@ monogatari.script ({
 		'show character p normal',
 		'p ......',
 		'p ...내 마음이 향하는 곳.',
+		'며칠간의 기억이 빠르게 스쳐 지나간다.',
+		'소라의 조용한 미소, 하나의 밝은 웃음, 빈 책상의 낙서, 종이학의 온기.',
+		'그리고 유우 선배의 말── "도망치지도 마."',
+		'p ...알겠어. 이번엔 솔직하게.',
+		'wait 800',
 		'hide character p with fadeOut',
 		{
 			'Choice': {

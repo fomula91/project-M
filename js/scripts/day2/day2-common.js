@@ -46,6 +46,9 @@ monogatari.script ({
 		'어젯밤, 두 사람의 얼굴이 떠올라 잠을 설쳤다.',
 		'show character p worried at center with fadeIn',
 		'p ...왜 이렇게 두근거리는 걸까.',
+		'어제 본 구교사 실루엣이 어른거린다.',
+		'p ...소라 씨에게도, 하나에게도, 더 가까이 다가가고 싶어.',
+		'알 수 없는 기대감이 발걸음을 재촉한다.',
 		'hide character p with fadeOut',
 		'교문을 들어서자 익숙한 목소리가 들려온다.',
 		{
@@ -165,8 +168,12 @@ monogatari.script ({
 		'show character p surprised at center with fadeIn',
 		'p ...이건 뭐지? "유우의 실험 노트"라고 적혀 있다.',
 		'p 유우...? 어디서 들어본 것 같은데.',
+		'노트 여백에 일기 같은 메모가 적혀 있다── "오늘 소라가 처음으로 웃었다."',
+		'...여기저기 빼곡한 메모에서 주인의 정성이 느껴진다.',
 		'show scene science_lab_05 with fadeIn',
 		'hide character p with fadeOut',
+		'정성스러운 필체가 눈에 밟힌다. 물어볼까, 그냥 넘어갈까.',
+		'p ...조금 신경 쓰이는데.',
 		{
 			'Choice': {
 				'Dialog': 'p 이 노트에 대해...',
@@ -252,6 +259,9 @@ monogatari.script ({
 		'show character h laugh at right with fadeIn',
 		'h {{player.name}}! 나랑 같이 하자! 우리 팀이면 완전 재밌을 거야!',
 		'하나가 신나서 뛰어온다.',
+		'p ...소라의 조심스러움, 하나의 직진. 정반대인 두 사람.',
+		'p 내일 축제를 누구와 함께하느냐에 따라 뭔가 달라질 것 같다.',
+		'작은 선택이 큰 차이를 만들 예감이 든다.',
 		'show character p normal at center with fadeIn',
 		{
 			'Choice': {
@@ -342,6 +352,9 @@ monogatari.script ({
 		'고개를 돌려 다시 보니, 이미 아무도 없다.',
 		'hide character u with fadeOut',
 		'p ...기분 탓이었나.',
+		'빈 책상의 낙서, 과학실 노트, 그리고 이 실루엣── 전부 이어져 있는 걸까.',
+		'가로등이 한 번 깜빡이고, 정류장에 다시 정적이 내린다.',
+		'p ...모르겠다. 하지만 무시할 수 없는 기분이야.',
 		'hide character p with fadeOut',
 		function () {
 			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });

@@ -79,6 +79,8 @@ monogatari.script ({
 		'p 후아... 드디어 새 학기다. 어떤 만남이 기다리고 있을까.',
 		'hide character p with fadeOut',
 		'교문을 지나 교실로 향하는 길, 벚꽃 나무 아래에서 한 소녀가 서 있다.',
+		'하늘을 가득 메운 벚꽃잎이 분홍빛 눈처럼 흩날린다.',
+		'잠깐 발을 멈추고 올려다본다. ...아름답다.',
 		{'Function': {
 			'Apply': function () {
 				monogatari.distractionFree();
@@ -107,6 +109,8 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'SchoolArrival': [
 		'show scene classroom_day with fadeFromBlack duration 1500',
+		'아침 햇살이 창문을 통해 쏟아져 들어온다. 분필 가루와 새 교과서 냄새.',
+		'새 학기 특유의 설렘이 교실 안에 가득하다.',
 		'교실에 들어서자, 두 사람이 눈에 들어온다.',
 		'show character s normal at left with slideInLeft',
 		's 안녕하세요. 저는 이 반의 학급위원 소라입니다.',
@@ -134,6 +138,8 @@ monogatari.script ({
 		'show scene classroom_day with fadeFromBlack duration 1500',
 		'자리를 찾아 앉으려는데, 창가 맨 뒷줄에 빈 책상이 눈에 들어온다.',
 		'책상 위에 오래된 낙서가 희미하게 남아있다.',
+		'"봄은 금방 지나간다"── 누군가 정성스레 새긴 듯한 필체.',
+		'왠지 마음에 걸리는 문장이다.',
 		'show character p surprised at center with fadeIn',
 		'p ...여기는 아무도 안 앉나?',
 		{
@@ -194,6 +200,9 @@ monogatari.script ({
 		'show character h happy at right with bounceIn',
 		'h {{player.name}}~! 나랑 같이 학교 탐험하러 가자! 매점에 새로 나온 빵이 있대!',
 		'하나가 신나서 손을 잡아끈다.',
+		'p ...첫날부터 이런 상황이라니.',
+		'소라의 곤란한 표정도, 하나의 밝은 웃음도 신경 쓰인다.',
+		'이미 어떤 기로에 서 있는 것 같은 기분.',
 		'show character p worried at center with fadeInUp',
 		{
 			'Choice': {
@@ -263,6 +272,9 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'LunchTimeChoice': [
 		'show character p normal at center with fadeIn',
+		'p 도서관의 따뜻한 고요함... 옥상의 시원한 바람...',
+		'p 어느 쪽이든 가보고 싶은 마음이 드는 건 마찬가지다.',
+		'잠시 고민한다.',
 		{
 			'Choice': {
 				'Dialog': 'p ...어디로 갈까?',
@@ -304,6 +316,10 @@ monogatari.script ({
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
 		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
+		'이불 속에서 오늘 하루를 되짚는다.',
+		'벚꽃 나무 아래의 실루엣, 소라의 조용한 미소, 하나의 끝없는 활력.',
+		'그리고 빈 책상에 새겨진 낙서── "봄은 금방 지나간다."',
+		'p ...내일은 어떤 하루가 될까.',
 		...fadeJump('Day2Start', { duration: 800 }),
 	]
 });

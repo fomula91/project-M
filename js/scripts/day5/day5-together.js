@@ -31,6 +31,8 @@ monogatari.script ({
 		'show character p normal at center with fadeIn',
 		'p ...소라도, 하나도, 둘 다 놓치고 싶지 않아.',
 		'p 그건 욕심이 아니야. 그냥... 솔직한 마음이야.',
+		'옥상에서 내리던 벚꽃 비가 떠오른다. 유우 선배는 이 마음을 이해해줬다.',
+		'p ...셋이서 함께라면, 어떤 계절이든.',
 		'hide character p with fadeOut',
 		'방과후──',
 		'jump Day5TogetherLetter'

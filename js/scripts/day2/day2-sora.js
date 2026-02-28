@@ -57,6 +57,7 @@ monogatari.script ({
 		'소라가 얼굴을 붉히며 작은 종이학 하나를 건넨다.',
 		's 이건... {{player.name}} 씨에게 드리는 거예요. 행운의 부적이라고 생각해주세요.',
 		'p 소중하게 간직할게요.',
+		'손바닥 위의 종이학이 의외로 따뜻하다. 소라의 체온이 남아 있는 것 같다.',
 		'소라가 수줍게 미소 짓는다. 심장이 두근거린다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',

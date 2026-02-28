@@ -41,6 +41,8 @@ monogatari.script ({
 		'show character h normal2',
 		'h {{player.name}} 앞에서는... 나도 좀 솔직해지고 싶어.',
 		'h 항상 밝기만 한 건 아니야. 가끔은 힘들기도 하고.',
+		'하나가 말을 멈춘다. 바람 소리만이 두 사람 사이를 채운다.',
+		'wait 600',
 		'p 알아, 하나. 억지로 웃지 않아도 돼.',
 		'p 울고 싶으면 울어도 돼. 내가 여기 있잖아.',
 		'show character h surprised',

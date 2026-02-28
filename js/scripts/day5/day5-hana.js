@@ -35,6 +35,9 @@ monogatari.script ({
 		'"서두르지 마. 하지만 도망치지도 마."',
 		'show character p normal at center with fadeIn',
 		'p ...하나에게, 이번엔 진심을 전하고 싶어.',
+		'축제 때 하나가 쓰고 있던 종이 왕관이 떠오른다.',
+		'밝은 얼굴 뒤에 숨겨진 눈물을── 이젠 안다.',
+		'p ...수영장에서 기다리고 있을 거야. 이번엔 내가.',
 		'hide character p with fadeOut',
 		'방과후──',
 		'jump Day5HanaPool'
@@ -48,6 +51,8 @@ monogatari.script ({
 		'stop music fade 2',
 		'play music hana-ending loop fade 2',
 		'수영장 뒤편. 유우가 알려준 비밀 장소.',
+		'수면이 석양빛을 머금고 금빛으로 일렁인다.',
+		'벚꽃잎 한 장이 수면 위에 내려앉아 잔잔한 파문을 만든다.',
 		'하나가 울타리에 앉아 하늘을 바라보고 있다.',
 		'show character h normal2 at center with fadeIn',
 		'h ...아, {{player.name}}. 여기 어떻게 알았어?',
@@ -78,6 +83,12 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day5HanaConfess2': [
 		'show scene swimming_pool with fadeIn',
+		'하나의 말이 가슴 깊이 파고든다.',
+		'한 번 거절당하고도 다시 마음을 꺼내 보이는 용기── 그 무게가 느껴진다.',
+		'수면에 비친 석양이 일렁이듯, 내 마음도 흔들린다.',
+		'"서두르지 마. 하지만 도망치지도 마."── 유우 선배의 목소리.',
+		'p ...도망치지 않을 거야. 하나의 용기 앞에서.',
+		'wait 800',
 		'show character h normal2 at center with fadeIn',
 		'show character p normal at right with fadeIn',
 		{

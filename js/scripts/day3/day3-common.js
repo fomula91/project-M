@@ -35,6 +35,9 @@ monogatari.script ({
 		'학교 전체가 활기로 가득하다. 풍선, 리본, 현수막이 곳곳에 걸려 있다.',
 		'show character p normal at center with fadeIn',
 		'p 드디어 축제다...',
+		'거울 앞에서 괜히 머리를 고쳐 본다.',
+		'p 축제인데... 왜 이렇게 신경이 쓰이는 걸까.',
+		'설명할 수 없는 예감이 가슴 한쪽을 두드린다.',
 		'hide character p with fadeOut',
 		{
 			'Conditional': {
@@ -58,6 +61,8 @@ monogatari.script ({
 		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
 		'p 이 사람... 어딘가에서 본 것 같은데.',
 		'p 정류장에서 본 사람과 닮은 것 같기도 하고...',
+		'사진을 뒤집자 손글씨가 보인다── "이 봄을 잊지 마."',
+		'...빈 책상 낙서와 같은 필체다.',
 		'hide character p with fadeOut',
 		function () {
 			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
@@ -108,6 +113,9 @@ monogatari.script ({
 		'h 에에?! 소라도?!',
 		'두 사람이 서로를 바라보며 당혹스러운 표정을 짓는다.',
 		'show character p worried at center with fadeIn',
+		'양쪽에서 느껴지는 시선. 소라의 조용한 간절함과 하나의 솔직한 기대.',
+		'누구를 선택해도 한 사람은 실망할 거라는 생각에 가슴이 무거워진다.',
+		'p ...이건 쉬운 선택이 아니야.',
 		'p ...이건 어떻게 해야 하지.',
 		{
 			'Choice': {

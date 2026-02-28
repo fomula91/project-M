@@ -35,6 +35,9 @@ monogatari.script ({
 		'"서두르지 마. 하지만 도망치지도 마."',
 		'show character p normal at center with fadeIn',
 		'p ...소라 씨에게, 이번엔 제대로 전하고 싶어.',
+		'주머니 속 종이학을 만진다. 소라가 건네줬던 행운의 부적.',
+		'손끝에 전해지는 의외의 온기── 소라의 정성이 깃든 것 같다.',
+		'p ...과학실에서 기다리고 있을 거야. 이번엔 내가 먼저.',
 		'hide character p with fadeOut',
 		'방과후──',
 		'jump Day5SoraScience'
@@ -48,6 +51,8 @@ monogatari.script ({
 		'stop music fade 2',
 		'play music sora-ending loop fade 2',
 		'과학실. 석양 빛이 실험 기구들을 주황색으로 물들인다.',
+		'비커와 시험관이 호박색으로 빛난다. 창틈으로 마지막 벚꽃잎이 날아든다.',
+		'시간이 멈춘 것 같은 고요한 공간.',
 		'소라가 혼자 앉아 책을 읽고 있다.',
 		'show character s normal at center with fadeIn',
 		's 아, {{player.name}} 씨. 과학실까지 오시다니.',
@@ -81,6 +86,12 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day5SoraConfess2': [
 		'show scene science_lab_08 with fadeIn',
+		'소라의 고백이 아직 귓가에 맴돈다.',
+		'이 말의 무게를── 소라가 얼마나 큰 용기를 냈는지── 알고 있다.',
+		'"서두르지 마. 하지만 도망치지도 마."── 유우 선배의 말이 떠오른다.',
+		'손끝이 떨린다. 하지만 이번만큼은 도망치지 않겠다.',
+		'p ...대답해야 해. 소라 씨의 용기에 걸맞은 대답을.',
+		'wait 800',
 		'show character s worried at center with fadeIn',
 		'show character p normal at right with fadeIn',
 		{
