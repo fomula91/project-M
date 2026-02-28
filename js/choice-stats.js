@@ -12,6 +12,7 @@ const ChoiceStats = (function () {
 	const PREVIEW_DELAY = 700;
 
 	const TRACKED_SCENES = {
+		'Day1UnknownHint': true,
 		'MorningEvent': true,
 		'LunchTime': true,
 		'Day2Morning': true,
