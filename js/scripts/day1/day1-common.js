@@ -144,19 +144,10 @@ monogatari.script ({
 		'왠지 마음에 걸리는 문장이다.',
 		'show character p surprised at center with fadeIn',
 		'p ...누가 새긴 걸까?',
-		{
-			'Choice': {
-				'Dialog': 'p ...누구에게 물어볼까?',
-				'AskSora': {
-					'Text': '소라에게 물어본다',
-					'Do': 'jump Day1UnknownHintSora'
-				},
-				'AskHana': {
-					'Text': '하나에게 물어본다',
-					'Do': 'jump Day1UnknownHintHana'
-				}
-			}
-		}
+		makeChoice('p ...누구에게 물어볼까?', {
+			AskSora: ['소라에게 물어본다', 'Day1UnknownHintSora'],
+			AskHana: ['하나에게 물어본다', 'Day1UnknownHintHana']
+		})
 	],
 
 	// ──────────────────────────────────
@@ -209,19 +200,10 @@ monogatari.script ({
 		'소라의 곤란한 표정도, 하나의 밝은 웃음도 신경 쓰인다.',
 		'이미 어떤 기로에 서 있는 것 같은 기분.',
 		'show character p worried at center with fadeInUp',
-		{
-			'Choice': {
-				'Dialog': 'p ...어떻게 하지?',
-				'Help': {
-					'Text': '소라를 도와준다',
-					'Do': 'jump HelpSora'
-				},
-				'Go': {
-					'Text': '하나를 따라간다',
-					'Do': 'jump GoWithHana'
-				}
-			}
-		}
+		makeChoice('p ...어떻게 하지?', {
+			Help: ['소라를 도와준다', 'HelpSora'],
+			Go: ['하나를 따라간다', 'GoWithHana']
+		})
 	],
 
 	// ──────────────────────────────────
@@ -281,19 +263,10 @@ monogatari.script ({
 		'p 도서관의 따뜻한 고요함... 옥상의 시원한 바람...',
 		'p 어느 쪽이든 가보고 싶은 마음이 드는 건 마찬가지다.',
 		'잠시 고민한다.',
-		{
-			'Choice': {
-				'Dialog': 'p ...어디로 갈까?',
-				'Library': {
-					'Text': '도서관에서 소라와 함께',
-					'Do': 'jump Library'
-				},
-				'Rooftop': {
-					'Text': '옥상에서 하나와 함께',
-					'Do': 'jump Rooftop'
-				}
-			}
-		}
+		makeChoice('p ...어디로 갈까?', {
+			Library: ['도서관에서 소라와 함께', 'Library'],
+			Rooftop: ['옥상에서 하나와 함께', 'Rooftop']
+		})
 	],
 
 	// ──────────────────────────────────

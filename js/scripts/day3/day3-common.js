@@ -118,23 +118,11 @@ monogatari.script ({
 		'누구를 선택해도 한 사람은 실망할 거라는 생각에 가슴이 무거워진다.',
 		'p ...이건 쉬운 선택이 아니야.',
 		'p ...이건 어떻게 해야 하지.',
-		{
-			'Choice': {
-				'Dialog': 'p ...어떻게 하면 좋을까?',
-				'ChooseSora': {
-					'Text': '소라와 함께 축제를 돌아본다',
-					'Do': 'jump Day3SoraRoute'
-				},
-				'ChooseHana': {
-					'Text': '하나와 함께 축제를 돌아본다',
-					'Do': 'jump Day3HanaRoute'
-				},
-				'ChooseBoth': {
-					'Text': '셋이서 같이 다니자!',
-					'Do': 'jump Day3TogetherRoute'
-				}
-			}
-		}
+		makeChoice('p ...어떻게 하면 좋을까?', {
+			ChooseSora: ['소라와 함께 축제를 돌아본다', 'Day3SoraRoute'],
+			ChooseHana: ['하나와 함께 축제를 돌아본다', 'Day3HanaRoute'],
+			ChooseBoth: ['셋이서 같이 다니자!', 'Day3TogetherRoute']
+		})
 	],
 
 	// ──────────────────────────────────

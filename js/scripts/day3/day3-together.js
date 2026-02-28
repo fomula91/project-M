@@ -58,6 +58,7 @@ monogatari.script ({
 	'Day3TogetherClimax': [
 		'show scene auditorium_evening with fadeIn',
 		'stop music fade 2',
+		'wait 2000',
 		'play music harem-ending loop fade 2',
 		'show character s happy',
 		'show character h happy',

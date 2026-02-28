@@ -15,12 +15,13 @@ const ChoiceStats = (function () {
 	const TRACKED_SCENES = {
 		'Day1UnknownHint': true,
 		'MorningEvent': true,
-		'LunchTime': true,
+		'LunchTimeChoice': true,
 		'Day2Morning': true,
 		'Day2ScienceLab': true,
 		'Day3BothHigh': true,
 		'Day3SoraClimax': true,
 		'Day3HanaClimax': true,
+		'Day4Morning': true,
 		'Day4Evening': true,
 		'Day5SoraConfess2': true,
 		'Day5HanaConfess2': true

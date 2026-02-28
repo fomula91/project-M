@@ -35,6 +35,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day4Start': [
 		'stop music fade 2',
+		'wait 2000',
 		'play music acoustic-chill loop fade 2',
 		'play sound school-bell',
 		'show scene school_front_day with fadeFromBlack duration 1500',
@@ -116,23 +117,11 @@ monogatari.script ({
 		'u 그래, 궁금하겠지.',
 		'p ...유우 선배라면 분명 많은 걸 알고 있을 거다.',
 		'가장 듣고 싶은 이야기가 뭔지, 스스로에게 물어본다.',
-		{
-			'Choice': {
-				'Dialog': 'p 유우 선배에게...',
-				'AboutSora': {
-					'Text': '소라에게 특별한 존재였나요?',
-					'Do': 'jump Day4AskAboutSora'
-				},
-				'AboutHana': {
-					'Text': '하나에게 특별한 존재였나요?',
-					'Do': 'jump Day4AskAboutHana'
-				},
-				'AboutAll': {
-					'Text': '셋이서 어떤 사이였어요?',
-					'Do': 'jump Day4AskAboutAll'
-				}
-			}
-		}
+		makeChoice('p 유우 선배에게...', {
+			AboutSora: ['소라에게 특별한 존재였나요?', 'Day4AskAboutSora'],
+			AboutHana: ['하나에게 특별한 존재였나요?', 'Day4AskAboutHana'],
+			AboutAll: ['셋이서 어떤 사이였어요?', 'Day4AskAboutAll']
+		})
 	],
 
 	// ──────────────────────────────────
@@ -259,22 +248,10 @@ monogatari.script ({
 		'p ...알겠어. 이번엔 솔직하게.',
 		'wait 800',
 		'hide character p with fadeOut',
-		{
-			'Choice': {
-				'Dialog': 'p 나는──',
-				'ToSora': {
-					'Text': '소라에게 다시 한번...',
-					'Do': 'jump Day5SoraRoute'
-				},
-				'ToHana': {
-					'Text': '하나에게 다시 한번...',
-					'Do': 'jump Day5HanaRoute'
-				},
-				'ToBoth': {
-					'Text': '두 사람 모두 소중해.',
-					'Do': 'jump Day5TogetherRoute'
-				}
-			}
-		}
+		makeChoice('p 나는──', {
+			ToSora: ['소라에게 다시 한번...', 'Day5SoraRoute'],
+			ToHana: ['하나에게 다시 한번...', 'Day5HanaRoute'],
+			ToBoth: ['두 사람 모두 소중해.', 'Day5TogetherRoute']
+		})
 	]
 });

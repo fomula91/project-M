@@ -60,6 +60,7 @@ monogatari.script ({
 	'Day3HanaClimax': [
 		...fadeScene('busstop_evening'),
 		'stop music fade 2',
+		'wait 2000',
 		'play music hana-ending loop fade 2',
 		'show character h normal2',
 		'축제가 끝나고, 하교 시간.',
@@ -82,19 +83,10 @@ monogatari.script ({
 		'이 용기를 가볍게 받아넘길 수 없다.',
 		'p ...제대로 대답해야 해. 하나의 진심에.',
 		'wait 800',
-		{
-			'Choice': {
-				'Dialog': 'p 하나...',
-				'Accept': {
-					'Text': '나도 좋아해, 하나.',
-					'Do': 'jump HanaConfess'
-				},
-				'Friends': {
-					'Text': '하나는 소중한 친구야.',
-					'Do': 'jump HanaFriendEnd'
-				}
-			}
-		}
+		makeChoice('p 하나...', {
+			Accept: ['나도 좋아해, 하나.', 'HanaConfess'],
+			Friends: ['하나는 소중한 친구야.', 'HanaFriendEnd']
+		})
 	],
 
 	// ──────────────────────────────────

@@ -45,6 +45,7 @@ monogatari.script ({
 	'Day5TogetherLetter': [
 		'show scene auditorium_sunrise with fadeIn',
 		'stop music fade 2',
+		'wait 2000',
 		'play music harem-ending loop fade 2',
 		'강당 앞에서 소라와 하나가 기다리고 있다.',
 		'show character s normal at left with fadeIn',

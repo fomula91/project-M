@@ -50,6 +50,7 @@ monogatari.script ({
 	'Day5HanaPool': [
 		'show scene swimming_pool with fadeIn',
 		'stop music fade 2',
+		'wait 2000',
 		'play music hana-ending loop fade 2',
 		'수영장 뒤편. 유우가 알려준 비밀 장소.',
 		'수면이 석양빛을 머금고 금빛으로 일렁인다.',
@@ -92,19 +93,10 @@ monogatari.script ({
 		'wait 800',
 		'show character h normal2 at center with fadeIn',
 		'show character p normal at right with fadeIn',
-		{
-			'Choice': {
-				'Dialog': 'p 하나...',
-				'TrueLove': {
-					'Text': '하나의 웃음도, 눈물도, 전부 좋아해.',
-					'Do': 'jump HanaTrueLoveEnd'
-				},
-				'Warm': {
-					'Text': '천천히 가자, 우리.',
-					'Do': 'jump HanaWarmEnd'
-				}
-			}
-		}
+		makeChoice('p 하나...', {
+			TrueLove: ['하나의 웃음도, 눈물도, 전부 좋아해.', 'HanaTrueLoveEnd'],
+			Warm: ['천천히 가자, 우리.', 'HanaWarmEnd']
+		})
 	],
 
 	// ──────────────────────────────────

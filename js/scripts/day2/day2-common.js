@@ -172,26 +172,14 @@ monogatari.script ({
 		'노트 여백에 일기 같은 메모가 적혀 있다── "오늘 소라가 처음으로 웃었다."',
 		'...여기저기 빼곡한 메모에서 주인의 정성이 느껴진다.',
 		'show scene science_lab_05 with fadeIn',
-		'hide character p with fadeOut',
 		'정성스러운 필체가 눈에 밟힌다. 물어볼까, 그냥 넘어갈까.',
+		'show character p normal at center with fadeIn',
 		'p ...조금 신경 쓰이는데.',
-		{
-			'Choice': {
-				'Dialog': 'p 이 노트에 대해...',
-				'AskSora': {
-					'Text': '소라에게 물어본다',
-					'Do': 'jump Day2ScienceLabSora'
-				},
-				'AskHana': {
-					'Text': '하나에게 물어본다',
-					'Do': 'jump Day2ScienceLabHana'
-				},
-				'Ignore': {
-					'Text': '조용히 넘어간다',
-					'Do': 'jump Day2ScienceLabSkip'
-				}
-			}
-		}
+		makeChoice('p 이 노트에 대해...', {
+			AskSora: ['소라에게 물어본다', 'Day2ScienceLabSora'],
+			AskHana: ['하나에게 물어본다', 'Day2ScienceLabHana'],
+			Ignore: ['조용히 넘어간다', 'Day2ScienceLabSkip']
+		})
 	],
 
 	// ──────────────────────────────────
@@ -265,19 +253,10 @@ monogatari.script ({
 		'p 내일 축제를 누구와 함께하느냐에 따라 뭔가 달라질 것 같다.',
 		'작은 선택이 큰 차이를 만들 예감이 든다.',
 		'show character p normal at center with fadeIn',
-		{
-			'Choice': {
-				'Dialog': 'p ...누구와 팀을 할까?',
-				'WithSora': {
-					'Text': '소라와 함께한다',
-					'Do': 'jump Day2WithSora'
-				},
-				'WithHana': {
-					'Text': '하나와 함께한다',
-					'Do': 'jump Day2WithHana'
-				}
-			}
-		}
+		makeChoice('p ...누구와 팀을 할까?', {
+			WithSora: ['소라와 함께한다', 'Day2WithSora'],
+			WithHana: ['하나와 함께한다', 'Day2WithHana']
+		})
 	],
 
 	// ──────────────────────────────────

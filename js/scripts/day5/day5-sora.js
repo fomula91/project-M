@@ -50,6 +50,7 @@ monogatari.script ({
 	'Day5SoraScience': [
 		'show scene science_lab_06 with fadeIn',
 		'stop music fade 2',
+		'wait 2000',
 		'play music sora-ending loop fade 2',
 		'과학실. 석양 빛이 실험 기구들을 주황색으로 물들인다.',
 		'비커와 시험관이 호박색으로 빛난다. 창틈으로 마지막 벚꽃잎이 날아든다.',
@@ -95,19 +96,10 @@ monogatari.script ({
 		'wait 800',
 		'show character s worried at center with fadeIn',
 		'show character p normal at right with fadeIn',
-		{
-			'Choice': {
-				'Dialog': 'p 소라 씨...',
-				'TrueLove': {
-					'Text': '기다릴게요. 소라 씨의 속도에 맞춰서.',
-					'Do': 'jump SoraTrueLoveEnd'
-				},
-				'Warm': {
-					'Text': '무리하지 않아도 괜찮아요.',
-					'Do': 'jump SoraWarmEnd'
-				}
-			}
-		}
+		makeChoice('p 소라 씨...', {
+			TrueLove: ['기다릴게요. 소라 씨의 속도에 맞춰서.', 'SoraTrueLoveEnd'],
+			Warm: ['무리하지 않아도 괜찮아요.', 'SoraWarmEnd']
+		})
 	],
 
 	// ──────────────────────────────────

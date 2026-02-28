@@ -63,6 +63,7 @@ monogatari.script ({
 	'Day3SoraClimax': [
 		'show scene school_grounds_evening with fadeIn',
 		'stop music fade 2',
+		'wait 2000',
 		'play music sora-ending loop fade 2',
 		'show character s normal',
 		'축제가 끝나고, 석양이 학교를 물들인다.',
@@ -81,19 +82,10 @@ monogatari.script ({
 		'심장이 크게 뛴다. 한 번, 두 번.',
 		'p ...도망치지 않을 거야. 소라 씨의 용기에 제대로 응답해야 해.',
 		'wait 800',
-		{
-			'Choice': {
-				'Dialog': 'p 소라 씨...',
-				'Confess': {
-					'Text': '나도 같은 마음이에요.',
-					'Do': 'jump SoraConfess'
-				},
-				'Gentle': {
-					'Text': '앞으로도 좋은 친구로 지내요.',
-					'Do': 'jump SoraFriendEnd'
-				}
-			}
-		}
+		makeChoice('p 소라 씨...', {
+			Confess: ['나도 같은 마음이에요.', 'SoraConfess'],
+			Gentle: ['앞으로도 좋은 친구로 지내요.', 'SoraFriendEnd']
+		})
 	],
 
 	// ──────────────────────────────────
