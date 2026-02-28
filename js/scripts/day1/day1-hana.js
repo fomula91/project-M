@@ -84,6 +84,25 @@ monogatari.script ({
 		'show character h laugh',
 		'하나가 장난스럽게 윙크한다.',
 		// TODO: [CG] rooftop-hana — 옥상 벚꽃 파노라마, 윙크하는 하나
+		{'Function': {
+			'Apply': function () {
+				monogatari.distractionFree();
+			},
+			'Revert': function () {
+				monogatari.distractionFree();
+			}
+		}},
+		'show scene rooftop-hana_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () {
+				monogatari.distractionFree();
+			},
+			'Revert': function () {
+				monogatari.distractionFree();
+			}
+		}},
+		'show scene auditorium_noon with fadeIn',
 		'p ...하나는 정말 밝은 아이다. 같이 있으면 나까지 즐거워져.',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',

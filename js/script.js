@@ -98,7 +98,8 @@ monogatari.assets ('scenes', {
 	'classroom_night': 'classroom_01_night.jpg',
 	'classroom3_evening': 'classroom_03_evening.jpg',
 	'bedroom_night': 'classroom_01_night.jpg',
-	'silhouette_cg': 'silhouette.png'
+	'silhouette_cg': 'silhouette.png',
+	'c': 'rooftop-hana.png'
 });
 
 // Define the Characters
