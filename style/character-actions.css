@@ -105,6 +105,13 @@
 	text-shadow: 0 1px 4px rgba(232, 123, 161, 0.4);
 }
 
+/* Unknown: silver-gray (mysterious) */
+.affinity-hint--unknown {
+	background: linear-gradient(135deg, rgba(160, 170, 190, 0.35), rgba(130, 140, 160, 0.3));
+	color: #e8ecf2;
+	text-shadow: 0 1px 4px rgba(160, 170, 190, 0.4);
+}
+
 .affinity-hint__icon {
 	font-size: 1.3em;
 	animation: affinityIconPulse 0.8s ease-in-out 0.3s 1 both;
