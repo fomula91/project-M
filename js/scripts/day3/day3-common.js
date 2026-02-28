@@ -64,7 +64,7 @@ monogatari.script ({
 			'Apply': function () { monogatari.distractionFree();},
 			'Revert': function () { monogatari.distractionFree();}
 		}},
-		'show scene photo-discovery with fadeIn',
+		'show scene photo-discovery_cg with fadeIn',
 		'wait 3000',
 		{'Function': {
 			'Apply': function () { monogatari.distractionFree();},
@@ -72,6 +72,7 @@ monogatari.script ({
 		}},
 		'gallery unlock photo-discovery_cg',
 		'show scene auditorium_day with fadeIn',
+		'show character p surprised at center with fadeIn',
 		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
 		'p 이 사람... 어딘가에서 본 것 같은데.',
 		'p 정류장에서 본 사람과 닮은 것 같기도 하고...',
