@@ -322,6 +322,7 @@ monogatari.script ({
 			'Revert': function () { monogatari.distractionFree(); }
 		}},
 		'gallery unlock silhouette',
+		'show character p surprised at center with fadeIn',
 		'p ...기분 탓인가.',
 		'고개를 갸웃하며 다시 걷기 시작한다.',
 		'hide character p with fadeOut',

@@ -102,10 +102,11 @@ monogatari.script ({
 				monogatari.distractionFree();
 			}
 		}},
+		'gallery unlock rooftop-hana',
 		'show scene auditorium_noon with fadeIn',
+		'show character p smile at left with fadeIn',
 		'p ...하나는 정말 밝은 아이다. 같이 있으면 나까지 즐거워져.',
 		'hide character p with fadeOut',
-		'hide character h with fadeOut',
 		'jump Day1Afternoon'
 	]
 });
