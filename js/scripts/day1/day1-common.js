@@ -143,12 +143,16 @@ monogatari.script ({
 		'show character p surprised at center with fadeIn',
 		'p ...여기는 아무도 안 앉나?',
 		{
-			'Conditional': {
-				'Condition': function () {
-					return this.storage('helped_sora') ? 'SoraSays' : 'HanaSays';
+			'Choice': {
+				'Dialog': 'p ...누구에게 물어볼까?',
+				'AskSora': {
+					'Text': '소라에게 물어본다',
+					'Do': 'jump Day1UnknownHintSora'
 				},
-				'SoraSays': 'jump Day1UnknownHintSora',
-				'HanaSays': 'jump Day1UnknownHintHana'
+				'AskHana': {
+					'Text': '하나에게 물어본다',
+					'Do': 'jump Day1UnknownHintHana'
+				}
 			}
 		}
 	],
