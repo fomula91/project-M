@@ -66,7 +66,7 @@ monogatari.assets ('images', {
 
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-	'opening_cg': 'opening.png',
+	'opening_cg': '../gallery/opening.png',
 	'school_front_early': 'early01.jpg',
 	'school_front_day': 'day01.jpg',
 	'school_grounds_early': 'early02.jpg',
@@ -101,9 +101,9 @@ monogatari.assets ('scenes', {
 	'classroom_night': 'classroom_01_night.jpg',
 	'classroom3_evening': 'classroom_03_evening.jpg',
 	'bedroom_night': 'classroom_01_night.jpg',
-	'silhouette_cg': 'silhouette.png',
-	'rooftop-hana_cg': 'rooftop-hana.png',
-	'library-sora_cg': 'library-sora.png'
+	'silhouette_cg': '../gallery/silhouette.png',
+	'rooftop-hana_cg': '../gallery/rooftop-hana.png',
+	'library-sora_cg': '../gallery/library-sora.png'
 });
 
 // Define the Characters
