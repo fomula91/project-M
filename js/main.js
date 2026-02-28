@@ -98,6 +98,9 @@ $_ready (() => {
 			}).observe(settingsEl, { attributes: true, attributeFilter: ['class'] });
 		}
 
+		UISounds.init();
+		UISounds.installHook();
+
 		ChoiceStats.init();
 		ChoiceStats.installHook();
 		ChoiceStats.installPreviewObserver();
