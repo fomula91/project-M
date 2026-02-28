@@ -28,6 +28,7 @@ monogatari.configuration ('credits', {
 // Define the images that will be available on your game's image gallery
 monogatari.assets ('gallery', {
 	'opening-unknown': 'opening.png',
+	'silhouette': 'silhouette.png',
 });
 
 // Define the music used in the game.
@@ -95,7 +96,8 @@ monogatari.assets ('scenes', {
 	'another_building_day': 'another_school_building_day.jpg',
 	'classroom_night': 'classroom_01_night.jpg',
 	'classroom3_evening': 'classroom_03_evening.jpg',
-	'bedroom_night': 'classroom_01_night.jpg'
+	'bedroom_night': 'classroom_01_night.jpg',
+	'silhouette_cg': 'silhouette.png'
 });
 
 // Define the Characters
