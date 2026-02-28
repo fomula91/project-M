@@ -204,6 +204,42 @@
 
 /**
  * ===========================
+ * Loading Skeleton
+ * ===========================
+**/
+
+.choice-stats-sidebar.loading {
+	opacity: 0;
+	animation: sidebarFadeIn 0.3s ease-out forwards;
+}
+
+.choice-stats-sidebar.loading .choice-stats-bar-track {
+	background: rgba(255, 183, 197, 0.15);
+	overflow: hidden;
+}
+
+.choice-stats-sidebar.loading .choice-stats-bar-track::after {
+	content: "";
+	display: block;
+	width: 40%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 183, 197, 0.3), transparent);
+	animation: loadingShimmer 1.2s ease-in-out infinite;
+}
+
+.choice-stats-sidebar.loading .choice-stats-percent {
+	opacity: 0.5;
+	font-size: 0.85em;
+	animation: none;
+}
+
+@keyframes loadingShimmer {
+	0%   { transform: translateX(-100%); }
+	100% { transform: translateX(350%); }
+}
+
+/**
+ * ===========================
  * Choice Statistics Preview
  * ===========================
 **/

@@ -9,7 +9,8 @@ const ChoiceStats = (function () {
 
 	const DISPLAY_DURATION = 2500;
 	const API_TIMEOUT = 3000;
-	const PREVIEW_DELAY = 700;
+	const PREVIEW_DELAY = 300;
+	const CONNECTIVITY_TIMEOUT = 1500;
 
 	const TRACKED_SCENES = {
 		'Day1UnknownHint': true,
@@ -46,6 +47,19 @@ const ChoiceStats = (function () {
 		return new Promise(function (_, reject) {
 			setTimeout(function () { reject(new Error('timeout')); }, ms);
 		});
+	}
+
+	async function isNetworkStable () {
+		if (!navigator.onLine) return false;
+		try {
+			var controller = new AbortController();
+			var timer = setTimeout(function () { controller.abort(); }, CONNECTIVITY_TIMEOUT);
+			var res = await fetch('/api/stats?scene_id=_ping', { signal: controller.signal });
+			clearTimeout(timer);
+			return res.ok;
+		} catch (e) {
+			return false;
+		}
 	}
 
 	async function recordVoteAndGetStats (sceneId, choiceKey) {
@@ -110,6 +124,32 @@ const ChoiceStats = (function () {
 		});
 	}
 
+	function showLoadingSidebar (container) {
+		var buttons = container.querySelectorAll('[data-choice]');
+		buttons.forEach(function (btn) {
+			if (btn.closest('.choice-row')) return;
+
+			var row = document.createElement('div');
+			row.className = 'choice-row';
+			btn.parentNode.insertBefore(row, btn);
+			row.appendChild(btn);
+
+			var sidebar = document.createElement('div');
+			sidebar.className = 'choice-stats-sidebar loading';
+
+			var track = document.createElement('div');
+			track.className = 'choice-stats-bar-track';
+			sidebar.appendChild(track);
+
+			var label = document.createElement('span');
+			label.className = 'choice-stats-percent';
+			label.textContent = '...';
+			sidebar.appendChild(label);
+
+			row.appendChild(sidebar);
+		});
+	}
+
 	function displayStats (stats, selectedKey, container) {
 		return new Promise(function (resolve) {
 			const percentages = calculatePercentages(stats);
@@ -132,11 +172,18 @@ const ChoiceStats = (function () {
 					btn.classList.add('choice-stats-unselected');
 				}
 
-				// Wrap button in .choice-row
-				var row = document.createElement('div');
-				row.className = 'choice-row';
-				btn.parentNode.insertBefore(row, btn);
-				row.appendChild(btn);
+				// Reuse existing .choice-row or create new
+				var row = btn.closest('.choice-row');
+				if (!row) {
+					row = document.createElement('div');
+					row.className = 'choice-row';
+					btn.parentNode.insertBefore(row, btn);
+					row.appendChild(btn);
+				}
+
+				// Remove existing sidebar (loading or preview) and replace
+				var oldSidebar = row.querySelector('.choice-stats-sidebar');
+				if (oldSidebar) oldSidebar.remove();
 
 				// Create sidebar
 				var sidebar = document.createElement('div');
@@ -180,11 +227,18 @@ const ChoiceStats = (function () {
 			var stat = percentages.find(function (p) { return p.choice_key === choiceKey; });
 			if (!stat) return;
 
-			// Wrap button in .choice-row
-			var row = document.createElement('div');
-			row.className = 'choice-row';
-			btn.parentNode.insertBefore(row, btn);
-			row.appendChild(btn);
+			// Reuse existing .choice-row or create new
+			var row = btn.closest('.choice-row');
+			if (!row) {
+				row = document.createElement('div');
+				row.className = 'choice-row';
+				btn.parentNode.insertBefore(row, btn);
+				row.appendChild(btn);
+			}
+
+			// Remove existing sidebar (loading) and replace
+			var oldSidebar = row.querySelector('.choice-stats-sidebar');
+			if (oldSidebar) oldSidebar.remove();
 
 			// Create preview sidebar
 			var sidebar = document.createElement('div');
@@ -232,16 +286,33 @@ const ChoiceStats = (function () {
 
 		isPreviewActive = true;
 
-		await new Promise(function (resolve) { setTimeout(resolve, PREVIEW_DELAY); });
+		// 네트워크 체크와 딜레이를 병렬 실행
+		var results = await Promise.all([
+			isNetworkStable(),
+			new Promise(function (resolve) { setTimeout(resolve, PREVIEW_DELAY); })
+		]);
+
+		var networkOk = results[0];
 		if (!isPreviewActive) return;
+		if (!networkOk) {
+			console.log('[ChoiceStats] Network unstable, skipping preview.');
+			return;
+		}
 
 		if (!container.querySelector('[data-choice]')) return;
+
+		// 스켈레톤 로딩 먼저 표시
+		showLoadingSidebar(container);
+		container.classList.add('choice-stats-preview');
 
 		var stats = await getSceneStats(sceneId);
 		if (!isPreviewActive) return;
 
 		if (stats && stats.length > 0) {
 			displayPreviewStats(stats, container);
+		} else {
+			// API 실패 시 로딩 스켈레톤 제거
+			cleanupPreview(container);
 		}
 	}
 
@@ -305,6 +376,21 @@ const ChoiceStats = (function () {
 		async function handleChoice (info) {
 			isPreviewActive = false;
 			cleanupPreview(info.container);
+
+			// 오프라인이면 통계 표시 없이 즉시 게임 진행
+			if (!navigator.onLine) {
+				console.log('[ChoiceStats] Offline, skipping stats display.');
+				isReplayingClick = true;
+				pendingChoice = null;
+				info.button.click();
+				setTimeout(function () { isReplayingClick = false; }, 100);
+				return;
+			}
+
+			// 온라인: 로딩 스켈레톤 먼저 표시
+			if (info.container) {
+				showLoadingSidebar(info.container);
+			}
 
 			var stats = await recordVoteAndGetStats(info.sceneId, info.choiceKey);
 
