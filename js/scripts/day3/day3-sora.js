@@ -62,9 +62,8 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day3SoraClimax': [
 		'show scene school_grounds_evening with fadeIn',
-		'stop music fade 2',
-		'wait 2000',
-		'play music sora-ending loop fade 2',
+		'stop music',
+		'play music sora-ending loop',
 		'show character s normal',
 		'축제가 끝나고, 석양이 학교를 물들인다.',
 		'play sound footsteps loop',
@@ -138,6 +137,7 @@ monogatari.script ({
 		'show scene auditorium_evening with fadeIn',
 		'centered ── 소라: 소중한 거리 ──',
 		'하지만... 이것으로 끝이 아닌 것 같다.',
+		'stop music',
 		function () {
 			this.storage({ day3_ending_type: 'sora_friend' });
 		},

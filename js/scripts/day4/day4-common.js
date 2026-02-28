@@ -34,10 +34,7 @@ monogatari.script ({
 	//  Day4Start — 등교, 유우 첫 만남
 	// ──────────────────────────────────
 	'Day4Start': [
-		'stop music fade 2',
-		'wait 2000',
-		'play music acoustic-chill loop fade 2',
-		'play sound school-bell',
+		'play music acoustic-chill loop',
 		'show scene school_front_day with fadeFromBlack duration 1500',
 		'centered ── 4일차: 지나간 봄의 기억 ──',
 		'show scene school_grounds_day with fadeIn',
@@ -176,8 +173,6 @@ monogatari.script ({
 		'u 그리고 지금... 그 자리에 네가 있는 거야.',
 		'p 저는 그런 대단한 사람이──',
 		'u 대단할 필요 없어. 그냥 곁에 있어주는 것만으로도 충분해.',
-		'hide character u with fadeOut',
-		'hide character p with fadeOut',
 		'jump Day4Lunch'
 	],
 
