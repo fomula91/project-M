@@ -80,6 +80,7 @@ monogatari.script ({
 		'h {{player.name}}이니까 괜찮지! 우리 이제 특별한 사이잖아~',
 		'show character h laugh',
 		'하나가 장난스럽게 윙크한다.',
+		// TODO: [CG] rooftop-hana — 옥상 벚꽃 파노라마, 윙크하는 하나
 		'p ...하나는 정말 밝은 아이다. 같이 있으면 나까지 즐거워져.',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',

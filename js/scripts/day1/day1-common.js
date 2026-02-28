@@ -310,6 +310,7 @@ monogatari.script ({
 		'show character p surprised at center with fadeIn',
 		'p ...어? 저 건물 유리창에 누가──',
 		'유리창 너머로 누군가의 실루엣이 보인 것 같았다.',
+		// TODO: [CG] silhouette — 석양빛 구교사 유리창 너머 실루엣
 		'p ...기분 탓인가.',
 		'고개를 갸웃하며 다시 걷기 시작한다.',
 		'hide character p with fadeOut',
