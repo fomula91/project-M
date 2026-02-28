@@ -109,6 +109,7 @@ monogatari.script ({
 	//  SchoolArrival — 교실 도착, 소라·하나 첫 만남
 	// ──────────────────────────────────
 	'SchoolArrival': [
+		'play sound school-bell',
 		'show scene classroom_day with fadeFromBlack duration 1500',
 		'아침 햇살이 창문을 통해 쏟아져 들어온다. 분필 가루와 새 교과서 냄새.',
 		'새 학기 특유의 설렘이 교실 안에 가득하다.',
@@ -194,6 +195,7 @@ monogatari.script ({
 	//  MorningEvent — 쉬는 시간 첫 선택지
 	// ──────────────────────────────────
 	'MorningEvent': [
+		'play sound school-bell',
 		'show scene classroom2_morning with fadeFromBlack duration 1500',
 		'쉬는 시간, 복도에서 소란이 들린다.',
 		'show character s worried at center with slideInLeft',
@@ -226,6 +228,7 @@ monogatari.script ({
 	//  LunchTime — 점심시간 분기
 	// ──────────────────────────────────
 	'LunchTime': [
+		'play sound school-bell',
 		'show scene classroom_day with fadeIn',
 		'점심시간이 되었다.',
 		'오늘은 어디서 점심을 먹을까 고민하는데...',
@@ -297,6 +300,7 @@ monogatari.script ({
 	//  Day1Afternoon — 하교, 구교사 복선
 	// ──────────────────────────────────
 	'Day1Afternoon': [
+		'play sound school-bell',
 		'show scene classroom_afternoon with fadeIn',
 		'오후 수업이 끝나고, 석양이 교실을 물들인다.',
 		'show character p normal at center with fadeIn',
@@ -305,7 +309,9 @@ monogatari.script ({
 		'p ...새 학교에서의 첫날, 좋은 사람들을 만났어.',
 		'hide character p with fadeOut',
 		'집으로 돌아가는 길──',
+		'play sound footsteps',
 		'show scene another_building_day with fadeIn',
+		'stop sound footsteps',
 		'교문 옆 구교사 건물이 눈에 들어온다.',
 		'show character p surprised at center with fadeIn',
 		'p ...어? 저 건물 유리창에 누가──',

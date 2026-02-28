@@ -36,6 +36,7 @@ monogatari.script ({
 	'Day4Start': [
 		'stop music fade 2',
 		'play music acoustic-chill loop fade 2',
+		'play sound school-bell',
 		'show scene school_front_day with fadeFromBlack duration 1500',
 		'centered ── 4일차: 지나간 봄의 기억 ──',
 		'show scene school_grounds_day with fadeIn',
@@ -232,6 +233,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day4Evening': [
 		...fadeScene('busstop_evening'),
+		'play sound footsteps loop',
 		'하교 시간. 유우가 버스 정류장까지 함께 걸어준다.',
 		'show character u normal at left with fadeIn',
 		'u 오늘 하루... 어땠어?',
@@ -245,6 +247,7 @@ monogatari.script ({
 		'u 네 마음이 향하는 곳으로, 솔직하게.',
 		'p 유우 선배...',
 		'u 파이팅, 후배.',
+		'stop sound footsteps fade 1',
 		'유우가 손을 흔들며 떠난다.',
 		'hide character u with fadeOut',
 		'show character p normal',

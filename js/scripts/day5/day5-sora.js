@@ -28,6 +28,7 @@ monogatari.script ({
 	//  Day5SoraRoute — 5일차 시작
 	// ──────────────────────────────────
 	'Day5SoraRoute': [
+		'play sound school-bell',
 		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 5일차: 다시 전하는 마음 ──',
 		'show scene school_grounds_day with fadeIn',

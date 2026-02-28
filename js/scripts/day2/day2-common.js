@@ -39,6 +39,7 @@ monogatari.script ({
 	//  Day2Start — 등교
 	// ──────────────────────────────────
 	'Day2Start': [
+		'play sound school-bell',
 		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 2일차: 가까워지는 마음 ──',
 		'show scene school_grounds_day with fadeIn',
@@ -250,6 +251,7 @@ monogatari.script ({
 	//  Day2Morning — 축제 준비 팀 선택
 	// ──────────────────────────────────
 	'Day2Morning': [
+		'play sound school-bell',
 		'show scene classroom2_morning with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
 		'"내일 있을 학교 축제 준비를 시작하겠습니다. 2인 1조로 팀을 구성하세요."',
@@ -282,6 +284,7 @@ monogatari.script ({
 	//  Day2Evening — 석양 분기
 	// ──────────────────────────────────
 	'Day2Evening': [
+		'play sound school-bell',
 		'show scene classroom_afternoon with fadeIn',
 		'해가 지고, 교실에 주황빛이 가득 찬다.',
 		'축제 준비를 마치고 돌아가려는데...',
@@ -324,9 +327,11 @@ monogatari.script ({
 		's 아, {{player.name}} 씨. 같이 가실래요?',
 		'show character h happy at right with fadeIn',
 		'h 셋이서 가자! 오늘도 재밌었다~!',
+		'play sound footsteps loop',
 		'셋이서 나란히 걸으며 하교한다.',
 		'show character p smile at center with fadeIn',
 		'p ...이 순간이 계속되면 좋겠다.',
+		'stop sound footsteps fade 1',
 		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
 		'hide character p',
 		'hide character s',

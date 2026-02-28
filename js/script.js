@@ -48,7 +48,9 @@ monogatari.assets ('voices', {
 
 // Define the sounds used in the game.
 monogatari.assets ('sounds', {
-
+	'footsteps': 'Footsteps.mp3',
+	'school-bell': 'Japanese_School_Bell.mp3',
+	'select': 'Select.mp3'
 });
 
 // Define the videos used in the game.

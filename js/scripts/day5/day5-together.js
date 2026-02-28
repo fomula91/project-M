@@ -23,6 +23,7 @@ monogatari.script ({
 	//  Day5TogetherRoute — 5일차 시작
 	// ──────────────────────────────────
 	'Day5TogetherRoute': [
+		'play sound school-bell',
 		'show scene school_front_early with fadeFromBlack duration 1500',
 		'centered ── 5일차: 이어지는 봄 ──',
 		'show scene school_grounds_day with fadeIn',

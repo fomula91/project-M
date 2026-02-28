@@ -28,6 +28,7 @@ monogatari.script ({
 	//  Day3Start — 축제 당일 아침
 	// ──────────────────────────────────
 	'Day3Start': [
+		'play sound school-bell',
 		'show scene school_grounds_early with fadeIn',
 		'centered ── 3일차: 축제, 그리고... ──',
 		'show scene auditorium_day with fadeIn',
