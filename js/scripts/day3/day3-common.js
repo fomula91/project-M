@@ -70,7 +70,7 @@ monogatari.script ({
 			'Apply': function () { monogatari.distractionFree();},
 			'Revert': function () { monogatari.distractionFree();}
 		}},
-		'gallery unlock photo-discovery_cg',
+		'gallery unlock photo-discovery',
 		'show scene auditorium_day with fadeIn',
 		'show character p surprised at center with fadeIn',
 		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
