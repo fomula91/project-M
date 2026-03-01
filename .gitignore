@@ -6,3 +6,8 @@ node_modules/
 .env.local
 .vercel
 .env*.local
+
+# Encrypted assets
+*.enc
+assets/manifest.enc.json
+tools/.asset-key
