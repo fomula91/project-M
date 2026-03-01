@@ -35,7 +35,7 @@ monogatari.script ({
 		'유우 선배의 말이 머릿속에서 맴돈다.',
 		'"서두르지 마. 하지만 도망치지도 마."',
 		'show character p normal at center with fadeIn',
-		'p ...소라 씨에게, 이번엔 제대로 전하고 싶어.',
+		'p ...소라에게, 이번엔 제대로 전하고 싶어.',
 		'주머니 속 종이학을 만진다. 소라가 건네줬던 작은 종이학.',
 		'손끝에 전해지는 의외의 온기── 소라의 정성이 깃든 것 같다.',
 		'p ...도서관에서 기다리고 있을 거야. 이번엔 내가 먼저.',
@@ -58,13 +58,13 @@ monogatari.script ({
 		'show character s normal at center with fadeIn',
 		's 아, {{player.name}} 씨. 도서관까지 오시다니.',
 		'show character p normal at right with fadeIn',
-		'p 소라 씨, 이야기 좀 해도 될까요?',
+		'p 소라야, 이야기 좀 해도 될까?',
 		's ...네, 물론이에요.',
-		'p 유우 선배를 만나고... 소라 씨에 대해 더 알게 됐어요.',
+		'p 유우 선배를 만나고... 소라에 대해 더 알게 됐어.',
 		'p 혼자이던 시절의 이야기도, 마음을 여는 게 무서웠다는 것도.',
 		'show character s worried',
 		's {{player.name}} 씨, 저──',
-		'p 그리고 그런 소라 씨가... 저는 더 소중해졌어요.',
+		'p 그리고 그런 소라가... 나한테 더 소중해졌어.',
 		'p 약한 모습도, 두려워하는 모습도 전부.',
 		'show scene classroom3_afternoon with fadeIn',
 		'show character s normal at center with fadeIn',
@@ -104,12 +104,12 @@ monogatari.script ({
 		'이 말의 무게를── 소라가 얼마나 큰 용기를 냈는지── 알고 있다.',
 		'"서두르지 마. 하지만 도망치지도 마."── 유우 선배의 말이 떠오른다.',
 		'손끝이 떨린다. 하지만 이번만큼은 도망치지 않겠다.',
-		'p ...대답해야 해. 소라 씨의 용기에 걸맞은 대답을.',
+		'p ...대답해야 해. 소라의 용기에 걸맞은 대답을.',
 		'wait 800',
 		'show character s worried at center with fadeIn',
 		'show character p normal at right with fadeIn',
-		makeChoice('p 소라 씨...', {
-			TrueLove: ['기다릴게요. 소라 씨의 속도에 맞춰서.', 'SoraTrueLoveEnd'],
+		makeChoice('p 소라야...', {
+			TrueLove: ['기다릴게. 소라의 속도에 맞춰서.', 'SoraTrueLoveEnd'],
 			Warm: ['무리하지 않아도 괜찮아요.', 'SoraWarmEnd']
 		})
 	],
@@ -122,7 +122,7 @@ monogatari.script ({
 			this.storage({ sora_affection: this.storage('sora_affection') + 3 });
 			AffinityHint.show('sora');
 		},
-		'p 기다릴게요, 소라 씨. 소라 씨의 속도에 맞춰서.',
+		'p 기다릴게, 소라야. 소라의 속도에 맞춰서.',
 		'p 서두르지 않을게요. 하지만 절대 떠나지도 않을게요.',
 		'show character s surprised',
 		's ...!',
@@ -165,9 +165,9 @@ monogatari.script ({
 			this.storage({ sora_affection: this.storage('sora_affection') + 2 });
 			AffinityHint.show('sora');
 		},
-		'p 무리하지 않아도 괜찮아요, 소라 씨.',
+		'p 무리하지 않아도 괜찮아, 소라야.',
 		'p 고백의 대답을 서둘러 할 필요 없어요.',
-		'p 지금 이 순간, 소라 씨와 함께 있는 것만으로도 충분해요.',
+		'p 지금 이 순간, 소라와 함께 있는 것만으로도 충분해.',
 		'show character s surprised',
 		's {{player.name}} 씨...',
 		'show character s happy',

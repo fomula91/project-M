@@ -34,6 +34,8 @@ monogatari.script ({
 		'show scene auditorium_day with fadeIn',
 		'동아리 전시회 당일 아침.',
 		'학교 곳곳에 전시 안내와 체험 부스 현수막이 걸려 있다.',
+		'복도에서 페인트 냄새가 섞인 공기가 풍겨온다.',
+		'2반은 사진 전시, 옆 반은 과학 실험 체험... 안내판이 빼곡하다.',
 		'show character p normal at center with fadeIn',
 		'p 드디어 전시회다...',
 		'거울 앞에서 괜히 머리를 고쳐 본다.',

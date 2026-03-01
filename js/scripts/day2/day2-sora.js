@@ -29,14 +29,13 @@ monogatari.script ({
 		function () {
 			this.storage ({
 				sora_affection: this.storage ('sora_affection') + 2,
-				hana_affection: this.storage ('hana_affection') + 1,
 				day2_studied_together: true
 			});
-			AffinityHint.show ('both');
+			AffinityHint.show ('sora');
 		},
 		'show character s surprised at center with fadeIn',
 		'show character p smile at left with fadeIn',
-		'p 소라 씨, 같이 하죠.',
+		'p 소라야, 같이 하자.',
 		's ...! 네, 감사합니다.',
 		'소라의 눈이 반짝인다. 처음 보는 표정이다.',
 		'show character h worried at right with fadeIn',
@@ -51,7 +50,7 @@ monogatari.script ({
 		's 이 종이학을 봐주세요. 이런 식으로 장식하면 어떨까요?',
 		'소라가 정성스럽게 접은 종이학을 보여준다.',
 		'show character s happy',
-		'p 와, 정말 예쁘다. 소라 씨 손재주가 대단하네요.',
+		'p 와, 정말 예쁘다. 소라 손재주가 대단하다.',
 		's 에... 칭찬은 좀 부끄럽지만... 고마워요.',
 		'show character s happy',
 		'소라가 얼굴을 붉히며 작은 종이학 하나를 건넨다.',
@@ -72,8 +71,10 @@ monogatari.script ({
 		'show scene classroom_day with fadeIn',
 		'show character s happy at center with fadeIn',
 		'show character p smile at left with fadeIn',
+		'p (...작은 종이학인데, 왠지 함부로 다룰 수 없는 느낌이다.)',
 		'손바닥 위의 종이학이 의외로 따뜻하다. 소라의 체온이 남아 있는 것 같다.',
-		'소라가 수줍게 미소 짓는다. 심장이 두근거린다.',
+		'p (...뭔가 받으니까 기분이 묘하다. 부담은 아닌데, 신경이 쓰인다.)',
+		'소라가 수줍게 미소 짓는다. 왠지 자꾸 의식하게 된다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',
 		'jump Day2Evening'
@@ -84,6 +85,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day2SoraEvening': [
 		'show scene classroom2_evening with fadeIn',
+		'종례가 끝나고 교실이 하나둘 비어간다.',
 		'show character s normal at center with fadeIn',
 		'복도에서 소라를 마주친다. 소라가 창밖을 바라보고 있다.',
 		's ...아, {{player.name}} 씨.',
@@ -111,7 +113,8 @@ monogatari.script ({
 		'show scene classroom2_evening with fadeIn',
 		'show character s happy at center with fadeIn',
 		'show character p normal at right with fadeIn',
-		'p ...저도요, 소라 씨.',
+		'p (석양 빛에 비친 소라의 모습이... 자꾸 눈에 밟힌다.)',
+		'p ...나도, 소라야.',
 		'두 사람 사이로 석양빛이 부드럽게 비춘다.',
 		'hide character p with fadeOut',
 		'hide character s with fadeOut',

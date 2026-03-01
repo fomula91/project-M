@@ -194,7 +194,7 @@ monogatari.script ({
 		'소라가 순간 동요한 표정을 짓지만 이내 침착해진다.',
 		'show character s normal',
 		's 과학부에서 활동하셨던 분이에요. 뛰어난 분이었죠.',
-		'p 소라 씨와도 아는 사이였어?',
+		'p 소라와도 아는 사이였어?',
 		's ...네. 저와 하나를 이어준 분이기도 해요.',
 		'소라가 작게 웃으며 말한다.',
 		'hide character s with fadeOut',
@@ -242,6 +242,9 @@ monogatari.script ({
 	'Day2Morning': [
 		'play sound school-bell',
 		'show scene classroom2_morning with slideLeft',
+		'교실에 들어서자 책상 위에 색지와 풀, 가위가 어지럽게 놓여 있다.',
+		'벌써 시작한 애들이 바닥에 앉아 포스터를 만들고 있다.',
+		'담임 선생님이 칠판에 조별 배정표를 적고 있다.',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
 		'"내일 동아리 전시회가 있습니다. 우리 반도 전시 부스를 준비해야 하니까, 소그룹으로 나눠서 맡아주세요."',
 		'교실이 웅성거린다. 몇몇은 이미 친한 친구끼리 모이기 시작한다.',
@@ -293,13 +296,6 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day2NeutralEvening': [
 		'show scene school_grounds_evening with fadeIn',
-		function () {
-			this.storage ({
-				sora_affection: this.storage ('sora_affection') + 1,
-				hana_affection: this.storage ('hana_affection') + 1
-			});
-			AffinityHint.show ('both');
-		},
 		'교문을 나서려는데, 소라와 하나가 나란히 서 있다.',
 		'show character s normal at left with fadeIn',
 		's 아, {{player.name}} 씨. 같이 가실래요?',
@@ -326,6 +322,7 @@ monogatari.script ({
 		}},
 		'gallery unlock three-walk-home',
 		'show scene school_grounds_evening with fadeIn',
+		'p (셋이서 이렇게 걷는 게... 왜 이렇게 자연스럽지.)',
 		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
 		'jump Day2End'
 	],

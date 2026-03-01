@@ -29,10 +29,9 @@ monogatari.script ({
 		'show scene classroom_day with slideRight',
 		function () {
 			this.storage ({
-				hana_affection: this.storage ('hana_affection') + 2,
-				sora_affection: this.storage ('sora_affection') + 1
+				hana_affection: this.storage ('hana_affection') + 2
 			});
-			AffinityHint.show ('both');
+			AffinityHint.show ('hana');
 		},
 		'show character h laugh at center with fadeIn',
 		'show character p smile at right with fadeIn',
@@ -59,6 +58,7 @@ monogatari.script ({
 		'p 그래, 같이 다니자.',
 		'show character h happy',
 		'하나의 눈이 별처럼 빛난다.',
+		'p (하나 옆에 있으면 지루할 틈이 없다. 근데 가끔... 괜찮은 건가 싶기도 하고.)',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',
 		'jump Day2Evening'
@@ -69,6 +69,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day2HanaEvening': [
 		'show scene school_grounds_evening with fadeIn',
+		'종례가 끝나고 교실이 하나둘 비어간다.',
 		'show character h happy at center with fadeIn',
 		'교문 앞에서 하나가 기다리고 있다.',
 		'h {{player.name}}! 여기여기!',
@@ -100,6 +101,7 @@ monogatari.script ({
 		'gallery unlock hana-sunset-promise',
 		'show scene school_grounds_evening with fadeIn',
 		'show character h happy at center with fadeIn',
+		'p (하나가 저렇게 진지해지는 건 처음 보는 것 같다.)',
 		'석양 속 하나의 미소가 유독 아름답게 보인다.',
 		'jump Day2End'
 	]
