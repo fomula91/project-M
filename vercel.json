@@ -1,5 +1,5 @@
 {
-  "buildCommand": "",
+  "buildCommand": "node tools/encrypt-assets.js --delete-originals",
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [

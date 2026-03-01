@@ -22,11 +22,18 @@ const MIME_TYPES = {
 };
 
 function getOrCreateKey() {
+	// 1. 환경변수 ASSET_ENCRYPTION_KEY가 있으면 사용 (Vercel 빌드용)
+	if (process.env.ASSET_ENCRYPTION_KEY) {
+		console.log('환경변수 키 사용: ASSET_ENCRYPTION_KEY');
+		return Buffer.from(process.env.ASSET_ENCRYPTION_KEY, 'hex');
+	}
+	// 2. 로컬 키 파일이 있으면 사용
 	if (fs.existsSync(KEY_FILE)) {
 		const hex = fs.readFileSync(KEY_FILE, 'utf8').trim();
 		console.log('기존 키 사용:', KEY_FILE);
 		return Buffer.from(hex, 'hex');
 	}
+	// 3. 둘 다 없으면 새 키 생성
 	const key = crypto.randomBytes(32);
 	fs.writeFileSync(KEY_FILE, key.toString('hex'), 'utf8');
 	console.log('새 키 생성:', KEY_FILE);
@@ -65,7 +72,11 @@ function encryptFile(filePath, key) {
 }
 
 function main() {
-	console.log('=== 에셋 암호화 시작 ===\n');
+	const deleteOriginals = process.argv.includes('--delete-originals');
+
+	console.log('=== 에셋 암호화 시작 ===');
+	if (deleteOriginals) console.log('[옵션] 암호화 후 원본 파일 삭제');
+	console.log('');
 
 	const key = getOrCreateKey();
 	const assetFiles = collectAssetFiles(ASSETS_DIR);
@@ -114,6 +125,20 @@ function main() {
 	console.log(`매니페스트: ${path.relative(PROJECT_ROOT, MANIFEST_FILE)}`);
 	console.log(`\n[Service Worker용 키 (hex)]`);
 	console.log(key.toString('hex'));
+
+	// --delete-originals: manifest에 등록된 원본 파일만 삭제
+	if (deleteOriginals) {
+		console.log('\n=== 원본 파일 삭제 ===');
+		let deleted = 0;
+		for (const relativePath of Object.keys(manifest)) {
+			const absPath = path.join(PROJECT_ROOT, relativePath);
+			if (fs.existsSync(absPath)) {
+				fs.unlinkSync(absPath);
+				deleted++;
+			}
+		}
+		console.log(`삭제된 원본 파일: ${deleted}개`);
+	}
 }
 
 main();

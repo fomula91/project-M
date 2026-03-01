@@ -5,7 +5,7 @@ const name = 'Monogatari';
 
 // The version of the cache, changing this will force everything to be cached
 // again.
-const version = '0.5.0';
+const version = '0.6.0';
 
 // ── Asset Decryption Config ──
 // 이 키는 tools/encrypt-assets.js 실행 후 출력되는 hex 문자열로 교체해야 합니다.
