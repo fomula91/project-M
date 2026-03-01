@@ -34,7 +34,7 @@ const DebugJump = (function () {
             'Day4SoraAfternoon', 'Day4HanaAfternoon', 'Day4TogetherAfternoon'
         ],
         'Day 5': [
-            'Day5SoraRoute', 'Day5SoraScience', 'Day5SoraConfess2', 'SoraTrueLoveEnd', 'SoraWarmEnd',
+            'Day5SoraRoute', 'Day5SoraLibrary', 'Day5SoraConfess2', 'SoraTrueLoveEnd', 'SoraWarmEnd',
             'Day5HanaRoute', 'Day5HanaPool', 'Day5HanaConfess2', 'HanaTrueLoveEnd', 'HanaWarmEnd',
             'Day5TogetherRoute', 'Day5TogetherLetter'
         ]
