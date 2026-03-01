@@ -11,12 +11,13 @@ const ASSETS_DIR = path.join(PROJECT_ROOT, 'assets');
 const KEY_FILE = path.join(__dirname, '.asset-key');
 const MANIFEST_FILE = path.join(ASSETS_DIR, 'manifest.enc.json');
 
-const TARGET_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.mp3']);
+const TARGET_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.mp3']);
 
 const MIME_TYPES = {
 	'.jpg': 'image/jpeg',
 	'.jpeg': 'image/jpeg',
 	'.png': 'image/png',
+	'.webp': 'image/webp',
 	'.mp3': 'audio/mpeg',
 };
 
