@@ -74,9 +74,22 @@ monogatari.script ({
 		'show character h normal2',
 		'h 그래서── 나, 아직 포기 안 했어.',
 		'h {{player.name}}, 나는 아직도 너를 좋아해.',
-		'수영장 수면에 비친 석양이 하나의 얼굴을 비춘다.',
+		// [CG] hana-confession — 금빛 수면 위 벚꽃잎, 하나의 결연한 고백
 		'hide character h',
 		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene hana-confession_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock hana-confession',
+		'show scene swimming_pool with fadeIn',
+		'수영장 수면에 비친 석양이 하나의 얼굴을 비춘다.',
 		'jump Day5HanaConfess2'
 	],
 
@@ -126,10 +139,22 @@ monogatari.script ({
 		'하나가 눈물을 닦으며 장난스럽게 웃는다.',
 		'p 하하, 알겠어. 약속.',
 		'h 약속! 어기면 안 돼!',
+		// [CG] hana-truelove — 눈물 흘리면서도 환하게 웃는 하나, 진짜 웃음
+		'hide character p',
+		'hide character h',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene hana-truelove_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock hana-truelove',
 		'석양빛 수영장에서, 두 사람의 웃음이 퍼져나간다.',
 		'이것은 가면이 아닌, 진짜 하나의 웃음.',
-		'hide character p with fadeOut',
-		'hide character h with fadeOut',
 		'show scene swimming_pool with fadeIn',
 		'centered ── 하나 트루 러브 엔딩: 수영장의 석양 ──',
 		'end'
@@ -152,6 +177,23 @@ monogatari.script ({
 		'p 유우 선배가 알려줬어. 중요한 건 함께 있는 거라고.',
 		'show character h shy',
 		'h {{player.name}}...',
+		// [CG] hana-warm — 수줍게 고개 숙이는 하나, 처음 보는 표정
+		'hide character p',
+		'hide character h',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene hana-warm_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock hana-warm',
+		'show scene swimming_pool with fadeIn',
+		'show character h shy at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		'하나가 수줍게 고개를 숙인다. 처음 보는 표정이다.',
 		'h 그렇다면... 조금만 더 기다려줘.',
 		'h 다음에는 내가 더 용기 내서... 제대로 전할게.',

@@ -57,6 +57,21 @@ monogatari.script ({
 		'소라가 얼굴을 붉히며 작은 종이학 하나를 건넨다.',
 		's 이건... {{player.name}} 씨에게 드리는 거예요. 행운의 부적이라고 생각해주세요.',
 		'p 소중하게 간직할게요.',
+		// [CG] crane-gift — 소라가 종이학을 건네는 클로즈업
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene crane-gift_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock crane-gift',
+		'show scene classroom_day with fadeIn',
+		'show character s happy at center with fadeIn',
+		'show character p smile at left with fadeIn',
 		'손바닥 위의 종이학이 의외로 따뜻하다. 소라의 체온이 남아 있는 것 같다.',
 		'소라가 수줍게 미소 짓는다. 심장이 두근거린다.',
 		'hide character p with fadeOut',
@@ -81,6 +96,21 @@ monogatari.script ({
 		's 내일이... 기대돼요. {{player.name}} 씨와 함께니까.',
 		'show character s happy',
 		'소라가 처음으로 환하게 웃는다.',
+		// [CG] sora-sunset-smile — 석양빛 속 소라의 환한 미소
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-sunset-smile_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-sunset-smile',
+		'show scene classroom2_evening with fadeIn',
+		'show character s happy at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		'p ...저도요, 소라 씨.',
 		'두 사람 사이로 석양빛이 부드럽게 비춘다.',
 		'hide character p with fadeOut',

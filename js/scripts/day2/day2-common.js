@@ -310,10 +310,23 @@ monogatari.script ({
 		'show character p smile at center with fadeIn',
 		'p ...이 순간이 계속되면 좋겠다.',
 		'stop sound footsteps fade 1',
-		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
+		// [CG] three-walk-home — 셋이서 나란히 하교
 		'hide character p',
 		'hide character s',
 		'hide character h',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene three-walk-home_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock three-walk-home',
+		'show scene school_grounds_evening with fadeIn',
+		'벚꽃 잎이 세 사람의 어깨 위로 내려앉는다.',
 		'jump Day2End'
 	],
 
@@ -328,8 +341,21 @@ monogatari.script ({
 		'p ...누구와 함께 보내게 될까.',
 		'hide character p with fadeOut',
 		'그때, 정류장 건너편에 낯선 인물이 서 있는 것이 보인다.',
+		// [CG] busstop-silhouette — 가로등에 비치는 검정색 머리카락 실루엣
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene busstop-silhouette_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock busstop-silhouette',
+		'show scene busstop_night with fadeIn',
 		'show character u normal at left with fadeIn',
-		'...보라색 머리카락이 가로등 불빛에 비친다.',
+		'...검정색 머리카락이 가로등 불빛에 비친다.',
 		'show character p surprised at center with fadeIn',
 		'p ...저 사람은──',
 		'고개를 돌려 다시 보니, 이미 아무도 없다.',

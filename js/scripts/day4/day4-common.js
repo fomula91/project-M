@@ -62,6 +62,23 @@ monogatari.script ({
 	'Day4MeetUnknownHigh': [
 		'show character p surprised at right with fadeIn',
 		'p ...어제 정류장에서 본──?!',
+		// [CG] yuu-first-meet — 교문 앞 자신감 넘치는 유우의 첫 등장
+		'hide character u',
+		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene yuu-first-meet_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock yuu-first-meet',
+		'show scene school_grounds_day with fadeIn',
+		'show character u normal at center with fadeIn',
+		'show character p surprised at right with fadeIn',
 		'u 후후, 눈치가 빠르구나.',
 		'u 안녕. 나는 유우. 작년에 이 학교를 졸업했어.',
 		function () {
@@ -197,6 +214,23 @@ monogatari.script ({
 		'p ...두 사람 모두, 겉으로는 안 보이는 아픔이 있었군요.',
 		'u 누구나 그렇지. 너도 마찬가지일 거야.',
 		'유우가 하늘을 올려다보며 말한다.',
+		// [CG] pool-secret — 수면 위 잔물결, 햇살이 부서지는 비밀 공간
+		'hide character u',
+		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene pool-secret_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock pool-secret',
+		'show scene swimming_pool with fadeIn',
+		'show character u normal at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		'수면 위로 잔물결이 퍼진다. 햇살이 물결 위에서 부서진다.',
 		'wait 800',
 		'u 중요한 건... 그 아픔을 나눌 수 있는 사람이 곁에 있느냐야.',

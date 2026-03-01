@@ -32,6 +32,29 @@ monogatari.assets ('gallery', {
 	'rooftop-hana': 'rooftop-hana.png',
 	'library-sora': 'library-sora.png',
 	'photo-discovery': 'photo-discovery.png',
+	// Day 2
+	'crane-gift': 'crane-gift.png',
+	'sora-sunset-smile': 'sora-sunset-smile.png',
+	'hana-sunset-promise': 'hana-sunset-promise.png',
+	'three-walk-home': 'three-walk-home.png',
+	'busstop-silhouette': 'busstop-silhouette.png',
+	// Day 3
+	'sora-exhibition': 'sora-exhibition.png',
+	'rooftop-sakura-rain': 'rooftop-sakura-rain.png',
+	'three-hands': 'three-hands.png',
+	// Day 4
+	'pool-secret': 'pool-secret.png',
+	'hana-unmasked': 'hana-unmasked.png',
+	'yuu-first-meet': 'yuu-first-meet.png',
+	'sora-past-tears': 'sora-past-tears.png',
+	// Day 5
+	'sora-confession': 'sora-confession.png',
+	'sora-truelove': 'sora-truelove.png',
+	'hana-confession': 'hana-confession.png',
+	'hana-truelove': 'hana-truelove.png',
+	'together-letter': 'together-letter.png',
+	'sora-warm': 'sora-warm.png',
+	'hana-warm': 'hana-warm.png',
 });
 
 // Define the music used in the game.
@@ -107,6 +130,29 @@ monogatari.assets ('scenes', {
 	'rooftop-hana_cg': '../gallery/rooftop-hana.png',
 	'library-sora_cg': '../gallery/library-sora.png',
 	'photo-discovery_cg': '../gallery/photo-discovery.png',
+	// Day 2 CG
+	'crane-gift_cg': '../gallery/crane-gift.png',
+	'sora-sunset-smile_cg': '../gallery/sora-sunset-smile.png',
+	'hana-sunset-promise_cg': '../gallery/hana-sunset-promise.png',
+	'three-walk-home_cg': '../gallery/three-walk-home.png',
+	'busstop-silhouette_cg': '../gallery/busstop-silhouette.png',
+	// Day 3 CG
+	'sora-exhibition_cg': '../gallery/sora-exhibition.png',
+	'rooftop-sakura-rain_cg': '../gallery/rooftop-sakura-rain.png',
+	'three-hands_cg': '../gallery/three-hands.png',
+	// Day 4 CG
+	'pool-secret_cg': '../gallery/pool-secret.png',
+	'hana-unmasked_cg': '../gallery/hana-unmasked.png',
+	'yuu-first-meet_cg': '../gallery/yuu-first-meet.png',
+	'sora-past-tears_cg': '../gallery/sora-past-tears.png',
+	// Day 5 CG
+	'sora-confession_cg': '../gallery/sora-confession.png',
+	'sora-truelove_cg': '../gallery/sora-truelove.png',
+	'hana-confession_cg': '../gallery/hana-confession.png',
+	'hana-truelove_cg': '../gallery/hana-truelove.png',
+	'together-letter_cg': '../gallery/together-letter.png',
+	'sora-warm_cg': '../gallery/sora-warm.png',
+	'hana-warm_cg': '../gallery/hana-warm.png',
 });
 
 // Define the Characters

@@ -45,6 +45,21 @@ monogatari.script ({
 		'이 공간만 따로 시간이 멈춘 것 같은 고요함.',
 		's ...이 그림, 예쁘지 않아요?',
 		'소라가 벚꽃 풍경화 앞에 멈춰 선다.',
+		// [CG] sora-exhibition — 조용한 전시실, 벚꽃 그림 앞의 소라
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-exhibition_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-exhibition',
+		'show scene classroom3_afternoon with fadeIn',
+		'show character s normal at center with fadeIn',
+		'show character p smile at right with fadeIn',
 		'p 정말 예쁘네요. 근데 소라 씨가 더 예뻐요.',
 		'show character s surprised',
 		's ...?!',

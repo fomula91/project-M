@@ -95,6 +95,19 @@ monogatari.script ({
 		'show scene auditorium_sunrise with fadeIn',
 		'갑자기 바람이 불며 벚꽃잎이 옥상 위로 솟구친다.',
 		'말 그대로 벚꽃 비가 내린다.',
+		// [CG] rooftop-sakura-rain — 벚꽃잎이 솟구치는 옥상, 세 사람이 바라봄
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene rooftop-sakura-rain_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock rooftop-sakura-rain',
+		'show scene auditorium_sunrise with fadeIn',
 		'show character h surprised at right with fadeIn',
 		'h 와...! 진짜 예쁘다!',
 		'show character s surprised at left with fadeIn',
@@ -112,9 +125,24 @@ monogatari.script ({
 		'show character h laugh',
 		'h {{player.name}}...',
 		'소라가 내 오른손을, 하나가 왼손을 잡는다.',
+		// [CG] three-hands — 소라(오른손)+하나(왼손) 손잡기, 벚꽃이 원을 그리며 감쌈
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene three-hands_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock three-hands',
+		'show scene auditorium_sunrise with fadeIn',
+		'show character s happy at left with fadeIn',
+		'show character h laugh at right with fadeIn',
+		'show character p smile at center with fadeIn',
 		's 저도... {{player.name}} 씨와 하나를 만나서 세상이 달라졌어요.',
 		'h 나도! 셋이서 함께라서 매일이 즐거워!',
-		'show character p smile',
 		'p 그래, 우리 셋이서... 이 봄을 함께 걸어가자.',
 		'벚꽃잎이 세 사람을 감싸며 원을 그린다.',
 		'마치 이 인연을 축복하듯이.',

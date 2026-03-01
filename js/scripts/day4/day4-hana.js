@@ -43,6 +43,23 @@ monogatari.script ({
 		'h 항상 밝기만 한 건 아니야. 가끔은 힘들기도 하고.',
 		'하나가 말을 멈춘다. 바람 소리만이 두 사람 사이를 채운다.',
 		'wait 600',
+		// [CG] hana-unmasked — 혼자 앉아 하늘을 바라보는 하나, 가면 뒤 진짜 표정
+		'hide character h',
+		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene hana-unmasked_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock hana-unmasked',
+		'show scene auditorium_afternoon with fadeIn',
+		'show character h worried at center with fadeIn',
+		'show character p normal at right with fadeIn',
 		'p 알아, 하나. 억지로 웃지 않아도 돼.',
 		'p 울고 싶으면 울어도 돼. 내가 여기 있잖아.',
 		'show character h surprised',

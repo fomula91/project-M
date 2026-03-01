@@ -37,6 +37,20 @@ monogatari.script ({
 		'소라의 눈가가 촉촉해진다.',
 		'소라의 손이 무의식적으로 책상 모서리를 잡는다. 잠깐의 정적.',
 		'wait 600',
+		// [CG] sora-past-tears — 눈가가 촉촉해지는 소라, 과거의 외로움
+		'hide character s',
+		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-past-tears_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-past-tears',
 		'show scene science_lab_06 with fadeIn',
 		'show character s worried at center with fadeIn',
 		'show character p normal at right with fadeIn',

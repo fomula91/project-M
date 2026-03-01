@@ -54,10 +54,23 @@ monogatari.script ({
 		's 우리 사물함에 하나씩 들어있었어요.',
 		'show character p normal at center with fadeIn',
 		'p 나한테도 왔어. 같이 읽어볼까?',
-		'셋이서 강당 계단에 나란히 앉아 편지를 펼친다.',
+		// [CG] together-letter — 강당 계단에 나란히 앉아 유우의 편지를 읽는 세 사람
 		'hide character s',
 		'hide character h',
 		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene together-letter_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock together-letter',
+		'show scene auditorium_sunrise with fadeIn',
+		'셋이서 강당 계단에 나란히 앉아 편지를 펼친다.',
 		'"──소라, 하나, 그리고 하루에게."',
 		'"너희 셋을 보면서 안심했어."',
 		'"소라는 더 이상 혼자가 아니고, 하나는 진짜 웃음을 찾았고,"',

@@ -79,8 +79,22 @@ monogatari.script ({
 		's 그래서 이번에는... 제가 먼저 말할게요.',
 		's {{player.name}} 씨, 저── 당신을 좋아해요.',
 		's 친구가 아니라... 한 사람으로서.',
-		'석양빛 과학실에서, 소라의 고백이 조용히 울려 퍼진다.',
+		// [CG] sora-confession — 호박빛 석양이 비커를 물들이는 과학실, 소라의 고백
 		'hide character s',
+		'hide character p',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-confession_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-confession',
+		'show scene science_lab_08 with fadeIn',
+		'석양빛 과학실에서, 소라의 고백이 조용히 울려 퍼진다.',
 		'jump Day5SoraConfess2'
 	],
 
@@ -125,9 +139,21 @@ monogatari.script ({
 		's 저도요. {{player.name}} 씨와 함께... 천천히 걸어가고 싶어요.',
 		's 이 과학실에서, 이 석양 아래서... 약속해요.',
 		'p 약속.',
+		// [CG] sora-truelove — 석양 속 과학실에서 두 손 맞잡기
+		'hide character p',
+		'hide character s',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-truelove_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-truelove',
 		'석양이 과학실을 가득 물들이는 가운데, 두 사람은 조용히 손을 맞잡았다.',
-		'hide character p with fadeOut',
-		'hide character s with fadeOut',
 		'show scene science_lab_08 with fadeIn',
 		'centered ── 소라 트루 러브 엔딩: 과학실의 석양 ──',
 		'end'
@@ -152,12 +178,24 @@ monogatari.script ({
 		's {{player.name}} 씨 곁에 있으면 편안하다는 건 확실해요.',
 		'p 그것만으로 충분해요.',
 		'소라가 살며시 내 어깨에 머리를 기댄다.',
+		// [CG] sora-warm — 소라가 어깨에 머리를 기대는 따뜻한 장면
+		'hide character p',
+		'hide character s',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene sora-warm_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock sora-warm',
+		'show scene science_lab_06 with fadeIn',
 		's ...고마워요. 천천히... 알아가요.',
 		'봄바람이 과학실 창문을 스친다.',
 		'서두르지 않아도, 두 사람의 봄은 이미 시작되었다.',
-		'hide character p with fadeOut',
-		'hide character s with fadeOut',
-		'show scene science_lab_06 with fadeIn',
 		'centered ── 소라 엔딩: 천천히 피는 봄 ──',
 		'end'
 	]

@@ -86,6 +86,20 @@ monogatari.script ({
 		'h 내일... 꼭 같이 축제 돌아다니자. 절대 약속!',
 		'p 응, 약속.',
 		'stop sound footsteps fade 1',
+		// [CG] hana-sunset-promise — 석양 속 나란히 걷는 둘
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'show scene hana-sunset-promise_cg with fadeIn',
+		'wait 3000',
+		{'Function': {
+			'Apply': function () { monogatari.distractionFree();},
+			'Revert': function () { monogatari.distractionFree();}
+		}},
+		'gallery unlock hana-sunset-promise',
+		'show scene school_grounds_evening with fadeIn',
+		'show character h happy at center with fadeIn',
 		'석양 속 하나의 미소가 유독 아름답게 보인다.',
 		'hide character p with fadeOut',
 		'hide character h with fadeOut',
