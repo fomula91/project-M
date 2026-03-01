@@ -1,12 +1,12 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 2 — 하나 루트 (축제 준비, 석양 이벤트)
+ *  Day 2 — 하나 루트 (전시회 준비, 석양 이벤트)
  *  파일: day2-hana.js
  * ═══════════════════════════════════════════
  *
  *  라벨 목록:
- *    - Day2WithHana    : 하나와 축제 준비 (hana +2)
+ *    - Day2WithHana    : 하나와 전시회 준비 (hana +2)
  *    - Day2HanaEvening : 하나 석양 이벤트
  *
  *  흐름:
@@ -22,7 +22,7 @@
 monogatari.script ({
 
 	// ──────────────────────────────────
-	//  Day2WithHana — 하나와 축제 준비 (hana +2)
+	//  Day2WithHana — 하나와 전시회 준비 (hana +2)
 	// ──────────────────────────────────
 	'Day2WithHana': [
 		'hide character p',
@@ -41,7 +41,7 @@ monogatari.script ({
 		'하나가 기뻐하며 껑충 뛰어오른다.',
 		'show character s normal at left with fadeIn',
 		's 그렇군요... 열심히 해주세요.',
-		's 아, 이건 제가 정리해둔 축제 자료예요. 도움이 될 거예요.',
+		's 아, 이건 제가 정리해둔 전시회 자료예요. 도움이 될 거예요.',
 		'소라가 깔끔하게 정리된 노트를 건네준다.',
 		's 두 분 다 화이팅이에요.',
 		'소라가 조용히 미소를 지으며 돌아선다.',
@@ -51,12 +51,12 @@ monogatari.script ({
 		'h {{player.name}}, 이 왕관 써봐! 내가 만든 거야!',
 		'종이로 만든 왕관을 머리에 씌워주는 하나.',
 		'p 하하, 이게 뭐야?',
-		'h 에헤~ 축제의 왕자님! 어울린다~',
+		'h 에헤~ 전시회의 왕자님! 어울린다~',
 		'show character h normal2',
 		'h 사실 나, 오늘 정말 즐거워. {{player.name}}랑 같이라서 그런 것 같아.',
 		'하나가 갑자기 진지한 표정을 짓는다.',
-		'h ...내일 축제 때도 같이 다니자. 약속!',
-		'p 약속할게.',
+		'h ...내일 전시회 때도 같이 다니면 좋겠다!',
+		'p 그래, 같이 다니자.',
 		'show character h happy',
 		'하나의 눈이 별처럼 빛난다.',
 		'hide character p with fadeOut',
@@ -83,8 +83,8 @@ monogatari.script ({
 		'show character h normal',
 		'h 에헤... 그 말 듣으니까 더 행복해진다.',
 		'하나가 살짝 얼굴을 붉히며 하늘을 올려다본다.',
-		'h 내일... 꼭 같이 축제 돌아다니자. 절대 약속!',
-		'p 응, 약속.',
+		'h 내일 전시회도 재밌겠다~! 같이 다니자!',
+		'p 응, 그러자.',
 		'stop sound footsteps fade 1',
 		// [CG] hana-sunset-promise — 석양 속 나란히 걷는 둘
 		{'Function': {

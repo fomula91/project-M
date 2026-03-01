@@ -1,7 +1,7 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 2 — 공통 (등교 인사, 과학실, 축제 준비, 저녁)
+ *  Day 2 — 공통 (등교 인사, 과학실, 전시회 준비, 저녁)
  *  파일: day2-common.js
  * ═══════════════════════════════════════════
  *
@@ -17,7 +17,7 @@
  *    - Day2ScienceLabSora    : 소라에게 노트 질문
  *    - Day2ScienceLabHana    : 하나에게 노트 질문
  *    - Day2ScienceLabSkip    : 조용히 넘어감
- *    - Day2Morning           : 축제 준비 팀 선택
+ *    - Day2Morning           : 전시회 준비 소그룹 선택
  *    - Day2Evening           : 석양 분기
  *    - Day2NeutralEvening    : 셋이서 하교
  *    - Day2End               : 버스 정류장, 유우 실루엣 → Day3Start
@@ -48,8 +48,8 @@ monogatari.script ({
 		'show character p worried at center with fadeIn',
 		'p ...왜 이렇게 두근거리는 걸까.',
 		'어제 본 구교사 실루엣이 어른거린다.',
-		'p ...소라 씨에게도, 하나에게도, 더 가까이 다가가고 싶어.',
-		'알 수 없는 기대감이 발걸음을 재촉한다.',
+		'p ...오늘은 어떤 하루가 될까.',
+		'작은 기대감이 발걸음을 재촉한다.',
 		'hide character p with fadeOut',
 		'교문을 들어서자 익숙한 목소리가 들려온다.',
 		{
@@ -92,7 +92,7 @@ monogatari.script ({
 	'Day2SoraGreetingHigh': [
 		'show character s happy at left with approachCloser',
 		's {{player.name}} 씨, 좋은 아침이에요!',
-		's 어제 도서관에서도 정말 즐거웠어요. 오늘도... 같이 있고 싶어요.',
+		's 어제 같이 점심 먹었던 거... 즐거웠어요. 오늘도 잘 부탁드려요.',
 		'소라가 평소보다 한 걸음 더 가까이 다가와 인사한다.',
 		'show character h surprised at right with fadeIn',
 		'h 앗! 소라가 웃고 있어?! 너희 둘 대체 어제 뭐 한 거야~?!',
@@ -237,24 +237,24 @@ monogatari.script ({
 	],
 
 	// ──────────────────────────────────
-	//  Day2Morning — 축제 준비 팀 선택
+	//  Day2Morning — 전시회 준비 소그룹 선택
 	// ──────────────────────────────────
 	'Day2Morning': [
 		'play sound school-bell',
 		'show scene classroom2_morning with slideLeft',
 		'2교시가 끝나고, 담임 선생님이 공지를 한다.',
-		'"내일 있을 학교 축제 준비를 시작하겠습니다. 2인 1조로 팀을 구성하세요."',
+		'"내일 동아리 전시회가 있습니다. 우리 반도 전시 부스를 준비해야 하니까, 소그룹으로 나눠서 맡아주세요."',
+		'교실이 웅성거린다. 몇몇은 이미 친한 친구끼리 모이기 시작한다.',
 		'show character s worried at left with fadeIn',
-		's {{player.name}} 씨... 혹시, 저와 같이 준비하실래요?',
+		's {{player.name}} 씨... 혹시, 저랑 같은 소그룹에서 준비하실래요?',
 		'소라가 조심스럽게 다가와 물어본다.',
 		'show character h laugh at right with fadeIn',
-		'h {{player.name}}! 나랑 같이 하자! 우리 팀이면 완전 재밌을 거야!',
+		'h {{player.name}}! 나랑 같이 하자! 우리끼리 하면 완전 재밌을 거야!',
 		'하나가 신나서 뛰어온다.',
 		'p ...소라의 조심스러움, 하나의 직진. 정반대인 두 사람.',
-		'p 내일 축제를 누구와 함께하느냐에 따라 뭔가 달라질 것 같다.',
-		'작은 선택이 큰 차이를 만들 예감이 든다.',
+		'p 누구와 준비하느냐에 따라 뭔가 달라질 것 같다.',
 		'show character p normal at center with fadeIn',
-		makeChoice('p ...누구와 팀을 할까?', {
+		makeChoice('p ...누구와 함께 준비할까?', {
 			WithSora: ['소라와 함께한다', 'Day2WithSora'],
 			WithHana: ['하나와 함께한다', 'Day2WithHana']
 		})
@@ -267,7 +267,7 @@ monogatari.script ({
 		'play sound school-bell',
 		'show scene classroom_afternoon with fadeIn',
 		'해가 지고, 교실에 주황빛이 가득 찬다.',
-		'축제 준비를 마치고 돌아가려는데...',
+		'전시회 준비를 마치고 돌아가려는데...',
 		{
 			'Conditional': {
 				'Condition': function () {
@@ -337,8 +337,8 @@ monogatari.script ({
 		'show scene busstop_night with fadeIn',
 		'버스 정류장에서 혼자 버스를 기다린다.',
 		'show character p normal at center with fadeIn',
-		'p ...내일은 축제다.',
-		'p ...누구와 함께 보내게 될까.',
+		'p ...내일은 전시회다.',
+		'p ...오늘보다 조금 더 가까워질 수 있을까.',
 		'hide character p with fadeOut',
 		'그때, 정류장 건너편에 낯선 인물이 서 있는 것이 보인다.',
 		// [CG] busstop-silhouette — 가로등에 비치는 검정색 머리카락 실루엣
@@ -361,7 +361,7 @@ monogatari.script ({
 		'고개를 돌려 다시 보니, 이미 아무도 없다.',
 		'hide character u with fadeOut',
 		'p ...기분 탓이었나.',
-		'빈 책상의 낙서, 과학실 노트, 그리고 이 실루엣── 전부 이어져 있는 걸까.',
+		'낙서, 노트, 실루엣── 우연의 일치라고 하기엔 뭔가 걸리지만, 확신은 없다.',
 		'가로등이 한 번 깜빡이고, 정류장에 다시 정적이 내린다.',
 		'p ...모르겠다. 하지만 무시할 수 없는 기분이야.',
 		'hide character p with fadeOut',

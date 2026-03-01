@@ -1,12 +1,12 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 3 — 공통 (축제 시작, 사진 발견, 메인 분기)
+ *  Day 3 — 공통 (전시회 시작, 사진 발견, 메인 분기)
  *  파일: day3-common.js
  * ═══════════════════════════════════════════
  *
  *  라벨 목록:
- *    - Day3Start          : 축제 당일 아침
+ *    - Day3Start          : 전시회 당일 아침
  *    - Day3PhotoDiscovery : 사진 복선 (unknown_interest ≥ 1)
  *    - Day3MainBranch     : 호감도 기반 메인 분기
  *    - Day3BothHigh       : 양쪽 호감 높음 → 3자 선택
@@ -25,19 +25,19 @@
 monogatari.script ({
 
 	// ──────────────────────────────────
-	//  Day3Start — 축제 당일 아침
+	//  Day3Start — 전시회 당일 아침
 	// ──────────────────────────────────
 	'Day3Start': [
 		'play sound school-bell',
 		'show scene school_grounds_early with fadeIn',
-		'centered ── 3일차: 축제, 그리고... ──',
+		'centered ── 3일차: 전시회, 그리고... ──',
 		'show scene auditorium_day with fadeIn',
-		'축제 당일 아침.',
-		'학교 전체가 활기로 가득하다. 풍선, 리본, 현수막이 곳곳에 걸려 있다.',
+		'동아리 전시회 당일 아침.',
+		'학교 곳곳에 전시 안내와 체험 부스 현수막이 걸려 있다.',
 		'show character p normal at center with fadeIn',
-		'p 드디어 축제다...',
+		'p 드디어 전시회다...',
 		'거울 앞에서 괜히 머리를 고쳐 본다.',
-		'p 축제인데... 왜 이렇게 신경이 쓰이는 걸까.',
+		'p 전시회인데... 왜 이렇게 신경이 쓰이는 걸까.',
 		'설명할 수 없는 예감이 가슴 한쪽을 두드린다.',
 		'hide character p with fadeOut',
 		{
@@ -56,10 +56,10 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'Day3PhotoDiscovery': [
 		'show scene auditorium_day with fadeIn',
-		'축제 게시판 앞을 지나가는데, 오래된 사진 한 장이 눈에 들어온다.',
+		'전시 게시판 앞을 지나가는데, 오래된 사진 한 장이 눈에 들어온다.',
 		'show character p surprised at center with fadeIn',
 		'p ...이건──?',
-		// TODO: [CG] photo-discovery — 축제 게시판 앞, 사진 복선
+		// TODO: [CG] photo-discovery — 전시 게시판 앞, 사진 복선
 		{'Function': {
 			'Apply': function () { monogatari.distractionFree();},
 			'Revert': function () { monogatari.distractionFree();}
@@ -76,8 +76,8 @@ monogatari.script ({
 		'사진 속에는 소라, 하나, 그리고 낯선 학생 한 명이 웃고 있다.',
 		'p 이 사람... 어딘가에서 본 것 같은데.',
 		'p 정류장에서 본 사람과 닮은 것 같기도 하고...',
-		'사진을 밑에 손글씨가 보인다── "이 봄을 잊지 마."',
-		'...빈 책상 낙서와 같은 필체다.',
+		'사진 아래에 손글씨가 보인다── "이 봄을 잊지 마."',
+		'...어딘가에서 본 듯한 필체. 하지만 확실하진 않다.',
 		'hide character p with fadeOut',
 		function () {
 			this.storage({ unknown_interest: this.storage('unknown_interest') + 1 });
@@ -122,7 +122,7 @@ monogatari.script ({
 		'교실에 들어서자 소라와 하나가 동시에 다가온다.',
 		'show character s worried at left with fadeIn',
 		'show character h surprised at right with fadeIn',
-		's {{player.name}} 씨, 오늘 축제... 같이 돌아볼래요?',
+		's {{player.name}} 씨, 오늘 전시회... 같이 돌아볼래요?',
 		'h {{player.name}}! 나랑 같이 돌아다니기로 했잖아!',
 		's ...에? 하나 씨, 저도 {{player.name}} 씨와 약속이...',
 		'h 에에?! 소라도?!',
@@ -133,8 +133,8 @@ monogatari.script ({
 		'p ...이건 쉬운 선택이 아니야.',
 		'p ...이건 어떻게 해야 하지.',
 		makeChoice('p ...어떻게 하면 좋을까?', {
-			ChooseSora: ['소라와 함께 축제를 돌아본다', 'Day3SoraRoute'],
-			ChooseHana: ['하나와 함께 축제를 돌아본다', 'Day3HanaRoute'],
+			ChooseSora: ['소라와 함께 전시회를 돌아본다', 'Day3SoraRoute'],
+			ChooseHana: ['하나와 함께 전시회를 돌아본다', 'Day3HanaRoute'],
 			ChooseBoth: ['셋이서 같이 다니자!', 'Day3TogetherRoute']
 		})
 	],
@@ -147,7 +147,7 @@ monogatari.script ({
 		'교실에 들어서자 소라와 하나가 나란히 앉아 이야기를 나누고 있다.',
 		'show character s happy at left with fadeIn',
 		'show character h happy at right with fadeIn',
-		'h 아! {{player.name}}! 와와, 오늘 축제 같이 돌자!',
+		'h 아! {{player.name}}! 와와, 오늘 전시회 같이 돌자!',
 		's 네, {{player.name}} 씨도 함께해요.',
 		'두 사람의 따뜻한 웃음이 나를 맞이한다.',
 		'jump Day3TogetherRoute'

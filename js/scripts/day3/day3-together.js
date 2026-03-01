@@ -1,30 +1,28 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 3 — Together 루트 (셋이서 축제, 히든/우정 엔딩)
+ *  Day 3 — Together 루트 (셋이서 전시회, 유대 확인)
  *  파일: day3-together.js
  * ═══════════════════════════════════════════
  *
  *  라벨 목록:
- *    - Day3TogetherRoute  : 셋이서 축제
- *    - Day3TogetherClimax : 옥상 석양
- *    - HiddenEnding       : 히든 엔딩 (벚꽃의 약속) → end
- *    - FriendshipEnding   : 우정 엔딩 → Day4Start
+ *    - Day3TogetherRoute  : 셋이서 전시회
+ *    - Day3TogetherClimax : 옥상 석양, 셋의 유대 확인 → Day4Start
  *
  *  흐름:
  *    Day3BothHigh / Day3Balanced [cross-file] → Day3TogetherRoute
- *    → Day3TogetherClimax → HiddenEnding (end) / FriendshipEnding → Day4Start [cross-file]
+ *    → Day3TogetherClimax → Day4Start [cross-file]
  *
  *  의존:
  *    - fadeJump()  (helpers/transitions.js)
- *    - storage: chose_both, sora_affection, hana_affection, day3_ending_type
+ *    - storage: chose_both, day3_ending_type
  * ═══════════════════════════════════════════
  */
 
 monogatari.script ({
 
 	// ──────────────────────────────────
-	//  Day3TogetherRoute — 셋이서 축제
+	//  Day3TogetherRoute — 셋이서 전시회
 	// ──────────────────────────────────
 	'Day3TogetherRoute': [
 		'show scene auditorium_noon with slideRight',
@@ -35,7 +33,7 @@ monogatari.script ({
 		},
 		'show character s normal at left with fadeIn',
 		'show character h laugh at right with fadeIn',
-		'셋이서 축제를 돌아본다.',
+		'셋이서 전시회를 돌아본다.',
 		'h 솜사탕 사자! 셋이서 나눠 먹자!',
 		'show character s surprised',
 		's 에... 저는 달콤한 건 좀...',
@@ -49,13 +47,13 @@ monogatari.script ({
 		's 에...? 그, 그런가요?',
 		'show character h happy at right with fadeIn',
 		'h 어? 우리 사이 좋았어? 에헤~',
-		'셋이서 점술 카페, 전시실, 매점을 돌아다닌다.',
+		'셋이서 체험 부스, 전시실, 매점을 돌아다닌다.',
 		'정신없이 즐거운 시간이 흘러간다.',
 		'jump Day3TogetherClimax'
 	],
 
 	// ──────────────────────────────────
-	//  Day3TogetherClimax — 옥상 석양
+	//  Day3TogetherClimax — 옥상 석양, 셋의 유대 확인 → Day4Start
 	// ──────────────────────────────────
 	'Day3TogetherClimax': [
 		'show scene auditorium_evening with fadeIn',
@@ -64,121 +62,39 @@ monogatari.script ({
 		'show character s happy at left with fadeIn',
 		'show character h happy at right with fadeIn',
 		'show character p smile at center with fadeIn',
-		'축제가 끝나갈 무렵, 옥상에서 셋이 석양을 바라본다.',
+		'전시회가 끝나갈 무렵, 옥상에서 셋이 석양을 바라본다.',
 		's ...오늘 정말 즐거웠어요.',
-		'h 응! 최고의 축제였어!',
+		'h 응! 최고의 하루였어!',
 		'p 나도... 너희 덕분에 정말 행복했어.',
-		'h {{player.name}}... 우리 앞으로도 계속 이렇게 지내자!',
-		's 네... 저도 같은 마음이에요.',
-		'hide character p with fadeOut',
-		{
-			'Conditional': {
-				'Condition': function () {
-					var sora = this.storage ('sora_affection');
-					var hana = this.storage ('hana_affection');
-					if (sora >= 4 && hana >= 4 && this.storage ('chose_both') === true) {
-						return 'HiddenPath';
-					} else {
-						return 'FriendPath';
-					}
-				},
-				'HiddenPath': 'jump HiddenEnding',
-				'FriendPath': 'jump FriendshipEnding'
-			}
-		}
-	],
-
-	// ──────────────────────────────────
-	//  HiddenEnding — 히든 엔딩 (벚꽃의 약속)
-	// ──────────────────────────────────
-	'HiddenEnding': [
-		'show scene auditorium_sunrise with fadeIn',
-		'갑자기 바람이 불며 벚꽃잎이 옥상 위로 솟구친다.',
-		'말 그대로 벚꽃 비가 내린다.',
-		// [CG] rooftop-sakura-rain — 벚꽃잎이 솟구치는 옥상, 세 사람이 바라봄
-		{'Function': {
-			'Apply': function () { monogatari.distractionFree();},
-			'Revert': function () { monogatari.distractionFree();}
-		}},
-		'show scene rooftop-sakura-rain_cg with fadeIn',
-		'wait 3000',
-		{'Function': {
-			'Apply': function () { monogatari.distractionFree();},
-			'Revert': function () { monogatari.distractionFree();}
-		}},
-		'gallery unlock rooftop-sakura-rain',
-		'show scene auditorium_sunrise with fadeIn',
-		'show character h surprised at right with fadeIn',
-		'h 와...! 진짜 예쁘다!',
-		'show character s surprised at left with fadeIn',
-		's 이건... 마치 마법 같아요.',
-		'세 사람 모두 말을 잃고 벚꽃 비를 바라본다.',
-		'show character p normal at center',
-		'p ...있잖아, 둘 다.',
-		's 네?',
-		'h 응?',
-		'p 전학 와서 불안했는데... 너희를 만나서 정말 다행이야.',
-		'p 소라의 차분한 따뜻함도, 하나의 밝은 에너지도...',
-		'p 둘 다 없으면 안 될 만큼 소중해.',
+		'show character h normal2',
+		'h ...있잖아, {{player.name}}.',
+		'h 나, 오늘 셋이서 다녀서 좋았어. 근데...',
+		'show character h worried',
+		'h ...가끔 이 시간이 언제까지 갈 수 있을까 생각하면 좀 무서워.',
+		'show character s worried',
+		's ...저도요. 이렇게 좋은 날이 계속될 수 있을까...',
+		'show character p normal',
+		'p ...나도 같은 생각이야.',
+		'p 하지만 적어도 오늘── 이 순간은 진짜잖아.',
 		'show character s happy at left',
-		's {{player.name}} 씨...',
-		'show character h laugh at right',
-		'h {{player.name}}...',
-		'소라가 내 오른손을, 하나가 왼손을 잡는다.',
-		// [CG] three-hands — 소라(오른손)+하나(왼손) 손잡기, 벚꽃이 원을 그리며 감쌈
-		{'Function': {
-			'Apply': function () { monogatari.distractionFree();},
-			'Revert': function () { monogatari.distractionFree();}
-		}},
-		'show scene three-hands_cg with fadeIn',
-		'wait 3000',
-		{'Function': {
-			'Apply': function () { monogatari.distractionFree();},
-			'Revert': function () { monogatari.distractionFree();}
-		}},
-		'gallery unlock three-hands',
-		'show scene auditorium_sunrise with fadeIn',
-		'show character s happy at left with fadeIn',
-		'show character h laugh at right with fadeIn',
-		'show character p smile at center with fadeIn',
-		's 저도... {{player.name}} 씨와 하나를 만나서 세상이 달라졌어요.',
-		'h 나도! 셋이서 함께라서 매일이 즐거워!',
-		'p 그래, 우리 셋이서... 이 봄을 함께 걸어가자.',
-		'벚꽃잎이 세 사람을 감싸며 원을 그린다.',
-		'마치 이 인연을 축복하듯이.',
+		's ...맞아요. 지금 이 순간은 진짜예요.',
+		'show character h happy at right',
+		'h 응! 그거면 충분해! ...아마!',
+		'세 사람 모두 웃는다. 하지만 어딘가 아련한 웃음.',
+		'벚꽃잎이 세 사람의 어깨 위로 내려앉는다.',
 		'hide character p with fadeOut',
 		'hide character s',
 		'hide character h',
-		'show scene auditorium_sunrise with fadeIn',
-		'centered ── 히든 엔딩: 벚꽃의 약속 ──',
-		'end'
-	],
-
-	// ──────────────────────────────────
-	//  FriendshipEnding — 우정 엔딩 → Day4Start
-	// ──────────────────────────────────
-	'FriendshipEnding': [
 		'show scene school_grounds_evening with fadeIn',
-		'show character s happy at left with fadeIn',
-		'show character h happy at right with fadeIn',
-		'세 사람이 옥상에서 나란히 석양을 바라본다.',
-		's 벌써 축제가 끝나네요...',
-		'h 아쉽다~ 내일부터 다시 수업이잖아~',
-		'show character p smile at center',
-		'p 하하, 그래도 오늘 정말 즐거웠어.',
-		's 네, 정말... 이렇게 즐거운 건 오랜만이에요.',
-		'h 내일도, 모레도, 계속 이렇게 함께하자!',
-		'p 물론이지.',
-		'벚꽃 나무 아래, 세 사람의 웃음소리가 퍼진다.',
-		'hide character s',
-		'hide character h',
-		'show scene school_grounds_evening with fadeIn',
-		'centered ── 우정: 세 사람의 봄 ──',
-		'하지만... 이것으로 끝이 아닌 것 같다.',
-		function () {
-			this.storage({ day3_ending_type: 'friendship' });
-		},
+		'centered ── 셋: 벚꽃 아래의 약속 ──',
+		'이불 속에서 오늘 하루를 되짚는다.',
+		'소라의 조용한 불안, 하나의 솔직한 두려움.',
+		'셋이서 함께라는 건 편안하면서도, 어딘가 위태롭다.',
+		'p ...이 관계가 어디로 향하는 걸까.',
 		'stop music',
+		function () {
+			this.storage({ day3_ending_type: 'together_deepen' });
+		},
 		...fadeJump('Day4Start'),
 	]
 });

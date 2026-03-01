@@ -38,10 +38,10 @@ monogatari.script ({
 		'show scene school_front_day with fadeFromBlack duration 1500',
 		'centered ── 4일차: 지나간 봄의 기억 ──',
 		'show scene school_grounds_day with fadeIn',
-		'축제가 끝나고 월요일 아침.',
+		'전시회가 끝나고 월요일 아침.',
 		'어딘가 허전한 기분으로 교문을 지나는데──',
 		'show character p normal at center with fadeIn',
-		'p ...축제 끝나니까 갑자기 조용하네.',
+		'p ...전시회 끝나니까 갑자기 조용하네.',
 		'hide character p with fadeOut',
 		'교문 앞에서 낯선 인물이 서 있다.',
 		'show character u normal at center with fadeIn',
@@ -87,7 +87,7 @@ monogatari.script ({
 		},
 		'p 유우... 선배? 소라와 하나가 이야기하던──',
 		'u 맞아. 그 아이들의 선배이자, 오래된 친구.',
-		'u 축제에 한번 들르려고 했는데 하루 늦었네.',
+		'u 전시회에 한번 들르려고 했는데 하루 늦었네.',
 		'show character u normal',
 		'유우가 밝게 웃으며 말한다.',
 		'hide character p with fadeOut',
@@ -240,8 +240,8 @@ monogatari.script ({
 			'Conditional': {
 				'Condition': function () {
 					var type = this.storage('day3_ending_type');
-					if (type === 'sora_friend') return 'SoraAfternoon';
-					if (type === 'hana_friend') return 'HanaAfternoon';
+					if (type === 'sora_deepen' || type === 'sora_friend') return 'SoraAfternoon';
+					if (type === 'hana_deepen' || type === 'hana_friend') return 'HanaAfternoon';
 					return 'TogetherAfternoon';
 				},
 				'SoraAfternoon': 'jump Day4SoraAfternoon',

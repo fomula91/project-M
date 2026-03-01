@@ -76,12 +76,18 @@ monogatari.script ({
 		'봄바람이 벚꽃 잎을 흩날리는 4월의 아침.',
 		'오늘은 사쿠라 학원의 새 학기 첫날이다.',
 		'show character p normal at center with fadeIn',
-		'p 후아... 드디어 새 학기다. 어떤 만남이 기다리고 있을까.',
+		'p ...전학 첫날.',
+		'p 전 학교에선 딱히 깊은 관계도, 그렇다고 혼자인 것도 아닌── 어중간한 거리감.',
+		'p 누구와도 가까워지지 못한 건 아닌데, 돌이켜보면 남는 게 없다.',
+		'p 이번엔 너무 멀어지지도, 괜히 조급해지지도 말자.',
+		'p 그냥... 후회 없는 한 학기였으면 좋겠다.',
 		'hide character p with fadeOut',
-		'교문을 지나 교실로 향하는 길, 벚꽃 나무 아래에서 한 소녀가 서 있다.',
-		'말을 걸어볼까 싶었지만, 흩날리는 벚꽃잎에 시선을 빼앗긴다.',
+		'교문을 지나 교실로 향하는 길──',
+		'벚꽃 나무 아래에 누군가 서 있다.',
+		'흩날리는 꽃잎에 가려 얼굴이 잘 보이지 않는다.',
+		'...왜인지, 발이 멈춘다.',
 		'하늘을 가득 메운 벚꽃잎이 분홍빛 눈처럼 흩날린다.',
-		'잠깐 발을 멈추고 올려다본다. ...아름답다.',
+		'잠깐 올려다본다. ...아름답다.',
 		{'Function': {
 			'Apply': function () {
 				monogatari.distractionFree();
@@ -102,6 +108,11 @@ monogatari.script ({
 			}
 		}},
 		'gallery unlock opening-unknown',
+		'show character p normal at center with fadeIn',
+		'p ...누구였을까.',
+		'p 얼굴은 제대로 못 봤는데, 왜인지 기억에 남는다.',
+		'hide character p with fadeOut',
+		'시계를 보니 예종이 가까워지고 있다. 서둘러야 한다.',
 		...fadeJump('SchoolArrival'),
 	],
 
@@ -113,18 +124,26 @@ monogatari.script ({
 		'show scene classroom_day with fadeFromBlack duration 1500',
 		'아침 햇살이 창문을 통해 쏟아져 들어온다. 분필 가루와 새 교과서 냄새.',
 		'새 학기 특유의 설렘이 교실 안에 가득하다.',
-		'교실에 들어서자, 두 사람이 눈에 들어온다.',
+		'교실 안에는 이미 친한 무리끼리 자리를 잡고 떠들고 있다.',
+		'1학년을 함께 보낸 아이들 사이에 이미 만들어진 관계가 느껴진다.',
+		'"자, 오늘 2학년으로 전학 온 학생이야. 잘 지내 보렴."',
+		'담임 선생님이 나를 반 앞에 세운다.',
+		'show character p normal at center with fadeIn',
+		'p (2학년 중간에 전학이라... 아무래도 좀 눈에 띄겠지.)',
+		'hide character p with fadeOut',
+		'"소라, 오늘 하루만 전학생 안내 좀 도와줄 수 있겠니?"',
 		'show character s normal at left with slideInLeft',
-		's 안녕하세요. 저는 이 반의 학급위원 소라입니다.',
-		's 새로 오신 분이군요. 잘 부탁드립니다.',
-		'조용하지만 단정한 인상의 소녀가 차분하게 인사한다.',
+		's ...네, 알겠습니다.',
+		'조용하지만 단정한 인상의 소녀가 자리에서 일어선다.',
+		's 안녕하세요. 소라입니다. 오늘... 제가 안내를 맡게 됐어요.',
+		'조심스러운 말투. 부탁받은 역할이 조금 부담스러운 듯한 표정.',
 		'show character h happy at right with slideInRight',
 		'wait 400',
 		'h 앗! 새로운 친구다! 안녕안녕~! 나는 하나!',
 		'h 우리 같은 반이네! 앞으로 잘 지내자~!',
-		'밝은 미소로 다가오는 활발한 소녀.',
+		'밝은 미소로 다가오는 활발한 소녀. 주변의 시선 따위 아랑곳하지 않는다.',
 		'show character p smile at center with fadeInUp',
-		'p ...두 사람 다 인상적이네. 잘 지낼 수 있겠지?',
+		'p ...분위기가 확실히 다른 두 사람이네.',
 		'hide character p with fadeOut',
 		'wait 200',
 		'hide character s with fadeOutLeft',
@@ -142,9 +161,10 @@ monogatari.script ({
 		'오래된 듯 희미하게 파묻힌 글씨.',
 		'"봄은 금방 지나간다"── 누군가 정성스레 새긴 듯한 필체.',
 		'왠지 마음에 걸리는 문장이다.',
-		'show character p surprised at center with fadeIn',
-		'p ...누가 새긴 걸까?',
-		makeChoice('p ...누구에게 물어볼까?', {
+		'show character p normal at center with fadeIn',
+		'p ...누가 새긴 걸까. 신경 쓰이긴 하지만.',
+		'쉬는 시간이 되자 슬쩍 옆 자리를 둘러본다.',
+		makeChoice('p ...누가 알고 있을까?', {
 			AskSora: ['소라에게 물어본다', 'Day1UnknownHintSora'],
 			AskHana: ['하나에게 물어본다', 'Day1UnknownHintHana']
 		})
@@ -189,10 +209,9 @@ monogatari.script ({
 		'play sound school-bell',
 		'show scene classroom2_morning with fadeFromBlack duration 1500',
 		'쉬는 시간, 복도에서 소란이 들린다.',
-		'show character s worried at center with slideInLeft',
-		's 저기... 죄송한데, 이 서류들을 교무실까지 옮겨야 하는데...',
-		'소라가 잔뜩 쌓인 서류를 들고 힘겨워하고 있다.',
-		'show character s worried at left with fadeIn',
+		'show character s worried at left with slideInLeft',
+		'소라가 잔뜩 쌓인 서류를 들고 복도를 지나간다. 누군가에게 도움을 청하려다 멈추는 모습.',
+		's .............',
 		'show character h happy at right with bounceIn',
 		'h {{player.name}}~! 나랑 같이 학교 탐험하러 가자! 매점에 새로 나온 빵이 있대!',
 		'하나가 신나서 손을 잡아끈다.',
@@ -235,8 +254,8 @@ monogatari.script ({
 	'LunchTimeSoraWarm': [
 		'show character s happy at left with fadeIn',
 		's {{player.name}} 씨! 아까 도와주신 덕분에 서류 정리가 빨리 끝났어요.',
-		's 혹시 시간 되시면... 도서관에서 같이 점심 드실래요?',
-		's 조용하고 좋은 자리가 있어요. 감사 인사도 제대로 드리고 싶어서...',
+		's 혹시 조용한 데서 쉬고 싶으시면... 도서관 옆에 좋은 자리가 있어요.',
+		's 감사 인사도 제대로 드리고 싶어서...',
 		'show character h happy at right with fadeIn',
 		'h {{player.name}}~! 옥상에서 같이 밥 먹자! 바람도 시원하고 좋아!',
 		'jump LunchTimeChoice'
@@ -247,8 +266,7 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'LunchTimeHanaWarm': [
 		'show character s normal at left with fadeIn',
-		's {{player.name}} 씨, 혹시 시간 되시면... 도서관에서 같이 점심 드실래요?',
-		's 조용하고 좋은 자리가 있어요.',
+		's {{player.name}} 씨, 혹시 조용한 데서 쉬고 싶으시면... 도서관 옆에 좋은 자리가 있어요.',
 		'show character h laugh at right with fadeIn',
 		'h {{player.name}}~! 아까 매점 탐험 재밌었지? 옥상에서 같이 밥 먹자!',
 		'h 바람도 시원하고, 아까 산 빵도 같이 먹자~!',
@@ -260,11 +278,11 @@ monogatari.script ({
 	// ──────────────────────────────────
 	'LunchTimeChoice': [
 		'show character p normal at center with fadeIn',
-		'p 도서관의 따뜻한 고요함... 옥상의 시원한 바람...',
+		'p 휴게 라운지의 따뜻한 고요함... 옥상의 시원한 바람...',
 		'p 어느 쪽이든 가보고 싶은 마음이 드는 건 마찬가지다.',
 		'잠시 고민한다.',
 		makeChoice('p ...어디로 갈까?', {
-			Library: ['도서관에서 소라와 함께', 'Library'],
+			Library: ['휴게 라운지에서 소라와 함께', 'Library'],
 			Rooftop: ['옥상에서 하나와 함께', 'Rooftop']
 		})
 	],
@@ -311,10 +329,40 @@ monogatari.script ({
 		'p 내일은 또 어떤 일이 있을까...',
 		'hide character p with fadeOut',
 		'show scene #000000 with fadeIn',
-		'눈을 감으면 소라의 차분한 미소와 하나의 밝은 웃음이 떠오른다.',
 		'이불 속에서 오늘 하루를 되짚는다.',
-		'벚꽃 나무 아래의 실루엣, 소라의 조용한 미소, 하나의 끝없는 활력.',
-		'그리고 창틀에 새겨진 낙서── "봄은 금방 지나간다."',
+		{
+			'Conditional': {
+				'Condition': function () {
+					return this.storage ('helped_sora') === true ? 'SoraMemory' : 'HanaMemory';
+				},
+				'SoraMemory': 'jump Day1NightSora',
+				'HanaMemory': 'jump Day1NightHana'
+			}
+		}
+	],
+
+	// ──────────────────────────────────
+	//  Day1NightSora — 밤 독백 (소라 루트)
+	// ──────────────────────────────────
+	'Day1NightSora': [
+		'소라가 서류를 건넬 때의 표정이 떠오른다.',
+		'부탁하는 것조차 어려워하던 조심스러운 모습.',
+		'...그런 소라가 휴게 라운지에서 보여준 작은 미소.',
+		'p 소라 씨는... 왜 혼자 있는 게 편하다고 생각하게 된 걸까.',
+		'벚꽃 나무 아래의 실루엣, 창틀에 새겨진 낙서── "봄은 금방 지나간다."',
+		'p ...내일은 어떤 하루가 될까.',
+		...fadeJump('Day2Start', { duration: 800 }),
+	],
+
+	// ──────────────────────────────────
+	//  Day1NightHana — 밤 독백 (하나 루트)
+	// ──────────────────────────────────
+	'Day1NightHana': [
+		'하나의 환한 웃음이 떠오른다.',
+		'끝없이 밝아 보이는데── 가끔 내 표정을 살피던 시선.',
+		'...그게 왠지 마음에 걸린다.',
+		'p 하나는... 항상 저렇게 밝은 걸까.',
+		'벚꽃 나무 아래의 실루엣, 창틀에 새겨진 낙서── "봄은 금방 지나간다."',
 		'p ...내일은 어떤 하루가 될까.',
 		...fadeJump('Day2Start', { duration: 800 }),
 	]

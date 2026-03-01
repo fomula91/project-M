@@ -1,14 +1,14 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 5 — 하나 루트 (수영장 재고백, 트루러브/온기 엔딩)
+ *  Day 5 — 하나 루트 (수영장 고백, 트루러브/온기 엔딩)
  *  파일: day5-hana.js
  * ═══════════════════════════════════════════
  *
  *  라벨 목록:
  *    - Day5HanaRoute   : 5일차 시작 → 수영장
- *    - Day5HanaPool    : 하나 재고백 이벤트
- *    - Day5HanaConfess2: 재고백 선택
+ *    - Day5HanaPool    : 하나 고백 이벤트
+ *    - Day5HanaConfess2: 고백 선택
  *    - HanaTrueLoveEnd : 하나 트루 러브 엔딩 → end
  *    - HanaWarmEnd     : 하나 온기 엔딩 → end
  *
@@ -36,8 +36,8 @@ monogatari.script ({
 		'"서두르지 마. 하지만 도망치지도 마."',
 		'show character p normal at center with fadeIn',
 		'p ...하나에게, 이번엔 진심을 전하고 싶어.',
-		'축제 때 하나가 쓰고 있던 종이 왕관이 떠오른다.',
-		'밝은 얼굴 뒤에 숨겨진 눈물을── 이젠 안다.',
+		'전시회 때 하나가 쓰고 있던 종이 왕관이 떠오른다.',
+		'밝은 얼굴 뒤에 숨겨진 진심을── 이젠 안다.',
 		'p ...수영장에서 기다리고 있을 거야. 이번엔 내가.',
 		'hide character p with fadeOut',
 		'방과후──',
@@ -45,7 +45,7 @@ monogatari.script ({
 	],
 
 	// ──────────────────────────────────
-	//  Day5HanaPool — 하나 재고백 이벤트
+	//  Day5HanaPool — 하나 고백 이벤트
 	// ──────────────────────────────────
 	'Day5HanaPool': [
 		'show scene swimming_pool with fadeIn',
@@ -64,8 +64,8 @@ monogatari.script ({
 		'하나가 씩 웃지만, 금방 진지한 표정으로 돌아온다.',
 		'show character h worried',
 		'h {{player.name}}... 나, 사실 그때 얘기가 있어.',
-		'h 축제 때 고백했을 때... 솔직히 거절당할 줄 알았어.',
-		'h 근데 막상 들으니까... 역시 아프더라.',
+		'h 전시회 때... 사실 더 솔직하고 싶었어.',
+		'h 근데 용기가 안 나서 그냥 웃고 넘긴 거야.',
 		'p 하나...',
 		'h 아, 근데 괜찮아! 나 원래 금방 일어나는 타입이거든!',
 		'show character h happy',
@@ -94,7 +94,7 @@ monogatari.script ({
 	],
 
 	// ──────────────────────────────────
-	//  Day5HanaConfess2 — 재고백 선택
+	//  Day5HanaConfess2 — 고백 선택
 	// ──────────────────────────────────
 	'Day5HanaConfess2': [
 		'show scene swimming_pool with fadeIn',

@@ -9,7 +9,7 @@ const DebugJump = (function () {
             'Start', 'Prologue', 'SchoolArrival',
             'Day1UnknownHint', 'Day1UnknownHintSora', 'Day1UnknownHintHana',
             'MorningEvent', 'LunchTime', 'LunchTimeSoraWarm', 'LunchTimeHanaWarm',
-            'LunchTimeChoice', 'Day1Afternoon',
+            'LunchTimeChoice', 'Day1Afternoon', 'Day1NightSora', 'Day1NightHana',
             'HelpSora', 'Library',
             'GoWithHana', 'Rooftop'
         ],
@@ -23,9 +23,9 @@ const DebugJump = (function () {
         ],
         'Day 3': [
             'Day3Start', 'Day3PhotoDiscovery', 'Day3MainBranch', 'Day3BothHigh', 'Day3Balanced',
-            'Day3SoraRoute', 'Day3SoraClimax', 'SoraConfess', 'SoraFriendEnd',
-            'Day3HanaRoute', 'Day3HanaClimax', 'HanaConfess', 'HanaFriendEnd',
-            'Day3TogetherRoute', 'Day3TogetherClimax', 'HiddenEnding', 'FriendshipEnding'
+            'Day3SoraRoute', 'Day3SoraClimax',
+            'Day3HanaRoute', 'Day3HanaClimax',
+            'Day3TogetherRoute', 'Day3TogetherClimax'
         ],
         'Day 4': [
             'Day4Start', 'Day4MeetUnknownHigh', 'Day4MeetUnknownNormal',

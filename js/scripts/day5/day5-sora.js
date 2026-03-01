@@ -1,14 +1,14 @@
 /* global monogatari */
 /**
  * ═══════════════════════════════════════════
- *  Day 5 — 소라 루트 (도서관 재고백, 트루러브/온기 엔딩)
+ *  Day 5 — 소라 루트 (도서관 고백, 트루러브/온기 엔딩)
  *  파일: day5-sora.js
  * ═══════════════════════════════════════════
  *
  *  라벨 목록:
  *    - Day5SoraRoute   : 5일차 시작 → 도서관
- *    - Day5SoraLibrary : 소라 재고백 이벤트
- *    - Day5SoraConfess2: 재고백 선택
+ *    - Day5SoraLibrary : 소라 고백 이벤트
+ *    - Day5SoraConfess2: 고백 선택
  *    - SoraTrueLoveEnd : 소라 트루 러브 엔딩 → end
  *    - SoraWarmEnd     : 소라 온기 엔딩 → end
  *
@@ -36,7 +36,7 @@ monogatari.script ({
 		'"서두르지 마. 하지만 도망치지도 마."',
 		'show character p normal at center with fadeIn',
 		'p ...소라 씨에게, 이번엔 제대로 전하고 싶어.',
-		'주머니 속 종이학을 만진다. 소라가 건네줬던 행운의 부적.',
+		'주머니 속 종이학을 만진다. 소라가 건네줬던 작은 종이학.',
 		'손끝에 전해지는 의외의 온기── 소라의 정성이 깃든 것 같다.',
 		'p ...도서관에서 기다리고 있을 거야. 이번엔 내가 먼저.',
 		'hide character p with fadeOut',
@@ -45,7 +45,7 @@ monogatari.script ({
 	],
 
 	// ──────────────────────────────────
-	//  Day5SoraLibrary — 소라 재고백 이벤트
+	//  Day5SoraLibrary — 소라 고백 이벤트
 	// ──────────────────────────────────
 	'Day5SoraLibrary': [
 		'show scene classroom3_afternoon with fadeIn',
@@ -69,11 +69,10 @@ monogatari.script ({
 		'show scene classroom3_afternoon with fadeIn',
 		'show character s normal at center with fadeIn',
 		'소라가 책을 내려놓고 천천히 일어선다.',
-		's 전에... {{player.name}} 씨가 좋은 친구로 지내자고 했을 때요.',
-		's 솔직히... 마음이 많이 아팠어요.',
-		's 하지만 그게 제 탓이라고 생각했어요. 마음을 제대로 전하지 못한.',
+		's 전시회 때... 솔직히 더 말하고 싶은 게 있었어요.',
+		's 하지만 용기가 나지 않아서... 그냥 웃고 말았어요.',
 		's 그런데 어제... 유우 선배가 그랬어요.',
-		's "네가 처음 마음을 연 상대야. 한 번으로 포기하면 후회할 거야" 라고.',
+		's "네가 처음 마음을 연 상대야. 전하지 않으면 후회할 거야" 라고.',
 		'show character s normal',
 		's 그래서 이번에는... 제가 먼저 말할게요.',
 		's {{player.name}} 씨, 저── 당신을 좋아해요.',
@@ -97,7 +96,7 @@ monogatari.script ({
 	],
 
 	// ──────────────────────────────────
-	//  Day5SoraConfess2 — 재고백 선택
+	//  Day5SoraConfess2 — 고백 선택
 	// ──────────────────────────────────
 	'Day5SoraConfess2': [
 		'show scene classroom3_afternoon with fadeIn',
