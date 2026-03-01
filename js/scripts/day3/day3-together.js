@@ -120,9 +120,9 @@ monogatari.script ({
 		'p 전학 와서 불안했는데... 너희를 만나서 정말 다행이야.',
 		'p 소라의 차분한 따뜻함도, 하나의 밝은 에너지도...',
 		'p 둘 다 없으면 안 될 만큼 소중해.',
-		'show character s happy',
+		'show character s happy at left',
 		's {{player.name}} 씨...',
-		'show character h laugh',
+		'show character h laugh at right',
 		'h {{player.name}}...',
 		'소라가 내 오른손을, 하나가 왼손을 잡는다.',
 		// [CG] three-hands — 소라(오른손)+하나(왼손) 손잡기, 벚꽃이 원을 그리며 감쌈
