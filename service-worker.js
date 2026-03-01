@@ -11,6 +11,7 @@ const version = '0.4.0';
 // 이 키는 tools/encrypt-assets.js 실행 후 출력되는 hex 문자열로 교체해야 합니다.
 const ASSET_KEY_HEX = '106c7143e29939f38842c5cc8bcfa0a7d7032f3d797d162c6ca12d179ae8fbbf';
 const ENCRYPTED_CACHE = `${name}-encrypted-v${version}`;
+const ENC_DEBUG = false; // 배포 환경 디버깅 시 true로 변경
 
 const files = [
 
@@ -169,22 +170,33 @@ async function handleEncryptedAsset (request) {
 
 	const manifest = await loadManifest();
 	if (!manifest || !manifest[assetPath]) {
-		return null; // 매니페스트에 없으면 원본 요청 그대로
+		if (ENC_DEBUG) console.warn(`[ENC] not in manifest: ${assetPath}`);
+		return null;
 	}
 
 	// 복호화된 캐시 확인
 	const cache = await caches.open(ENCRYPTED_CACHE);
 	const cached = await cache.match(request);
-	if (cached) return cached;
+	if (cached) {
+		if (ENC_DEBUG) console.log(`[ENC] cache hit: ${assetPath}`);
+		return cached;
+	}
 
 	const entry = manifest[assetPath];
 	const encUrl = new URL('/' + entry.enc, url.origin).href;
 
+	if (ENC_DEBUG) console.log(`[ENC] fetching: ${encUrl}`);
+
 	const encResponse = await fetch(encUrl);
-	if (!encResponse.ok) return null;
+	if (!encResponse.ok) {
+		if (ENC_DEBUG) console.warn(`[ENC] fetch failed (${encResponse.status}): ${encUrl}`);
+		return null;
+	}
 
 	const encBuffer = await encResponse.arrayBuffer();
 	const decryptedBuffer = await decryptAsset(encBuffer);
+
+	if (ENC_DEBUG) console.log(`[ENC] decrypted: ${assetPath} (${encBuffer.byteLength} → ${decryptedBuffer.byteLength})`);
 
 	const response = new Response(decryptedBuffer, {
 		status: 200,
@@ -241,10 +253,12 @@ self.addEventListener ('fetch', (event) => {
 			handleEncryptedAsset(event.request).then((decrypted) => {
 				if (decrypted) return decrypted;
 				// 복호화 실패 시 원본 폴백
+				if (ENC_DEBUG) console.warn(`[ENC] fallback to original: ${url.pathname}`);
 				return caches.match(event.request).then((cached) => {
 					return cached || fetch(event.request);
 				});
-			}).catch(() => {
+			}).catch((err) => {
+				if (ENC_DEBUG) console.error(`[ENC] error: ${url.pathname}`, err);
 				return caches.match(event.request).then((cached) => {
 					return cached || fetch(event.request);
 				});
