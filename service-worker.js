@@ -5,7 +5,7 @@ const name = 'Monogatari';
 
 // The version of the cache, changing this will force everything to be cached
 // again.
-const version = '0.6.0';
+const version = '0.6.1';
 
 // ── Asset Decryption Config ──
 // 이 키는 tools/encrypt-assets.js 실행 후 출력되는 hex 문자열로 교체해야 합니다.
@@ -87,12 +87,15 @@ let assetManifest = null;
 async function loadManifest () {
 	if (assetManifest) return assetManifest;
 	try {
-		const res = await fetch('/assets/manifest.enc.json');
+		const res = await fetch('/assets/manifest.enc.json', { cache: 'no-store' });
 		if (res.ok) {
 			assetManifest = await res.json();
+			console.log(`[ENC] manifest loaded: ${Object.keys(assetManifest).length} entries`);
+		} else {
+			console.error(`[ENC] manifest fetch failed: ${res.status}`);
 		}
 	} catch (e) {
-		// manifest가 없으면 암호화 미적용 상태 → 원본 그대로 서빙
+		console.error('[ENC] manifest load error:', e.message);
 	}
 	return assetManifest;
 }
@@ -170,7 +173,7 @@ async function handleEncryptedAsset (request) {
 
 	const manifest = await loadManifest();
 	if (!manifest || !manifest[assetPath]) {
-		if (ENC_DEBUG) console.warn(`[ENC] not in manifest: ${assetPath}`);
+		console.warn(`[ENC] not in manifest: ${assetPath} (manifest=${!!manifest})`);
 		return null;
 	}
 
@@ -189,14 +192,14 @@ async function handleEncryptedAsset (request) {
 
 	const encResponse = await fetch(encUrl);
 	if (!encResponse.ok) {
-		if (ENC_DEBUG) console.warn(`[ENC] fetch failed (${encResponse.status}): ${encUrl}`);
+		console.warn(`[ENC] fetch failed (${encResponse.status}): ${encUrl}`);
 		return null;
 	}
 
 	const encBuffer = await encResponse.arrayBuffer();
 	const decryptedBuffer = await decryptAsset(encBuffer);
 
-	if (ENC_DEBUG) console.log(`[ENC] decrypted: ${assetPath} (${encBuffer.byteLength} → ${decryptedBuffer.byteLength})`);
+	console.log(`[ENC] decrypted: ${assetPath} (${encBuffer.byteLength} → ${decryptedBuffer.byteLength})`);
 
 	const response = new Response(decryptedBuffer, {
 		status: 200,
@@ -252,13 +255,12 @@ self.addEventListener ('fetch', (event) => {
 		event.respondWith(
 			handleEncryptedAsset(event.request).then((decrypted) => {
 				if (decrypted) return decrypted;
-				// 복호화 실패 시 원본 폴백
-				if (ENC_DEBUG) console.warn(`[ENC] fallback to original: ${url.pathname}`);
+				console.warn(`[ENC] fallback to original: ${url.pathname}`);
 				return caches.match(event.request).then((cached) => {
 					return cached || fetch(event.request);
 				});
 			}).catch((err) => {
-				if (ENC_DEBUG) console.error(`[ENC] error: ${url.pathname}`, err);
+				console.error(`[ENC] error: ${url.pathname}`, err);
 				return caches.match(event.request).then((cached) => {
 					return cached || fetch(event.request);
 				});
