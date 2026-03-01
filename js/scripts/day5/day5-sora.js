@@ -66,7 +66,7 @@ monogatari.script ({
 		's {{player.name}} 씨, 저──',
 		'p 그리고 그런 소라 씨가... 저는 더 소중해졌어요.',
 		'p 약한 모습도, 두려워하는 모습도 전부.',
-		'show scene classroom3_evening with fadeIn',
+		'show scene classroom3_afternoon with fadeIn',
 		'show character s normal at center with fadeIn',
 		'소라가 책을 내려놓고 천천히 일어선다.',
 		's 전에... {{player.name}} 씨가 좋은 친구로 지내자고 했을 때요.',
@@ -78,7 +78,6 @@ monogatari.script ({
 		's 친구가 아니라... 한 사람으로서.',
 		// [CG] sora-confession — 호박빛 석양이 책장을 물들이는 도서관, 소라의 고백
 		'hide character s',
-		'hide character p',
 		{'Function': {
 			'Apply': function () { monogatari.distractionFree();},
 			'Revert': function () { monogatari.distractionFree();}
@@ -90,7 +89,7 @@ monogatari.script ({
 			'Revert': function () { monogatari.distractionFree();}
 		}},
 		'gallery unlock sora-confession',
-		'show scene classroom3_evening with fadeIn',
+		'show scene classroom3_afternoon with fadeIn',
 		'석양빛 도서관에서, 소라의 고백이 조용히 울려 퍼진다.',
 		'jump Day5SoraConfess2'
 	],
@@ -99,7 +98,7 @@ monogatari.script ({
 	//  Day5SoraConfess2 — 재고백 선택
 	// ──────────────────────────────────
 	'Day5SoraConfess2': [
-		'show scene classroom3_evening with fadeIn',
+		'show scene classroom3_afternoon with fadeIn',
 		'소라의 고백이 아직 귓가에 맴돈다.',
 		'이 말의 무게를── 소라가 얼마나 큰 용기를 냈는지── 알고 있다.',
 		'"서두르지 마. 하지만 도망치지도 마."── 유우 선배의 말이 떠오른다.',
@@ -190,7 +189,7 @@ monogatari.script ({
 			'Revert': function () { monogatari.distractionFree();}
 		}},
 		'gallery unlock sora-warm',
-		'show scene classroom3_evening with fadeIn',
+		'show scene classroom3_afternoon with fadeIn',
 		's ...고마워요. 천천히... 알아가요.',
 		'봄바람이 도서관 창문을 스친다.',
 		'서두르지 않아도, 두 사람의 봄은 이미 시작되었다.',
