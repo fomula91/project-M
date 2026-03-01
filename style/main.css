@@ -38,7 +38,7 @@ button:hover {
 **/
 
 [data-screen="main"].active {
-	background: url('../assets/scenes/Auditorium_Outside_Sunrise.jpg') center center / cover no-repeat !important;
+	background: url('../assets/scenes/Auditorium_Outside_Sunrise.webp') center center / cover no-repeat !important;
 	position: relative;
 	overflow: hidden;
 	display: flex;
