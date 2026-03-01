@@ -101,8 +101,6 @@ monogatari.script ({
 		'show scene school_grounds_evening with fadeIn',
 		'show character h happy at center with fadeIn',
 		'석양 속 하나의 미소가 유독 아름답게 보인다.',
-		'hide character p with fadeOut',
-		'hide character h with fadeOut',
 		'jump Day2End'
 	]
 });
