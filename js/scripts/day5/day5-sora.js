@@ -60,9 +60,6 @@ monogatari.script ({
 		'show character p normal at right with fadeIn',
 		'p 소라 씨, 이야기 좀 해도 될까요?',
 		's ...네, 물론이에요.',
-		'show scene classroom3_afternoon with fadeIn',
-		'show character s normal at center with fadeIn',
-		'show character p normal at right with fadeIn',
 		'p 유우 선배를 만나고... 소라 씨에 대해 더 알게 됐어요.',
 		'p 혼자이던 시절의 이야기도, 마음을 여는 게 무서웠다는 것도.',
 		'show character s worried',
@@ -156,6 +153,7 @@ monogatari.script ({
 		'석양이 도서관을 가득 물들이는 가운데, 두 사람은 조용히 손을 맞잡았다.',
 		'show scene classroom3_evening with fadeIn',
 		'centered ── 소라 트루 러브 엔딩: 도서관의 석양 ──',
+		'stop music',
 		'end'
 	],
 
@@ -192,11 +190,12 @@ monogatari.script ({
 			'Revert': function () { monogatari.distractionFree();}
 		}},
 		'gallery unlock sora-warm',
-		'show scene classroom3_afternoon with fadeIn',
+		'show scene classroom3_evening with fadeIn',
 		's ...고마워요. 천천히... 알아가요.',
 		'봄바람이 도서관 창문을 스친다.',
 		'서두르지 않아도, 두 사람의 봄은 이미 시작되었다.',
 		'centered ── 소라 엔딩: 천천히 피는 봄 ──',
+		'stop music',
 		'end'
 	]
 });

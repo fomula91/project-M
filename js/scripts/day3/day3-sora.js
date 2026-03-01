@@ -133,6 +133,7 @@ monogatari.script ({
 		'hide character s with fadeOut',
 		'show scene auditorium_evening with fadeIn',
 		'centered ── 소라 엔딩: 조용한 봄의 시작 ──',
+		'stop music',
 		'end'
 	],
 
